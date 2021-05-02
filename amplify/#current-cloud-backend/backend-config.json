@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "ocppwebapp639c1e93": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
