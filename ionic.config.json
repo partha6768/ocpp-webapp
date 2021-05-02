@@ -1,0 +1,8 @@
+{
+  "name": "ocpp-webapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "88e10c16"
+}

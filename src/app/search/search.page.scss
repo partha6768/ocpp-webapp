@@ -1,0 +1,42 @@
+
+#map {
+  height: 100%;
+}
+.filter-box{
+  bottom: 10%;
+  position: absolute;
+}
+.search-box{
+  padding: 15px 25px;
+  top: 5%;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: calc(100% - 10px);
+  z-index: 1;
+}
+.filter-item{
+  padding: 10px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  display: inline-flex;
+  margin-left: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-family: 'Lexend-Regular';
+}
+.filter-item-icon{
+  display: inline-flex;
+  height: 60px;
+  vertical-align: middle;
+}
+.current-location-icon{
+  vertical-align: middle;
+  background-color: white;
+  height: 42px;
+  width: 50px;
+  display: inline-flex;
+  margin-bottom: 2px;
+}

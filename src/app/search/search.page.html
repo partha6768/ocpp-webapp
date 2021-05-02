@@ -1,0 +1,19 @@
+<ion-content [fullscreen]="true">
+  <div class="search-box">
+    <div>
+      <div style="display: inline-flex;width: 85%">
+        <ion-searchbar></ion-searchbar>
+      </div>
+      <div class="current-location-icon"><ion-img style="width: 30%;margin-left: 17px;" src="assets/icon/target.svg"></ion-img></div>
+    </div>
+  </div>
+  <div #map id="map"></div>
+  <div class="filter-box">
+    <ion-img class="filter-item-icon" src="assets/icon/filter.svg"></ion-img>
+    <div class="filter-item">Near Me</div>
+    <div class="filter-item">Available Station</div>
+    <div class="filter-item">Discount</div>
+    <div class="filter-item">Fast charger</div>
+    <div class="filter-item" (click)="openRouteModal()">On Route To</div>
+  </div>
+</ion-content>
