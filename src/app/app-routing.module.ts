@@ -21,6 +21,10 @@ const routes: Routes = [
   },  {
     path: 'connect',
     loadChildren: () => import('./connect/connect.module').then( m => m.ConnectPageModule)
+  },
+  {
+    path: 'charger-remove',
+    loadChildren: () => import('./charger-remove/charger-remove.module').then( m => m.ChargerRemovePageModule)
   }
 
 ];
