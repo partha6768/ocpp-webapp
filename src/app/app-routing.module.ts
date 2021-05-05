@@ -18,7 +18,11 @@ const routes: Routes = [
   {
     path: 'view-route',
     loadChildren: () => import('./view-route/view-route.module').then( m => m.ViewRoutePageModule)
+  },  {
+    path: 'connect',
+    loadChildren: () => import('./connect/connect.module').then( m => m.ConnectPageModule)
   }
+
 ];
 @NgModule({
   imports: [

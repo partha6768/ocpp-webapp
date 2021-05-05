@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+@mixin button-bg($bg) {
+  background: $bg;
+  &:hover {
+    background:darken($bg,8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background:darken($bg,25%);
+  } 
+}
+
+.btn {
+    color:white;
+    text-decoration:none;
+    padding:5px 10px;
+    border-radius:3px;
+    font-family: 'Poiret One', cursive;
+    font-size:2em;
+    margin-bottom: 1rem;
+   }
+   
+   .btn-green {
+       display: flex;
+    justify-content: center;
+    padding-left: 6rem;
+    font: normal normal 600 17px/21px Lexend;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) 17px/21px var(--unnamed-font-family-lexend);
+    background: var(--green) 0% 0% no-repeat padding-box;
+    background: #30CF87 0% 0% no-repeat padding-box;
+   }
+   
+   .btn-blue {
+    font: normal normal 600 17px/21px Lexend;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) 17px/21px var(--unnamed-font-family-lexend);
+    background: var(--dark-grey) 0% 0% no-repeat padding-box;
+    background: #273D4C 0% 0% no-repeat padding-box;
+    img{
+        display: block;
+        padding-left: 5.5rem;
+    }
+   }
+
+   .header{
+    top: 30px;
+    left: 26px;
+    width: 196px;
+    height: 25px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-20)/var(--unnamed-line-spacing-25) var(--unnamed-font-family-lexend);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--dark-grey);
+    text-align: left;
+    font: normal normal 600 20px/25px Lexend;
+    letter-spacing: 0px;
+    color: #273D4C;
+    opacity: 1;
+   }
+
+   .subtitle{
+    top: 30px;
+left: 26px;
+width: 362px;
+height: 20px;
+font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-medium) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-lexend);
+letter-spacing: var(--unnamed-character-spacing-0);
+color: var(--medium-grey);
+text-align: left;
+font: normal normal medium 16px/20px Lexend;
+letter-spacing: 0px;
+color: #C3D0D9;
+opacity: 1;
+   }
+
+.back_btn{
+    
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-20)/var(--unnamed-line-spacing-25) var(--unnamed-font-family-lexend);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--dark-grey);
+    text-align: left;
+    font: normal normal bold 20px/25px Lexend;
+    letter-spacing: 0px;
+    color: #273D4C;
+    opacity: 1;
+}
+
+.card{
+    display:grid;
+    grid-template:max-content;
+    grid-column-start: inherit;
+    margin-top: 20rem;
+}
+
+.h > h1{
+    color: #273D4C;
+}
+
+   

@@ -6,7 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: BookingHistoryPage,
+  },  {
+    path: 'invoice',
+    loadChildren: () => import('./invoice/invoice.module').then( m => m.InvoicePageModule)
   }
+
 ];
 
 @NgModule({
