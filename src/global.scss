@@ -43,6 +43,29 @@
   position: absolute;
   width: 100%;
 }
+.select-vehicle {
+  --height: 85%;
+}
+.select-vehicle .modal-wrapper{
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
 .color-red{
   color: red;
+}
+.in-list{
+  --border-color: white;
+}
+.padding-top-20{
+  padding-top: 20px;
+}
+.padding-10{
+  padding: 10px;
+}
+.close-icon{
+  float: right;
+  padding: 10px;
 }

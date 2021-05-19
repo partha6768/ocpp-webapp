@@ -1,23 +1,34 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {IonSlides} from "@ionic/angular";
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {IonSlides, ModalController} from "@ionic/angular";
+import {ViewRoutePage} from "../../view-route/view-route.page";
+import {VehicleComponent} from "../../home/vehicle/vehicle.component";
 
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss'],
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent implements AfterViewInit {
   currentIndex = 0;
   @ViewChild('slides', {static: true}) slides: IonSlides;
-  constructor() { }
-
-  ngOnInit() {}
+  constructor(public modalController: ModalController) { }
 
   slideChanged(){
-    this.slides.getActiveIndex().then(
-        (index)=>{
-          this.currentIndex = index;
-        });
+    this.slides.getActiveIndex().then((index)=>{
+      this.currentIndex = index;
+    });
+  }
+
+  ngAfterViewInit(): void {
+    this.slideChanged();
+  }
+
+  async openVehicleModal() {
+    const modal = await this.modalController.create({
+      component: VehicleComponent,
+      cssClass: 'select-vehicle'
+    });
+    return await modal.present();
   }
 
 }

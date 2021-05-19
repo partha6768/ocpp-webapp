@@ -17,7 +17,7 @@ export class LoginPage implements OnInit, OnDestroy {
       this.authState = authState;
       this.user = authData as CognitoUserInterface;
       if(this.authState === 'signedin' && this.user){
-        this.router.navigate(['/home']);
+        this.router.navigate(['/login/slider']);
       }
       this.ref.detectChanges();
     });
