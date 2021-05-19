@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ChargeCompletePageRoutingModule } from './charge-complete-routing.module';
 
 import { ChargeCompletePage } from './charge-complete.page';
+import { LateComponent } from "./late/late.component";
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { ChargeCompletePage } from './charge-complete.page';
     IonicModule,
     ChargeCompletePageRoutingModule
   ],
-  declarations: [ChargeCompletePage]
+  declarations: [LateComponent, ChargeCompletePage]
 })
 export class ChargeCompletePageModule {}

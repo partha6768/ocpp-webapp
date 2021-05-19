@@ -1,0 +1,26 @@
+ion-slides {
+  height: 90%;
+}
+
+.swiper-slide {
+  display: block;
+}
+
+.swiper-slide h2 {
+  margin: 0px;
+  font: normal normal 600 28px/35px Lexend-Regular;
+}
+
+.swiper-slide img {
+  height: 360px;
+  max-width: 80%;
+  margin: 60px 0 40px;
+  pointer-events: none;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ion-color-step-600, #60646b);
+  font: normal normal medium 17px/21px Lexend-Regular;
+}

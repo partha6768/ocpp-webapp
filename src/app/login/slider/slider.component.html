@@ -1,0 +1,32 @@
+<ion-content fullscreen class="ion-padding" scroll-y="false">
+  <ion-slides pager="true" (ionSlideDidChange)="slideChanged($event)" #slides>
+
+    <ion-slide>
+      <div class="slide">
+        <img src="./assets/img/onboarding-1.png"/>
+        <h2>Find the Nearest Charging Station</h2>
+        <p>Select the nearest charging station on the map, and easily navigate to it.</p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="./assets/img/onboarding-2.png"/>
+      <h2>Choose a Station According to your needs.</h2>
+      <p>Search EV Station according to your preference : nearby, on route, charging levels</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="./assets/img/onboarding-3.png"/>
+      <h2>Reserve a Slot & Save Your Time</h2>
+      <p>Book your slot according to your convenience and make the most of your time.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="./assets/img/onboarding-4.png"/>
+      <h2>Charge, Pay and Go</h2>
+      <p>Reach the charger and start charging. You can view live status of charging. Pay after charging and go.</p>
+    </ion-slide>
+  </ion-slides>
+  <ion-button *ngIf="currentIndex != 3" style="display: block" fill="clear">Skip >></ion-button>
+  <ion-button  *ngIf="currentIndex == 3" expand="full" size="large">Next <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+</ion-content>

@@ -8,6 +8,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 import {AmplifyUIAngularModule} from '@aws-amplify/ui-angular';
+import {SliderComponent} from "./slider/slider.component";
 
 @NgModule({
     imports: [
@@ -17,6 +18,6 @@ import {AmplifyUIAngularModule} from '@aws-amplify/ui-angular';
         LoginPageRoutingModule,
         AmplifyUIAngularModule
     ],
-  declarations: [LoginPage]
+  declarations: [LoginPage,SliderComponent]
 })
 export class LoginPageModule {}
