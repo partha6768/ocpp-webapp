@@ -6,6 +6,7 @@ import { SearchPage } from './search.page';
 
 import { SearchPageRoutingModule } from './search-routing.module';
 import {ViewRoutePageModule} from '../view-route/view-route.module';
+import {QrScanComponent} from "./qr-scan/qr-scan.component";
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import {ViewRoutePageModule} from '../view-route/view-route.module';
     SearchPageRoutingModule,
     ViewRoutePageModule
   ],
-  declarations: [SearchPage]
+  declarations: [SearchPage,QrScanComponent]
 })
 export class SearchPageModule {}

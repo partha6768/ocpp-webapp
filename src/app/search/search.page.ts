@@ -1,6 +1,7 @@
 import {Component, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import {ViewRoutePage} from "../view-route/view-route.page";
+import {VehicleComponent} from "../home/vehicle/vehicle.component";
 
 declare let google;
 
@@ -75,6 +76,14 @@ export class SearchPage implements AfterViewInit{
     const modal = await this.modalController.create({
       component: ViewRoutePage,
       cssClass: 'view-route'
+    });
+    return await modal.present();
+  }
+
+  async openVehicleModal() {
+    const modal = await this.modalController.create({
+      component: VehicleComponent,
+      cssClass: 'select-vehicle'
     });
     return await modal.present();
   }
