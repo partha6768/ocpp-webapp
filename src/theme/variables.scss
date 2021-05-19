@@ -4,11 +4,8 @@
 /** Ionic CSS Variables **/
 :root {
   --ion-font-family: 'Lexend-Regular';
-  --ion-font-family: 'Lexend-Bold';
-  --ion-font-family: 'Lexend-Light';
-  --ion-font-family: 'Lexend-Thin';
   /** primary **/
-  --ion-color-primary: #326747;
+  --ion-color-primary: #30CF87;
   --ion-color-primary-rgb: 50, 103, 71;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -266,4 +263,8 @@
   font-style: normal;
   font-weight: normal;
   src: url('../assets/fonts/Lexend/Lexend-Thin.ttf');
+}
+ion-button {
+  text-transform: none;
+  font-weight: bold;
 }
