@@ -7,15 +7,17 @@ import { SearchPage } from './search.page';
 import { SearchPageRoutingModule } from './search-routing.module';
 import {ViewRoutePageModule} from '../view-route/view-route.module';
 import {QrScanComponent} from "./qr-scan/qr-scan.component";
+import {ZXingScannerModule} from "@zxing/ngx-scanner";
 
 @NgModule({
-  imports: [
-    IonicModule,
-    CommonModule,
-    FormsModule,
-    SearchPageRoutingModule,
-    ViewRoutePageModule
-  ],
+    imports: [
+        IonicModule,
+        CommonModule,
+        FormsModule,
+        SearchPageRoutingModule,
+        ViewRoutePageModule,
+        ZXingScannerModule
+    ],
   declarations: [SearchPage,QrScanComponent]
 })
 export class SearchPageModule {}
