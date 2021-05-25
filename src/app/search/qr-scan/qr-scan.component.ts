@@ -63,4 +63,11 @@ export class QrScanComponent implements OnInit {
     this.tryHarder = !this.tryHarder;
   }
 
+    segmentChanged($event: CustomEvent) {
+        
+    }
+
+  openVehicleModal() {
+
+  }
 }

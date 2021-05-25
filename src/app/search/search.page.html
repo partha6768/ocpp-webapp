@@ -1,5 +1,12 @@
 <ion-content [fullscreen]="true">
   <div class="search-box">
+    <div class="filter-item padding-15" style="width: 42%;" (click)="openVehicleModal()">Tata Nexon EV</div>
+    <div class="filter-item filter-item-selected" style="width: 50%;">
+      <div><b>SCAN QR CODE</b></div><div class="font-size-12">on charger</div>
+      <ion-img class="map-icon" src="assets/icon/scan.svg"></ion-img>
+    </div>
+  </div>
+  <!--<div class="search-box">
     <div>
       <div class="filter-item" style="width: 42%;" (click)="openVehicleModal()">Tata Nexon EV</div>
       <div class="filter-item" style="width: 50%;">Scan QR code on charger</div>
@@ -10,7 +17,7 @@
       </div>
       <div class="current-location-icon"><ion-img style="width: 30%;margin-left: 17px;" src="assets/icon/target.svg"></ion-img></div>
     </div>
-  </div>
+  </div>-->
   <div #map id="map"></div>
   <div class="filter-box">
     <ion-img class="filter-item-icon" src="assets/icon/filter.svg"></ion-img>

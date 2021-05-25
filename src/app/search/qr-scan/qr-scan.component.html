@@ -1,11 +1,22 @@
-<zxing-scanner [torch]="torchEnabled" [(device)]="currentDevice" (scanSuccess)="onCodeResult($event)"
-               [tryHarder]="tryHarder" (permissionResponse)="onHasPermission($event)"
-               (camerasFound)="onCamerasFound($event)"></zxing-scanner>
-
-<section class="results" *ngIf="qrResultString">
-    <div>
-        <small>Result</small>
-        <strong>{{ qrResultString }}</strong>
+<div class="search-box">
+    <div class="filter-item padding-15" style="width: 42%;" (click)="openVehicleModal()">Tata Nexon EV</div>
+    <div class="filter-item filter-item-selected" style="width: 50%;">
+        <div><b>GO TO MAP</b></div><div class="font-size-12">To discover chargers</div>
+        <ion-icon class="color-white map-icon" name="map-outline"></ion-icon>
     </div>
-    <button mat-icon-button (click)="clearResult()">&times;</button>
-</section>
+</div>
+<div class="video-container">
+    <zxing-scanner [torch]="torchEnabled" [(device)]="currentDevice" (scanSuccess)="onCodeResult($event)"
+                   [tryHarder]="tryHarder" (permissionResponse)="onHasPermission($event)"
+                   (camerasFound)="onCamerasFound($event)"></zxing-scanner>
+</div>
+<div style="margin: 1.5%;">
+    <ion-segment class="bottom-tab" mode="ios" value="scan" (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="scan">
+            <ion-label>Scan QR code</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="code">
+            <ion-label>Enter code</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+</div>
