@@ -6,12 +6,22 @@
   bottom: 10%;
   position: absolute;
 }
-.search-box{
+.map-box{
   padding: 15px 25px;
   top: 5%;
   left: 50%;
   position: absolute;
   display: flex;
+  transform: translateX(-50%);
+  width: calc(100% + 40px);
+  z-index: 1;
+}
+.search-box{
+  padding: 15px 25px;
+  top: 15%;
+  left: 51%;
+  position: absolute;
+  display: inline-block;
   transform: translateX(-50%);
   width: calc(100% + 40px);
   z-index: 1;

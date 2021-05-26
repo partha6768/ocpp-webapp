@@ -1,6 +1,6 @@
 .bottom-tab{
   position: absolute;
-  bottom: 10%;
+  bottom: 7%;
   height: 40px;
   background: #C3D0D9 !important;
   width: 98%;
@@ -37,4 +37,20 @@
   top: 40px;
   font-size: 25px;
   right: 50px;
+}
+.image_layout{
+  text-align: center;
+  margin-top: 145px;
+}
+.display{
+  text-align: center;
+  color: #273D4C;
+  line-height: 0px;
+  padding-top: 10px;
+  font: normal normal 600 24px/30px Lexend-Bold;
+}
+.code-text{
+  margin: 0 20px;
+  text-align: center;
+  padding-top: 10px;
 }

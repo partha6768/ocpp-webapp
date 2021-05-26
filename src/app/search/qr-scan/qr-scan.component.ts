@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-qr-scan',
@@ -7,24 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QrScanComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
 
   availableDevices: MediaDeviceInfo[];
   currentDevice: MediaDeviceInfo = null;
-
   hasDevices: boolean;
   hasPermission: boolean;
-
   qrResultString: string;
-
   torchEnabled = false;
   tryHarder = false;
-
-  clearResult(): void {
-    this.qrResultString = null;
-  }
+  scanQR = true;
 
   onCamerasFound(devices: MediaDeviceInfo[]): void {
     this.availableDevices = devices;
@@ -35,39 +30,23 @@ export class QrScanComponent implements OnInit {
     this.qrResultString = resultString;
   }
 
-  onDeviceSelectChange(selected: string) {
-    const device = this.availableDevices.find(x => x.deviceId === selected);
-    this.currentDevice = device || null;
-  }
-
-  openFormatsDialog() {
-
-  }
-
   onHasPermission(has: boolean) {
     this.hasPermission = has;
   }
 
-  openInfoDialog() {
-    const data = {
-      hasDevices: this.hasDevices,
-      hasPermission: this.hasPermission,
-    };
-  }
+  segmentChanged($event: CustomEvent) {
 
-  toggleTorch(): void {
-    this.torchEnabled = !this.torchEnabled;
   }
-
-  toggleTryHarder(): void {
-    this.tryHarder = !this.tryHarder;
-  }
-
-    segmentChanged($event: CustomEvent) {
-        
-    }
 
   openVehicleModal() {
 
+  }
+
+  goToMap(){
+    this.router.navigate(['/home/search']);
+  }
+
+  toggleView(flag) {
+    this.scanQR = flag;
   }
 }
