@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {ModalController} from "@ionic/angular";
 
 @Component({
   selector: 'app-ammenities',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class AmmenitiesComponent implements OnInit {
 
   ammenities = [];
-  constructor() { }
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {
     this.ammenities = [
@@ -26,5 +28,10 @@ export class AmmenitiesComponent implements OnInit {
       { icon: 'assets/icon/ammenities/wifi.svg', name: 'Wifi', distance: '50 m'}
     ];
   }
+
+  close() {
+    this.modalController.dismiss();
+  }
+
 
 }

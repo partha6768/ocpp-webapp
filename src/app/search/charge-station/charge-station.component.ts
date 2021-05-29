@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {VehicleComponent} from "../../home/vehicle/vehicle.component";
 import {ModalController} from "@ionic/angular";
 import {AmmenitiesComponent} from "../ammenities/ammenities.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-charge-station',
@@ -15,7 +16,7 @@ export class ChargeStationComponent implements OnInit {
   };
   ammenitieIcons = [];
   connectiorPorts = [];
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController,private router: Router) { }
 
   ngOnInit() {
     this.ammenitieIcons = [
@@ -42,9 +43,14 @@ export class ChargeStationComponent implements OnInit {
     async openAmmenitiesModal() {
         const modal = await this.modalController.create({
             component: AmmenitiesComponent,
-            cssClass: 'view-ammenities'
+            cssClass: 'view-ammenities',
+            backdropDismiss: false
         });
         return await modal.present();
     }
 
+    reservation() {
+        this.modalController.dismiss();
+        this.router.navigate(['/home/search/reservation']);
+    }
 }

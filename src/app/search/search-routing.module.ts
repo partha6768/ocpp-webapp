@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchPage } from './search.page';
 import {QrScanComponent} from "./qr-scan/qr-scan.component";
+import {ReservationComponent} from "./reservation/reservation.component";
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'scan-qr',
     component: QrScanComponent,
+  },
+  {
+    path: 'reservation',
+    component: ReservationComponent,
   }
 ];
 

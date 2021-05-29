@@ -17,7 +17,7 @@
                 <div class="price-text">₹10 / kWh</div>
                 <div class="available-text">3 / 5 available</div>
                 <img class="padding-5" *ngFor="let portIcon of connectiorPorts;" [src]="portIcon" />
-                <ion-button class="padding-5" expand="full" size="large">Reserve</ion-button>
+                <ion-button class="padding-5" expand="full" size="large" (click)="reservation()">Reserve</ion-button>
             </div>
         </ion-slide>
         <ion-slide>
@@ -26,7 +26,7 @@
                 <div class="price-text">₹20 / kWh</div>
                 <div class="available-text">3 / 5 available</div>
                 <img class="padding-5" *ngFor="let portIcon of connectiorPorts;" [src]="portIcon" />
-                <ion-button class="padding-5" expand="full" size="large">Reserve</ion-button>
+                <ion-button class="padding-5" expand="full" size="large" (click)="reservation()">Reserve</ion-button>
             </div>
         </ion-slide>
         <ion-slide>
@@ -35,7 +35,7 @@
                 <div class="price-text">₹30 / kWh</div>
                 <div class="available-text">3 / 5 available</div>
                 <img class="padding-5" *ngFor="let portIcon of connectiorPorts;" [src]="portIcon" />
-                <ion-button class="padding-5" expand="full" size="large">Reserve</ion-button>
+                <ion-button class="padding-5" expand="full" size="large" (click)="reservation()">Reserve</ion-button>
             </div>
         </ion-slide>
 

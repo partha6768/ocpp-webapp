@@ -137,3 +137,16 @@ height-40{
 .view-ammenities ion-backdrop{
   --backdrop-opacity: 0.4;
 }
+.color-dark-green{
+  background: #273d4c;
+}
+.color-light-grey{
+  --background: #f3f7fa;
+  background: #f3f7fa;
+}
+.margin-lr-15{
+  margin: 0px 15px;
+}
+.button-slide ion-item{
+  --min-height: 4rem;
+}
