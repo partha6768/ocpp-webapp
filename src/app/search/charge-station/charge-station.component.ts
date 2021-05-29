@@ -13,25 +13,24 @@ export class ChargeStationComponent implements OnInit {
     slidesPerView: 2,
     spaceBetween: 0
   };
-  baseURL = 'http://localhost:4200/';
   ammenitieIcons = [];
   connectiorPorts = [];
   constructor(public modalController: ModalController) { }
 
   ngOnInit() {
     this.ammenitieIcons = [
-        'assets/icon/ammenities/auto-service-station.svg',
-        'assets/icon/ammenities/cafeteria.svg',
-        'assets/icon/ammenities/chemist-shop.svg',
-        'assets/icon/ammenities/food-stall.svg',
-        'assets/icon/ammenities/hotel.svg',
-        'assets/icon/ammenities/mall.svg',
-        'assets/icon/ammenities/park-garden.svg',
-        'assets/icon/ammenities/parking.svg',
-        'assets/icon/ammenities/rest-room.svg',
-        'assets/icon/ammenities/retail-store.svg',
-        'assets/icon/ammenities/salon.svg',
-        'assets/icon/ammenities/wifi.svg'
+        { icon: 'assets/icon/ammenities/auto-service-station.svg', name: 'Auto Service Station', distance: 'On station'},
+        { icon: 'assets/icon/ammenities/cafeteria.svg', name: 'Cafeteria', distance: 'On station'},
+        { icon: 'assets/icon/ammenities/chemist-shop.svg', name: 'Chemist Shop', distance: 'On station'},
+        { icon: 'assets/icon/ammenities/food-stall.svg', name: 'Food Stall', distance: '50 m'},
+        { icon: 'assets/icon/ammenities/hotel.svg', name: 'Hotel', distance: '500 m'},
+        { icon: 'assets/icon/ammenities/mall.svg', name: 'Mall', distance: '50 m'},
+        { icon: 'assets/icon/ammenities/park-garden.svg', name: 'Park Garden', distance: '50 m'},
+        { icon: 'assets/icon/ammenities/parking.svg', name: 'Parking', distance: '50 m'},
+        { icon: 'assets/icon/ammenities/rest-room.svg', name: 'Rest Room', distance: '50 m'},
+        { icon: 'assets/icon/ammenities/retail-store.svg', name: 'Retail Store', distance: '50 m'},
+        { icon: 'assets/icon/ammenities/salon.svg', name: 'Salon', distance: '50 m'},
+        { icon: 'assets/icon/ammenities/wifi.svg', name: 'Wifi', distance: '50 m'}
     ];
     this.connectiorPorts = [
       'assets/icon/port/port-1.svg',

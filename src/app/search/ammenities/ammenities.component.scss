@@ -1,0 +1,49 @@
+.ammenities-title {
+  padding: 20px 0px 10px 20px;
+  font-family: Lexend-Regular;
+  font-size: 1.375rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+}
+.icon-box {
+  margin: 5px;
+  padding: 0.938rem 0.875rem 0.938rem 0.938rem;
+  border-radius: 5px;
+  flex: 1;
+  background-color: #f3f7fa;
+  text-align: center;
+}
+.icon-container{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 20px;
+  position: absolute;
+  top: 50px;
+  overflow: scroll;
+  height: calc(100% - 55px);
+}
+.ammenities-name{
+  font-family: Lexend-Regular;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  color: #273d4c;
+}
+.ammenities-distance{
+  font-family: Lexend-Regular;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  color: #30cf87;
+}

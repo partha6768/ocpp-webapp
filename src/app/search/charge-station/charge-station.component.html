@@ -5,7 +5,7 @@
 <div class="station station-distance">5.6 kms away</div>
 <div>
     <span *ngFor="let ammenitieIcon of ammenitieIcons;let i=index">
-        <img *ngIf="i <= 4" class="ammenitie-icon" [src]="ammenitieIcon" />
+        <img *ngIf="i <= 4" class="ammenitie-icon" [src]="ammenitieIcon.icon" />
         <ion-button *ngIf="i == 5 " class="more-text" fill="clear" (click)="openAmmenitiesModal()">{{ammenitieIcons.length - 5}} more</ion-button>
     </span>
 </div>

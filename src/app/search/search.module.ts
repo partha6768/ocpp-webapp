@@ -9,6 +9,7 @@ import {ViewRoutePageModule} from '../view-route/view-route.module';
 import {QrScanComponent} from "./qr-scan/qr-scan.component";
 import {ZXingScannerModule} from "@zxing/ngx-scanner";
 import {ChargeStationComponent} from "./charge-station/charge-station.component";
+import {AmmenitiesComponent} from "./ammenities/ammenities.component";
 
 @NgModule({
     imports: [
@@ -19,6 +20,6 @@ import {ChargeStationComponent} from "./charge-station/charge-station.component"
         ViewRoutePageModule,
         ZXingScannerModule
     ],
-  declarations: [SearchPage,QrScanComponent,ChargeStationComponent]
+  declarations: [SearchPage,QrScanComponent,ChargeStationComponent,AmmenitiesComponent]
 })
 export class SearchPageModule {}

@@ -1,3 +1,8 @@
-<p>
-  ammenities works!
-</p>
+<div class="ammenities-title">Ammenities</div>
+<div class="icon-container">
+  <div class="icon-box" *ngFor="let ammenitie of ammenities">
+    <img [src]="ammenitie.icon" />
+    <div class="ammenities-name">{{ammenitie.name}}</div>
+    <div class="ammenities-distance">{{ammenitie.distance}}</div>
+  </div>
+</div>
