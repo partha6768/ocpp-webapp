@@ -3,6 +3,7 @@ import {VehicleComponent} from "../../home/vehicle/vehicle.component";
 import {ModalController} from "@ionic/angular";
 import {AmmenitiesComponent} from "../ammenities/ammenities.component";
 import {Router} from "@angular/router";
+import {ReservationComponent} from "../reservation/reservation.component";
 
 @Component({
   selector: 'app-charge-station',
@@ -49,8 +50,13 @@ export class ChargeStationComponent implements OnInit {
         return await modal.present();
     }
 
-    reservation() {
+    async reservation() {
         this.modalController.dismiss();
-        this.router.navigate(['/home/search/reservation']);
+        const modal = await this.modalController.create({
+            component: ReservationComponent,
+            cssClass: 'view-reservation',
+            backdropDismiss: false
+        });
+        return await modal.present();
     }
 }

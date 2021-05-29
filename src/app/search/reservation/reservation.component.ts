@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ModalController} from "@ionic/angular";
 
 @Component({
   selector: 'app-reservation',
@@ -7,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationComponent implements OnInit {
 
-  constructor() { }
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {}
 
-    selectTimeSlot($event) {
+  selectTimeSlot($event) {
 
-    }
+  }
+
+  close() {
+    this.modalController.dismiss();
+  }
 }
