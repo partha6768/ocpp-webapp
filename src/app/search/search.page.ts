@@ -17,7 +17,7 @@ export class SearchPage implements AfterViewInit{
   @ViewChild('map', { static: false }) mapElement: ElementRef;
   map: any;
   markers: any;
-  baseURL = 'http://localhost:4200/assets/icon/';
+  baseURL = 'http://localhost:4200/';
   lat = 40.73061;
   lng = -73.935242;
   coordinates = new google.maps.LatLng(this.lat, this.lng);
@@ -41,18 +41,18 @@ export class SearchPage implements AfterViewInit{
         position: new google.maps.LatLng(40.73061, 73.935242),
         map: this.map,
         title: 'CP001',
-        icon: this.baseURL + 'fast_charger_available.svg'
+        icon: this.baseURL + 'assets/icon/fast_charger_available.svg'
       },{
         position: new google.maps.LatLng(32.06485, 34.763226),
         map: this.map,
         title: 'CP002',
-        icon: this.baseURL + 'normal_charger_available.svg'
+        icon: this.baseURL + 'assets/icon/normal_charger_available.svg'
       },
       {
         position: new google.maps.LatLng(40.73061, -73.935242),
         map: this.map,
         title: 'CP003',
-        icon: this.baseURL + 'normal_charger_available.svg'
+        icon: this.baseURL + 'assets/icon/normal_charger_available.svg'
       }
     ];
     //Adding markers

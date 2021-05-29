@@ -1,3 +1,45 @@
-<p>
-  charge-station works!
-</p>
+<div class="title-text"><img class="padding-right-10" src="./assets/icon/percentage.svg"/><span>Get 20% off</span><span class="color-yellow float-right">SAVENATURE</span></div>
+<div class="station open-till">Open till 10:00pm</div>
+<div class="station station-name">TCL Station</div>
+<div class="station station-address">Gomtinagar Extention, Lucknow</div>
+<div class="station station-distance">5.6 kms away</div>
+<div>
+    <span *ngFor="let ammenitieIcon of ammenitieIcons;let i=index">
+        <img *ngIf="i <= 4" class="ammenitie-icon" [src]="ammenitieIcon" />
+        <ion-button *ngIf="i == 5 " class="more-text" fill="clear" (click)="openAmmenitiesModal()">{{ammenitieIcons.length - 5}} more</ion-button>
+    </span>
+</div>
+<ion-content class="ion-padding" scroll-y="false">
+    <ion-slides [options]="slideOpts">
+        <ion-slide>
+            <div class="connector-box">
+                <div class="max-power"><img src="./assets/icon/single-tunder.svg"/><span> 10 kW</span></div>
+                <div class="price-text">₹10 / kWh</div>
+                <div class="available-text">3 / 5 available</div>
+                <img class="padding-5" *ngFor="let portIcon of connectiorPorts;" [src]="portIcon" />
+                <ion-button class="padding-5" expand="full" size="large">Reserve</ion-button>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="connector-box">
+                <div class="max-power"><img src="./assets/icon/single-tunder.svg"/><span> 20 kW</span></div>
+                <div class="price-text">₹20 / kWh</div>
+                <div class="available-text">3 / 5 available</div>
+                <img class="padding-5" *ngFor="let portIcon of connectiorPorts;" [src]="portIcon" />
+                <ion-button class="padding-5" expand="full" size="large">Reserve</ion-button>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="connector-box">
+                <div class="max-power"><img src="./assets/icon/single-tunder.svg"/><span> 30 kW</span></div>
+                <div class="price-text">₹30 / kWh</div>
+                <div class="available-text">3 / 5 available</div>
+                <img class="padding-5" *ngFor="let portIcon of connectiorPorts;" [src]="portIcon" />
+                <ion-button class="padding-5" expand="full" size="large">Reserve</ion-button>
+            </div>
+        </ion-slide>
+
+    </ion-slides>
+</ion-content>
+
+<ion-button expand="full" class="get-direction-button" size="large"><img class="padding-right-10" src="./assets/icon/direction.svg"/> Get directions</ion-button>

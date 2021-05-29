@@ -8,6 +8,7 @@ import { SearchPageRoutingModule } from './search-routing.module';
 import {ViewRoutePageModule} from '../view-route/view-route.module';
 import {QrScanComponent} from "./qr-scan/qr-scan.component";
 import {ZXingScannerModule} from "@zxing/ngx-scanner";
+import {ChargeStationComponent} from "./charge-station/charge-station.component";
 
 @NgModule({
     imports: [
@@ -18,6 +19,6 @@ import {ZXingScannerModule} from "@zxing/ngx-scanner";
         ViewRoutePageModule,
         ZXingScannerModule
     ],
-  declarations: [SearchPage,QrScanComponent]
+  declarations: [SearchPage,QrScanComponent,ChargeStationComponent]
 })
 export class SearchPageModule {}

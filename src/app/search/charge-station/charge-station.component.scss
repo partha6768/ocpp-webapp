@@ -1,0 +1,102 @@
+.get-direction-button{
+  border-radius: 5px;
+  box-shadow: 0 12px 16px 0 rgba(25, 13, 49, 0.3);
+  --background: #273d4c !important;
+}
+.title-text{
+  background: #273d4c !important;
+  height: 6%;
+  padding: 7px 20px;
+  font-family: Lexend-Regular;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+}
+.station {
+  letter-spacing: normal;
+  font-family: Lexend-Regular;
+  line-height: 1.25;
+  font-style: normal;
+  font-stretch: normal;
+}
+.open-till {
+  text-transform: uppercase;
+  margin: 1.75rem 1.438rem 0.5rem 1.063rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #30cf87;
+}
+.station-name{
+  margin: 0.5rem 2.188rem 0.5rem 1.063rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #273d4c;
+}
+.station-address{
+  margin: 0 0 0.125rem 1.063rem;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #c3d0d9;
+}
+.station-distance{
+  margin: 0.125rem 8.125rem 0 1.063rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #273d4c;
+}
+.ammenitie-icon{
+  padding: 15px 0px 0px 10px;
+  max-width: 15%;
+}
+.more-text{
+  text-decoration: underline;
+  color: #273d4c;
+  float: right;
+  margin-top: 15px;
+}
+.connector-box{
+  width: 100%;
+  box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+  text-align: left;
+  margin-left: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.price-text {
+  font-family: Lexend-Regular;
+  font-size: 1.125rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.28;
+  letter-spacing: normal;
+  text-align: left;
+  color: #c3d0d9;
+  margin-left: 10px;
+}
+.available-text {
+  font-family: Lexend-Regular;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #30cf87;
+  text-transform: uppercase;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.max-power{
+  margin-bottom: 15px;
+  font-family: Lexend-Regular;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #273d4c;
+  margin-left: 10px;
+  margin-top: 10px;
+}
