@@ -1,83 +1,67 @@
-.header{
-    padding-top:30px;
-    padding-left:20px;
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-24)/var(--unnamed-line-spacing-30) var(--unnamed-font-family-lexend);
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-273d4c);
-    text-align: left;
-    font: normal normal 600 24px/30px Lexend;
-    letter-spacing: 0px;
-    color: #273D4C;
-    opacity: 1;
+.title-text{
+  font-family: Lexend-Regular;
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.28;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
 }
-
-.header_layout{
-top: 0px;
-left: 0px;
-width: 428px;
-height: 138px;
-background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
-background: #FFFFFF 0% 0% no-repeat padding-box;
-box-shadow: 0px 3px 15px #0000000D;
-opacity: 1;
-position: fixed;
-z-index: 1;
+.header-text{
+  font-family: Lexend-Regular;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #c3d0d9;
+  text-transform: uppercase;
 }
-
-.header_layout > .dropdown_bay{
-top: 50px;
-left: 11px;
-width: 159px;
-height: 36px;
-padding-left: 20px;
-background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
-border: 1px solid var(--unnamed-color-c3d0d9);
-border: 1px solid #C3D0D9;
-border-radius: 8px;
-opacity: 1;
+.body-text{
+  font-family: Lexend-Regular;
+  font-size: 1rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
 }
-.dropdown_bay > label{
-    
-    text-align: center;
-    color: #273D4C;
-    padding:20px;
+.footer-text {
+  font-family: Lexend-Regular;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+  margin-top: 10px;
 }
-
-ion-grid{
-    padding: 20px;
+.share-icon {
+  font-size: 24px;
+  color: #30cf87;
+  padding: 0px 5px;
+  float: right;
 }
-
-.date{
-    padding-left: 70px;
-    color: #273D4C;
-    font-weight:bold;
+.list-body{
+  height: 90%;
+  overflow-y: scroll;
 }
-
-.amount{
-    padding-left: 20px;
-    color: #273D4C;
-    font-weight:bold;
+.reservation-status{
+    font-family: Lexend-Regular;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    float: right;
+    text-transform: uppercase;
 }
-
-.time{
-    color: #273D4C;
-    font-weight:bold;
-}
-
-.name{
-color: #273D4C;
-font-weight:bold;
-}
-.Share{
-    padding-left: 40px;
-    color: #30CF87;
-    font-weight:bold;
-}
-.icon{
-    padding-right: 10px;
-}
-
-.background{
-    --background: #F3F7FA 0% 0% no-repeat padding-box;
-}
-

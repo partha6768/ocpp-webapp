@@ -56,7 +56,10 @@
   border-top-right-radius: 20px;
 }
 .color-red{
-  color: red;
+  color: #EA7267;
+}
+.color-green{
+  color: #30CF87;
 }
 .color-white{
   color: white;
@@ -146,4 +149,19 @@ height-40{
 }
 .button-slide ion-item{
   --min-height: 4rem;
+}
+ion-select{
+  width: 100%;
+}
+.action-sheet-group.sc-ion-action-sheet-md:last-child, .action-sheet-group.sc-ion-action-sheet-ios:last-child {
+  display: none;
+}
+.padding-0{
+  padding: 0px;
+}
+.padding-tb-10{
+  padding: 10px 0px;
+}
+.vertical-align-middle{
+  vertical-align: middle;
 }
