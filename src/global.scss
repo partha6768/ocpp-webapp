@@ -58,8 +58,11 @@
 .color-red{
   color: #EA7267;
 }
+.color-lgrey{
+  color: #c3d0d9 !important;
+}
 .color-green{
-  color: #30CF87;
+  color: #30CF87 !important;
 }
 .color-white{
   color: white;
@@ -176,4 +179,7 @@ ion-select{
 }
 .padding-t-5{
   padding-top: 5px;
+}
+.font-weight-bold{
+  font-weight: bold !important;
 }

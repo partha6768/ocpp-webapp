@@ -1,0 +1,96 @@
+
+.station {
+  letter-spacing: normal;
+  font-family: Lexend-Regular;
+  line-height: 1.25;
+  font-style: normal;
+  font-stretch: normal;
+}
+.station-address{
+  font-size: 1rem;
+  font-weight: normal;
+  color: #c3d0d9;
+  margin: 0.3rem 0 1rem;
+}
+.body-text{
+  font-family: Lexend-Regular;
+  font-size: 1rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: right;
+  color: #273d4c;
+}
+.marge-tb{
+  margin: 0.5rem 0 0.5rem 0;
+}
+.body-title{
+  font-family: Lexend-Bold;
+  font-size: 1rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+}
+.body-header{
+  font-family: Lexend-Regular;
+  font-size: 1rem;
+  margin: 0.5rem 0 0.5rem 0;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #c3d0d9;
+}
+.bill-header-1 {
+  margin: 0 0 0.4rem 0;
+  font-family: Lexend-Regular;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+}
+.bill-header-2 {
+  margin: 0 0 0.7rem 0;
+  font-family: Lexend-Regular;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+}
+.total-bill{
+  font-family: Lexend-Regular;
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.28;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+}
+.white-box{
+  box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+  background-color: white;
+  margin: 24px 16px;
+  padding: 20px;
+}
+.divider{
+  margin: 1.721rem 0 1.721rem 0;
+  border: 1px dashed #c3d0d9;
+}
