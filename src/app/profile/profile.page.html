@@ -1,8 +1,42 @@
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Profile</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <img src="assets/icon/profile/rectangle.svg" class="rectangle">
+  <div class="profile-header">Hello Suraj!</div>
+  <ion-card class="margin-15">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="green-coins"><img class="green-icon" src="assets/icon/profile/green-icon.svg" /> Green Coins</div>
+            <div class="green-coins-text">535</div>
+          </ion-col>
+          <ion-col class="text-align-center">
+            <div><img src="assets/icon/profile/add-icon.svg"/></div>
+            <div class="add-coins padding-t-5">Add coins</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <div class="margin-15">
+    <div class="label-header">Name</div>
+    <div class="label-value">Suraj Singh</div>
+  </div>
+  <div class="margin-20">
+    <div class="label-header">Email ID</div>
+    <div class="label-value">abc@gmail.com</div>
+  </div>
+  <div class="margin-20">
+    <div class="label-header">Mobile Number</div>
+    <div class="label-value">9543443545</div>
+  </div>
+  <div class="divider"></div>
+  <ion-list button>
+    <ion-item *ngFor="let tech of techs">
+      <img [src]="tech.icon" />
+      <ion-label>
+        <h3 class="padding-110">{{tech.title}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
   <amplify-sign-out></amplify-sign-out>
 </ion-content>
