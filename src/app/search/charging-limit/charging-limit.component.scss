@@ -1,0 +1,119 @@
+.swipe-to-text {
+  margin: 0.026rem 0 0 0.594rem;
+  font-family: Lexend-Regular;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.28;
+  letter-spacing: normal;
+  color: #273d4c;
+}
+.border-box{
+  padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+  border-radius: 5px;
+  background-color: #f3f7fa;
+  margin: 5px;
+  text-align: center;
+}
+.border-box-selected{
+  background-color: #30cf87;
+  color: white;
+}
+.header-text{
+  font-family: Lexend-Regular;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #273d4c;
+}
+.body-text{
+  font-family: Lexend-Regular;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #acc0ce;
+}
+.time-text{
+  font-family: Lexend-Regular;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: center;
+  color: #273d4c;
+}
+.time-text-selected{
+  color: #C3D0D9;
+}
+.time-slot ion-col{
+  border-radius: 5px;
+  box-shadow: 0 0 8px 0 rgb(34 62 80 / 8%);
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-box{
+  min-height: 65%;
+  overflow-y: scroll;
+}
+.content-title{
+  font-family: Lexend-Regular;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+  margin-left: 1rem;
+}
+.content-footer{
+  margin: 1.75rem 1rem 0;
+  font-family: Lexend;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #c3d0d9;
+}
+.content-sub-text-1{
+  font-family: Lexend-Regular;
+  font-size: 2.5rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #acc0ce;
+}
+.content-sub-text-2{
+  width: 50%;
+  display: inline-flex;
+  font-family: Lexend-Regular;
+  font-size: 3rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+}
+.margin-content{
+  margin: 1.75rem 1rem 0;
+}

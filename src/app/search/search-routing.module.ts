@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SearchPage } from './search.page';
 import {QrScanComponent} from "./qr-scan/qr-scan.component";
 import {ReservationComponent} from "./reservation/reservation.component";
+import {ChargingLimitComponent} from "./charging-limit/charging-limit.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'reservation',
     component: ReservationComponent,
+  },
+  {
+    path: 'set-limit',
+    component: ChargingLimitComponent,
   }
 ];
 

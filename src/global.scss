@@ -64,8 +64,14 @@
 .color-green{
   color: #30CF87 !important;
 }
+.color-darkgreen{
+  color: #273d4c !important;
+}
+.bg-green{
+  background-color: #30CF87 !important;
+}
 .color-white{
-  color: white;
+  color: white !important;
 }
 height-40{
   height: 40px;
@@ -182,4 +188,13 @@ ion-select{
 }
 .font-weight-bold{
   font-weight: bold !important;
+}
+.margin-lrb-10{
+  margin: 0px 10px 10px 10px;
+}
+.fw-600{
+  font-weight: 600;
+}
+.ml-1rem{
+  margin-left: 1rem;
 }
