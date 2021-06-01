@@ -9,42 +9,50 @@ import {Router} from '@angular/router';
 })
 export class ProfilePage implements OnInit, OnDestroy {
   authState: AuthState;
-  techs = [
+  menus = [
     {
       'title': 'Payment Method',
-      'icon': 'assets/icon/profile/credit-card.svg'
+      'icon': 'assets/icon/profile/credit-card.svg',
+      'routes': 'payment-method'
     },
     {
       'title': 'Settings',
-      'icon': 'assets/icon/profile/settings.svg'
+      'icon': 'assets/icon/profile/settings.svg',
+      'routes': 'settings'
     },
     {
       'title': 'Help & Support',
-      'icon': 'assets/icon/profile/question.svg'
+      'icon': 'assets/icon/profile/question.svg',
+      'routes': 'help-and-support'
     },
     {
       'title': 'Privacy Policy',
-      'icon': 'assets/icon/profile/privacy.svg'
+      'icon': 'assets/icon/profile/privacy.svg',
+      'routes': 'privacy'
     },
     {
       'title': 'Terms & Conditions',
-      'icon': 'assets/icon/profile/accept.svg'
+      'icon': 'assets/icon/profile/accept.svg',
+      'routes': 'teams-and-conditions'
+    },
+    {
+      'title': 'Logout',
+      'icon': 'assets/icon/profile/logout.svg',
+      'routes': 'logout'
     }
   ];
 
-  constructor(private ref: ChangeDetectorRef, private router: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    onAuthUIStateChange((authState: AuthState, authData) => {
-      this.authState = authState;
-      if(this.authState === 'signedout'){
-        this.router.navigate(['/login']);
-      }
-      this.ref.detectChanges();
-    });
+
   }
 
   ngOnDestroy() {
     return onAuthUIStateChange;
+  }
+
+  viewMenu(routes) {
+    this.router.navigate(['/home/profile/' + routes]);
   }
 }

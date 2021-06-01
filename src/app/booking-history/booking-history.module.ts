@@ -6,6 +6,7 @@ import { BookingHistoryPage } from './booking-history.page';
 
 import { BookingHistoryPageRoutingModule } from './booking-history-routing.module';
 import {InvoiceComponent} from "./invoice/invoice.component";
+import {ReservationDetailComponent} from "./reservation-detail/reservation-detail.component";
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import {InvoiceComponent} from "./invoice/invoice.component";
     FormsModule,
     BookingHistoryPageRoutingModule
   ],
-  declarations: [BookingHistoryPage,InvoiceComponent]
+  declarations: [BookingHistoryPage,InvoiceComponent, ReservationDetailComponent]
 })
 export class BookingHistoryPageModule {}

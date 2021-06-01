@@ -31,12 +31,11 @@
   </div>
   <div class="divider"></div>
   <ion-list button>
-    <ion-item *ngFor="let tech of techs">
-      <img [src]="tech.icon" />
+    <ion-item *ngFor="let menu of menus" (click)="viewMenu(menu.routes)">
+      <img [src]="menu.icon" />
       <ion-label>
-        <h3 class="padding-110">{{tech.title}}</h3>
+        <h3 class="padding-110">{{menu.title}}</h3>
       </ion-label>
     </ion-item>
   </ion-list>
-  <amplify-sign-out></amplify-sign-out>
 </ion-content>
