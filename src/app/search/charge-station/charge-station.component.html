@@ -6,7 +6,7 @@
 <div>
     <span *ngFor="let ammenitieIcon of ammenitieIcons;let i=index">
         <img *ngIf="i <= 4" class="ammenitie-icon" [src]="ammenitieIcon.icon" />
-        <ion-button *ngIf="i == 5 " class="more-text" fill="clear" (click)="openAmmenitiesModal()">{{ammenitieIcons.length - 5}} more</ion-button>
+        <span *ngIf="i == 5 " class="more-text" fill="clear" (click)="openAmmenitiesModal()">{{ammenitieIcons.length - 5}} more</span>
     </span>
 </div>
 <ion-content class="ion-padding" scroll-y="false">
@@ -17,7 +17,7 @@
                 <div class="price-text">₹10 / kWh</div>
                 <div class="available-text">3 / 5 available</div>
                 <img class="padding-5" *ngFor="let portIcon of connectiorPorts;" [src]="portIcon" />
-                <ion-button class="padding-5" expand="full" size="large" (click)="reservation()">Reserve</ion-button>
+                <ion-button class="padding-5 margin-0 box-shadow-none" expand="full" size="large" (click)="reservation()">Reserve</ion-button>
             </div>
         </ion-slide>
         <ion-slide>
@@ -26,7 +26,7 @@
                 <div class="price-text">₹20 / kWh</div>
                 <div class="available-text">3 / 5 available</div>
                 <img class="padding-5" *ngFor="let portIcon of connectiorPorts;" [src]="portIcon" />
-                <ion-button class="padding-5" expand="full" size="large" (click)="reservation()">Reserve</ion-button>
+                <ion-button class="padding-5 margin-0 box-shadow-none" expand="full" size="large" (click)="reservation()">Reserve</ion-button>
             </div>
         </ion-slide>
         <ion-slide>
@@ -35,7 +35,7 @@
                 <div class="price-text">₹30 / kWh</div>
                 <div class="available-text">3 / 5 available</div>
                 <img class="padding-5" *ngFor="let portIcon of connectiorPorts;" [src]="portIcon" />
-                <ion-button class="padding-5" expand="full" size="large" (click)="reservation()">Reserve</ion-button>
+                <ion-button class="padding-5 margin-0 box-shadow-none" expand="full" size="large" (click)="reservation()">Reserve</ion-button>
             </div>
         </ion-slide>
 

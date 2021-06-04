@@ -18,7 +18,8 @@ const routes: Routes = [
   {
     path: 'view-route',
     loadChildren: () => import('./view-route/view-route.module').then( m => m.ViewRoutePageModule)
-  },  {
+  },
+  {
     path: 'connect',
     loadChildren: () => import('./connect/connect.module').then( m => m.ConnectPageModule)
   },
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'charge-complete',
     loadChildren: () => import('./charge-complete/charge-complete.module').then( m => m.ChargeCompletePageModule)
+  },
+  {
+      path: 'error',
+    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
   }
 
 ];

@@ -12,6 +12,7 @@ import {PaymentMethodComponent} from "./payment-method/payment-method.component"
 import {TermsAndConditionsComponent} from "./terms-and-conditions/terms-and-conditions.component";
 import {SettingsComponent} from "./settings/settings.component";
 import {PrivacyComponent} from "./privacy/privacy.component";
+import {UpdateNameComponent} from "./update-name/update-name.component";
 
 @NgModule({
     imports: [
@@ -22,6 +23,6 @@ import {PrivacyComponent} from "./privacy/privacy.component";
         ProfilePageRoutingModule,
         AmplifyUIAngularModule,
     ],
-  declarations: [ProfilePage, HelpAndSupportComponent, LogoutComponent, PaymentMethodComponent, TermsAndConditionsComponent, SettingsComponent, PrivacyComponent]
+  declarations: [ProfilePage, HelpAndSupportComponent, LogoutComponent, PaymentMethodComponent, TermsAndConditionsComponent, SettingsComponent, PrivacyComponent, UpdateNameComponent]
 })
 export class ProfilePageModule {}

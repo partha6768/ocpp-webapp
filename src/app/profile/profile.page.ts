@@ -1,6 +1,8 @@
-import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthState, onAuthUIStateChange} from '@aws-amplify/ui-components';
 import {Router} from '@angular/router';
+import {ModalController} from "@ionic/angular";
+import {UpdateNameComponent} from "./update-name/update-name.component";
 
 @Component({
   selector: 'app-profile',
@@ -42,7 +44,7 @@ export class ProfilePage implements OnInit, OnDestroy {
     }
   ];
 
-  constructor(private router: Router) { }
+  constructor(public modalController: ModalController, private router: Router) { }
 
   ngOnInit() {
 
@@ -54,5 +56,13 @@ export class ProfilePage implements OnInit, OnDestroy {
 
   viewMenu(routes) {
     this.router.navigate(['/home/profile/' + routes]);
+  }
+
+  async showEditPopupName() {
+    const modal = await this.modalController.create({
+      component: UpdateNameComponent,
+      cssClass: 'update-profile'
+    });
+    return await modal.present();
   }
 }

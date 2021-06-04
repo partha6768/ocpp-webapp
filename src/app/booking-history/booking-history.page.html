@@ -37,7 +37,7 @@
     </ion-grid>
 </div>
 <div *ngIf="history" class="color-light-grey list-body">
-    <ion-card>
+    <ion-card (click)="showDetail()">
         <ion-card-content>
             <div class="title-text">P.C.M. Enterprises Praveen singh</div>
             <div class="cost-box">
@@ -67,7 +67,7 @@
     </ion-card>
 </div>
 <div *ngIf="!history" class="color-light-grey list-body">
-    <ion-card>
+    <ion-card (click)="showDetail()">
         <ion-card-content>
             <div class="title-text">P.C.M. Enterprises Praveen singh</div>
             <div class="cost-box">

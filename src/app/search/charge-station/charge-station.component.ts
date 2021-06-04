@@ -17,7 +17,7 @@ export class ChargeStationComponent implements OnInit {
   };
   ammenitieIcons = [];
   connectiorPorts = [];
-  constructor(public modalController: ModalController,private router: Router) { }
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {
     this.ammenitieIcons = [

@@ -49,4 +49,8 @@ export class QrScanComponent implements OnInit {
   toggleView(flag) {
     this.scanQR = flag;
   }
+
+  openLimtScreen() {
+    this.router.navigate(['/home/search/set-limit']);
+  }
 }

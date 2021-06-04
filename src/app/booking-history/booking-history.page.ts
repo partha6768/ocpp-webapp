@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {ModalController} from "@ionic/angular";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-booking-history',
@@ -16,7 +18,7 @@ export class BookingHistoryPage implements OnInit {
   monthOptions = [];
   yearOptions = [];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
       this.chargingRecordOptions = [{
@@ -62,4 +64,12 @@ export class BookingHistoryPage implements OnInit {
   toggleView(flag) {
     this.history = flag;
   }
+
+    showDetail() {
+        if (this.history) {
+            this.router.navigate(['/home/booking-history/invoice']);
+        } else {
+            this.router.navigate(['/home/booking-history/reservation-details']);
+        }
+    }
 }
