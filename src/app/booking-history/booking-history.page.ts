@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ModalController} from "@ionic/angular";
 import {Router} from "@angular/router";
 
 @Component({
@@ -57,7 +56,7 @@ export class BookingHistoryPage implements OnInit {
       this.selectedMonthFilter = this.monthOptions[new Date().getMonth()].value;
   }
 
-  segmentChanged($event: CustomEvent) {
+  segmentChanged() {
 
   }
 

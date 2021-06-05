@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
@@ -34,7 +34,7 @@ export class QrScanComponent implements OnInit {
     this.hasPermission = has;
   }
 
-  segmentChanged($event: CustomEvent) {
+  segmentChanged() {
 
   }
 

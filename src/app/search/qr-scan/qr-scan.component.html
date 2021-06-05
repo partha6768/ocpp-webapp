@@ -23,7 +23,7 @@
     <ion-button (click)="openLimtScreen()" class="margin-20" expand="full" size="large">Confirm Code</ion-button>
 </div>
 <div style="margin: 1.5%;">
-    <ion-segment class="bottom-tab" mode="ios" value="scan" (ionChange)="segmentChanged($event)">
+    <ion-segment class="bottom-tab" mode="ios" value="scan" (ionChange)="segmentChanged()">
         <ion-segment-button value="scan" (click)="toggleView(true)">
             <ion-label>Scan QR code</ion-label>
         </ion-segment-button>
