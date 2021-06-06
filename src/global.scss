@@ -141,6 +141,13 @@ height-40{
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 }
+.stop-confirm{
+  --width: 85%;
+  --height: 60%;
+}
+.stop-confirm .modal-wrapper{
+  border-radius: 9px;
+}
 .update-profile{
   --height: 30%;
 }

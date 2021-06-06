@@ -67,7 +67,6 @@ export class SearchPage implements AfterViewInit{
       const marker = new google.maps.Marker({
         ...markerInfo
       });
-
       //Add click event to open info window on marker
       marker.addListener('click', async () => {
         const modal = await this.modalController.create({
@@ -76,7 +75,6 @@ export class SearchPage implements AfterViewInit{
         });
         return await modal.present();
       });
-
       //Adding marker to google map
       marker.setMap(this.map);
     });
@@ -100,5 +98,9 @@ export class SearchPage implements AfterViewInit{
 
   goToScanQR(){
     this.router.navigate(['/home/search/scan-qr']);
+  }
+
+  openDetailModal() {
+    this.router.navigate(['/charging/in-progress']);
   }
 }

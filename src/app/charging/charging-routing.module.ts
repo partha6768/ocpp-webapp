@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ChargeCompletePage } from './charge-complete.page';
+import { ChargingPage } from './charging.page';
 import { LateComponent } from "./late/late.component";
+import {InProgressComponent} from "./in-progress/in-progress.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: ChargeCompletePage
+    component: ChargingPage
   },
   {
     path: 'late',
     component: LateComponent
+  },
+  {
+    path: 'in-progress',
+    component: InProgressComponent
   }
 ];
 
@@ -19,4 +24,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ChargeCompletePageRoutingModule {}
+export class ChargingPageRoutingModule {}

@@ -63,3 +63,40 @@
   font-size: 25px;
   right: 30px;
 }
+.in-progress-box{
+  background: #273d4c;
+  color: white;
+}
+.in-progress-box ion-button{
+  width: 4.4rem;
+  height: 2.188rem;
+  border-radius: 5px;
+  font-family: 'Lexend-Regular';
+  font-size: 0.875rem;
+  margin: 0;
+  float: right;
+}
+.in-progress-header-1{
+    font-family: Lexend-Regular;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left;
+}
+.in-progress-header-2{
+  font-family: Lexend-Regular;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+}
+.in-progress-icon{
+  font-size: 2rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}

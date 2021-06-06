@@ -21,4 +21,26 @@
     <div class="filter-item">Fast charger</div>
     <div class="filter-item" (click)="openRouteModal()">On Route To</div>
   </div>
+  <div class="in-progress-box">
+    <ion-slides pager="true" #slides>
+      <ion-slide>
+        <ion-grid>
+          <ion-row style="height: 3.4rem">
+            <ion-icon class="in-progress-icon" name="speedometer-outline"></ion-icon>
+            <ion-col size="8">
+              <div class="in-progress-header-1"><span>1:01:34 </span><span>Charge Time Remaining</span></div>
+              <div class="in-progress-header-2">TCL Station</div>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="openDetailModal()" expand="full" size="large">View</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-slide>
+      <ion-slide>
+
+      </ion-slide>
+    </ion-slides>
+  </div>
 </ion-content>
+

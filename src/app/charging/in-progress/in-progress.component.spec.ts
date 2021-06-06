@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ChargeCompletePage } from './charge-complete.page';
+import { InProgressComponent } from './in-progress.component';
 
-describe('ChargeCompletePage', () => {
-  let component: ChargeCompletePage;
-  let fixture: ComponentFixture<ChargeCompletePage>;
+describe('InProgressComponent', () => {
+  let component: InProgressComponent;
+  let fixture: ComponentFixture<InProgressComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChargeCompletePage ],
+      declarations: [ InProgressComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ChargeCompletePage);
+    fixture = TestBed.createComponent(InProgressComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

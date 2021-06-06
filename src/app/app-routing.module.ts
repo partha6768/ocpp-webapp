@@ -24,12 +24,8 @@ const routes: Routes = [
     loadChildren: () => import('./connect/connect.module').then( m => m.ConnectPageModule)
   },
   {
-    path: 'charger-remove',
-    loadChildren: () => import('./charger-remove/charger-remove.module').then( m => m.ChargerRemovePageModule)
-  },
-  {
-    path: 'charge-complete',
-    loadChildren: () => import('./charge-complete/charge-complete.module').then( m => m.ChargeCompletePageModule)
+    path: 'charging',
+    loadChildren: () => import('./charging/charging.module').then(m => m.ChargingPageModule)
   },
   {
       path: 'error',
