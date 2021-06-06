@@ -23,7 +23,8 @@ export class SearchPage implements AfterViewInit{
   coordinates = new google.maps.LatLng(this.lat, this.lng);
   mapOptions = {
     center: this.coordinates,
-    zoom: 15,
+    zoom: 12,
+    minZoom: 12, maxZoom: 18,
     fullscreenControl: false,
     zoomControl: false,
     mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -55,8 +56,9 @@ export class SearchPage implements AfterViewInit{
         icon: this.baseURL + 'assets/icon/normal_charger_available.svg'
       }
     ];
-    //Adding markers
-    this.loadAllMarkers();
+    google.maps.event.addListenerOnce(this.map, 'idle', () => {
+      this.loadAllMarkers();
+    });
   }
 
   loadAllMarkers(): void {
