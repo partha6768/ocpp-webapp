@@ -8,7 +8,7 @@
 }
 .map-box{
   padding: 15px 25px;
-  top: 5%;
+  top: 7%;
   left: 50%;
   position: absolute;
   display: flex;
@@ -18,7 +18,7 @@
 }
 .search-box{
   padding: 15px 25px;
-  top: 15%;
+  top: 17%;
   left: 51%;
   position: absolute;
   display: inline-block;
@@ -35,7 +35,7 @@
   margin-left: 10px;
   margin-top: 10px;
   cursor: pointer;
-  font-family: 'Lexend-Regular';
+  font-family: Lexend-Regular;
   display: inline-block;
   flex: 1;
 }
@@ -68,10 +68,9 @@
   color: white;
 }
 .in-progress-box ion-button{
-  width: 4.4rem;
   height: 2.188rem;
   border-radius: 5px;
-  font-family: 'Lexend-Regular';
+  font-family: Lexend-Regular;
   font-size: 0.875rem;
   margin: 0;
   float: right;
