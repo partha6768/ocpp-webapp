@@ -19,4 +19,8 @@ export class ReservationComponent implements OnInit {
   close() {
     this.modalController.dismiss();
   }
+
+  openReserveConfirmScreen() {
+
+  }
 }

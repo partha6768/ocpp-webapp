@@ -19,4 +19,8 @@ export class ChargingLimitComponent implements OnInit {
   selectTimeSlot($event: MouseEvent) {
     
   }
+
+    openPortScreen() {
+
+    }
 }

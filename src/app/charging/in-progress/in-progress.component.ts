@@ -20,4 +20,8 @@ export class InProgressComponent implements OnInit {
     });
     return await modal.present();
   }
+
+  close() {
+
+  }
 }

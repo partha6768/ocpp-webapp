@@ -12,6 +12,7 @@ import {ChargeStationComponent} from "./charge-station/charge-station.component"
 import {AmmenitiesComponent} from "./ammenities/ammenities.component";
 import {ReservationComponent} from "./reservation/reservation.component";
 import {ChargingLimitComponent} from "./charging-limit/charging-limit.component";
+import {UnpaidBillComponent} from "./unpaid-bill/unpaid-bill.component";
 
 @NgModule({
     imports: [
@@ -22,6 +23,6 @@ import {ChargingLimitComponent} from "./charging-limit/charging-limit.component"
         ViewRoutePageModule,
         ZXingScannerModule
     ],
-  declarations: [SearchPage,QrScanComponent,ChargeStationComponent,AmmenitiesComponent,ReservationComponent,ChargingLimitComponent]
+  declarations: [SearchPage,QrScanComponent,ChargeStationComponent,AmmenitiesComponent,ReservationComponent,ChargingLimitComponent,UnpaidBillComponent]
 })
 export class SearchPageModule {}
