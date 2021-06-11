@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-late',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
+
+  openChargeCompleteScreen() {
+    this.router.navigate(['/charging/charge-complete']);
+  }
 
 }

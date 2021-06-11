@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ConnectPage } from './connect.page';
+import { ConnectPortComponent } from './connect-port.component';
 
-describe('ConnectPage', () => {
-  let component: ConnectPage;
-  let fixture: ComponentFixture<ConnectPage>;
+describe('ConnectPortComponent', () => {
+  let component: ConnectPortComponent;
+  let fixture: ComponentFixture<ConnectPortComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConnectPage ],
+      declarations: [ ConnectPortComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ConnectPage);
+    fixture = TestBed.createComponent(ConnectPortComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

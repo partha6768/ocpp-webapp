@@ -13,6 +13,10 @@ import {AmmenitiesComponent} from "./ammenities/ammenities.component";
 import {ReservationComponent} from "./reservation/reservation.component";
 import {ChargingLimitComponent} from "./charging-limit/charging-limit.component";
 import {UnpaidBillComponent} from "./unpaid-bill/unpaid-bill.component";
+import {ConnectPortComponent} from "./connect-port/connect-port.component";
+import {ReservationCancelComponent} from "./reservation-cancel/reservation-cancel.component";
+import {ReservationTicketComponent} from "./reservation-ticket/reservation-ticket.component";
+import {SelectPortComponent} from "./select-port/select-port.component";
 
 @NgModule({
     imports: [
@@ -23,6 +27,6 @@ import {UnpaidBillComponent} from "./unpaid-bill/unpaid-bill.component";
         ViewRoutePageModule,
         ZXingScannerModule
     ],
-  declarations: [SearchPage,QrScanComponent,ChargeStationComponent,AmmenitiesComponent,ReservationComponent,ChargingLimitComponent,UnpaidBillComponent]
+  declarations: [SearchPage,QrScanComponent,ChargeStationComponent,AmmenitiesComponent,ReservationComponent,ChargingLimitComponent,UnpaidBillComponent,ConnectPortComponent,ReservationCancelComponent,ReservationTicketComponent,SelectPortComponent]
 })
 export class SearchPageModule {}

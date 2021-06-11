@@ -7,6 +7,8 @@ import { ChargingPage } from './charging.page';
 import { LateComponent } from "./late/late.component";
 import {InProgressComponent} from "./in-progress/in-progress.component";
 import {StopConfirmationComponent} from "./stop-confirmation/stop-confirmation.component";
+import {ChargeCompleteComponent} from "./charge-complete/charge-complete.component";
+import {PaymentCompleteComponent} from "./payment-complete/payment-complete.component";
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import {StopConfirmationComponent} from "./stop-confirmation/stop-confirmation.c
     IonicModule,
     ChargingPageRoutingModule
   ],
-  declarations: [LateComponent, ChargingPage, InProgressComponent, StopConfirmationComponent]
+  declarations: [LateComponent, ChargingPage, InProgressComponent, StopConfirmationComponent, ChargeCompleteComponent, PaymentCompleteComponent]
 })
 export class ChargingPageModule {}

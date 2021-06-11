@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ModalController} from "@ionic/angular";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-reservation',
@@ -8,7 +9,7 @@ import {ModalController} from "@ionic/angular";
 })
 export class ReservationComponent implements OnInit {
 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController, private router: Router) { }
 
   ngOnInit() {}
 
@@ -21,6 +22,7 @@ export class ReservationComponent implements OnInit {
   }
 
   openReserveConfirmScreen() {
-
+    this.modalController.dismiss();
+    this.router.navigate(['/home/search/reservation-ticket']);
   }
 }

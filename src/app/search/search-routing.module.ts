@@ -4,6 +4,7 @@ import { SearchPage } from './search.page';
 import {QrScanComponent} from "./qr-scan/qr-scan.component";
 import {ReservationComponent} from "./reservation/reservation.component";
 import {ChargingLimitComponent} from "./charging-limit/charging-limit.component";
+import {ReservationTicketComponent} from "./reservation-ticket/reservation-ticket.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'reservation',
     component: ReservationComponent,
+  },
+  {
+    path: 'reservation-ticket',
+    component: ReservationTicketComponent,
   },
   {
     path: 'set-limit',

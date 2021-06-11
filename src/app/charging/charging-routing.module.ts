@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ChargingPage } from './charging.page';
 import { LateComponent } from "./late/late.component";
 import {InProgressComponent} from "./in-progress/in-progress.component";
+import {ChargeCompleteComponent} from "./charge-complete/charge-complete.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'in-progress',
     component: InProgressComponent
+  },
+  {
+    path: 'charge-complete',
+    component: ChargeCompleteComponent
   }
 ];
 

@@ -20,10 +20,6 @@ const routes: Routes = [
     loadChildren: () => import('./view-route/view-route.module').then( m => m.ViewRoutePageModule)
   },
   {
-    path: 'connect',
-    loadChildren: () => import('./connect/connect.module').then( m => m.ConnectPageModule)
-  },
-  {
     path: 'charging',
     loadChildren: () => import('./charging/charging.module').then(m => m.ChargingPageModule)
   },
