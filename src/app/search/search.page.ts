@@ -4,6 +4,7 @@ import {ViewRoutePage} from "../view-route/view-route.page";
 import {VehicleComponent} from "../home/vehicle/vehicle.component";
 import {Router} from "@angular/router";
 import {ChargeStationComponent} from "./charge-station/charge-station.component";
+import { NearMeComponent } from './near-me/near-me.component';
 
 declare let google;
 
@@ -92,6 +93,14 @@ export class SearchPage implements AfterViewInit{
     const modal = await this.modalController.create({
       component: VehicleComponent,
       cssClass: 'select-vehicle'
+    });
+    return await modal.present();
+  }
+
+  async openNearMeModal() {
+    const modal = await this.modalController.create({
+      component: NearMeComponent,
+      cssClass: 'near-me'
     });
     return await modal.present();
   }
