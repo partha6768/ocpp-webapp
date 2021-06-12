@@ -1,0 +1,90 @@
+
+.bill-header-1 {
+  margin: 0 0 0.4rem 1.6rem;
+  font-family: Lexend-Regular;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+}
+.divider{
+  margin: 1.721rem 0 1.721rem 0;
+  border: 1px dashed #c3d0d9;
+}
+.station {
+  letter-spacing: normal;
+  font-family: Lexend-Regular;
+  line-height: 1.25;
+  font-style: normal;
+  font-stretch: normal;
+}
+.station-address {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #c3d0d9;
+  margin: 0 0 0 1.6rem;
+}
+.sub-header-1 {
+  margin: 0 2.563rem 1.313rem 3.187rem;
+  font-family: Lexend-Regular;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #273d4c;
+}
+.port-name {
+  margin: 1.313rem 4.938rem 4.75rem 0.938rem;
+  font-family: Lexend-Regular;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #30cf87;
+  vertical-align: bottom;
+}
+.btn-cancel{
+  font-family: Lexend-Regular;
+  font-size: 1.125rem;
+  font-weight: 600;
+  background: #EA7267;
+  align-items: center;
+  border-radius: 4px;
+  height: 3rem;
+  margin-top: 2rem;
+}
+.btn-scan{
+  font-family: Lexend-Regular;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #273d4c;
+  align-items: center;
+  border-radius: 4px;
+  height: 3rem;
+  margin-top: 2rem;
+}
+.sub-label {
+  margin: 1rem 0 0 0;
+  font-family: Lexend-Regular;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #c3d0d9;
+}
+.base-label {
+  margin-left: 1rem;
+  font-family: Lexend-Regular;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.29;
+  text-align: left;
+  color: #273d4c;
+}
