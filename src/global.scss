@@ -270,14 +270,22 @@ ion-button{
   --width: 95%;
 }
 .near-me {
-  bottom: 0;  
-  min-height: initial;
-  top: initial;
-  height: 30%;
+  --height: 35%;
+}
+.near-me .modal-wrapper{
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 .share-receipt{
-  bottom: 0;  
-  min-height: initial;
-  top: initial;
-  height: 30%;
+  --height: 30%;
+}
+.share-receipt .modal-wrapper{
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
