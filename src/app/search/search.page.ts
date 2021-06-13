@@ -1,11 +1,11 @@
-import {Component, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
+import {Component, ViewChild, ElementRef, AfterViewInit, OnInit} from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import {ViewRoutePage} from "../view-route/view-route.page";
 import {VehicleComponent} from "../home/vehicle/vehicle.component";
 import {Router} from "@angular/router";
 import {ChargeStationComponent} from "./charge-station/charge-station.component";
+import {UnpaidBillComponent} from "./unpaid-bill/unpaid-bill.component";
 import { NearMeComponent } from './near-me/near-me.component';
-
 declare let google;
 
 @Component({
@@ -13,12 +13,11 @@ declare let google;
   templateUrl: 'search.page.html',
   styleUrls: ['search.page.scss']
 })
-export class SearchPage implements AfterViewInit{
+export class SearchPage implements AfterViewInit, OnInit{
 
   @ViewChild('map', { static: false }) mapElement: ElementRef;
   map: any;
   markers: any;
-  baseURL = 'http://localhost:4200/';
   lat = 40.73061;
   lng = -73.935242;
   coordinates = new google.maps.LatLng(this.lat, this.lng);
@@ -37,24 +36,28 @@ export class SearchPage implements AfterViewInit{
     this.mapInitializer();
   }
 
+  ngOnInit() {
+    this.openPendingModel();
+  }
+
   mapInitializer(): void {
     this.map = new google.maps.Map(this.mapElement.nativeElement, this.mapOptions);
     this.markers = [{
         position: new google.maps.LatLng(40.73061, 73.935242),
         map: this.map,
         title: 'CP001',
-        icon: this.baseURL + 'assets/icon/fast_charger_available.svg'
+        icon: 'assets/icon/fast_charger_available.svg'
       },{
         position: new google.maps.LatLng(32.06485, 34.763226),
         map: this.map,
         title: 'CP002',
-        icon: this.baseURL + 'assets/icon/normal_charger_available.svg'
+        icon: 'assets/icon/normal_charger_available.svg'
       },
       {
         position: new google.maps.LatLng(40.73061, -73.935242),
         map: this.map,
         title: 'CP003',
-        icon: this.baseURL + 'assets/icon/normal_charger_available.svg'
+        icon: 'assets/icon/normal_charger_available.svg'
       }
     ];
     google.maps.event.addListenerOnce(this.map, 'idle', () => {
@@ -97,6 +100,14 @@ export class SearchPage implements AfterViewInit{
     return await modal.present();
   }
 
+  async openPendingModel() {
+    const modal = await this.modalController.create({
+      component: UnpaidBillComponent,
+      cssClass: 'unpaid-bill'
+    });
+    await modal.present()
+  }
+
   async openNearMeModal() {
     const modal = await this.modalController.create({
       component: NearMeComponent,
@@ -112,4 +123,5 @@ export class SearchPage implements AfterViewInit{
   openDetailModal() {
     this.router.navigate(['/charging/in-progress']);
   }
+
 }

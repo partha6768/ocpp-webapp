@@ -1,3 +1,12 @@
-<p>
-  reservation-cancel works!
-</p>
+<ion-content scroll-y="false" *ngIf="isConfirm">
+    <ion-img class="close-icon" src="./assets/icon/close.svg" (click)="close()"> </ion-img>
+    <ion-img class="circle-icon" src="assets/icon/circle-tunder.svg"></ion-img>
+    <div class="header">Your Reservation is cancelled.</div>
+    <div class="sub-header">Return to home to reserve again.</div>
+</ion-content>
+<ion-content scroll-y="false" *ngIf="!isConfirm">
+    <div class="header">Are you sure to cancel your reservation?</div>
+    <ion-img class="circle-icon" src="./assets/icon/calender.svg"></ion-img>
+    <ion-button color="none" class="btn-pay" expand="block" size="small" (click)="redirectPage()">Cancel it</ion-button>
+    <div class="btn-no">Don't cancel</div>
+</ion-content>

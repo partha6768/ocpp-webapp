@@ -1,3 +1,24 @@
-<p>
-  reservation-ticket works!
-</p>
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="./home" class="back_btn" title="blank"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+<div class="bill-header-1">TCL Service Station</div>
+<div class="station station-address">Gomtinagar Extention, Lucknow</div>
+<ion-content>
+  <ion-card class="text-align-center padding-1-rem">
+    <div class="sub-header-1">Reserved port</div>
+    <div class="padding-l-5rem">
+      <img src="assets/icon/port/port-1.svg"/>
+      <span class="port-name">A7</span>
+    </div>
+    <div class="sub-label">LOOK FOR THE NUMBER ON CHARGER</div>
+    <ion-button color="none" class="btn-scan margin-t-1rem" expand="block" size="small">Scan to start charging <img class="margin-l-2rem" src="assets/icon/scan.svg" /></ion-button>
+    <div class="divider"></div>
+    <div class="sub-header-1">Reservation start time</div>
+    <div class="port-name margin-0">06:34 PM</div>
+    <ion-button color="none" class="btn-cancel" expand="block" size="small" (click)="cancelReserve()">Cancel Reserve</ion-button>
+  </ion-card>
+  <div class="base-label">*Reservation will be canceled after 10 minutes of set time</div>
+</ion-content>
+<ion-button color="secondary" expand="full" size="large"><ion-img class="padding-right-10" src="assets/icon/direction.svg"></ion-img> Get directions</ion-button>

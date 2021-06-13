@@ -1,3 +1,72 @@
-<p>
-  unpaid-bill works!
-</p>
+<ion-content>
+  <img class="close-icon" src="./assets/icon/close.svg" (click)="close()"/>
+  <ion-grid class="padding-0">
+    <ion-row>
+      <ion-col size="3">
+        <ion-img class="header-icon" src="assets/icon/delay-icon.svg"></ion-img>
+      </ion-col>
+      <ion-col>
+        <div class="title-text">You have an unpaid bill</div>
+        <div class="title-status">No reservation can be made till pending bill is paid</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="padding-0">
+    <ion-row>
+      <ion-col size="8">
+        <div class="station station-address">Charging Station</div>
+        <div class="bill-header-1">TCL Service Station</div>
+      </ion-col>
+      <ion-col>
+        <div class="body-text color-black text-align-right">24/03/21</div>
+      </ion-col>
+    </ion-row>
+    <div class="bill-header-body">Patrakarpuram, Gomtinagar, Lucknow - 226022</div>
+  </ion-grid>
+  <ion-grid class="padding-0 bg-light-grey">
+    <ion-row>
+      <ion-col>
+        <div class="body-header text-align-center">Start Time</div>
+        <div class="body-text color-black text-align-center">1h 30min</div>
+      </ion-col>
+      <ion-col>
+        <div class="body-header text-align-center">End Time</div>
+        <div class="body-text color-black text-align-center">1h 30min</div>
+      </ion-col>
+      <ion-col>
+        <div class="body-header text-align-center">Duration</div>
+        <div class="body-text color-black text-align-center">1h 30min</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="body-header text-align-center">Energy Consumed</div>
+      </ion-col>
+      <ion-col>
+        <div class="body-text marge-tb color-black text-align-center">120kWh</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="padding-0 bg-light-grey">
+    <ion-row>
+      <ion-col class="bill-margin">
+        <div class="bill-header-2 bill-margin">Bill Details</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="bill-margin">
+        <div class="body-header">Charging cost</div>
+        <div class="body-header">GST</div>
+        <div class="body-header">Discount</div>
+        <div class="body-header color-green font-weight-bold">Total Payable</div>
+      </ion-col>
+      <ion-col>
+        <div class="body-text marge-tbr color-lgrey text-align-right">₹180.00</div>
+        <div class="body-text marge-tbr color-lgrey text-align-right">₹16.00</div>
+        <div class="body-text marge-tbr color-green text-align-right">-₹30.00</div>
+        <div class="body-text marge-tbr color-black font-weight-bold text-align-right">₹166.00</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-button expand="full" size="large">Pay</ion-button>
