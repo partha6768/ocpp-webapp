@@ -17,6 +17,7 @@ import {ConnectPortComponent} from "./connect-port/connect-port.component";
 import {ReservationCancelComponent} from "./reservation-cancel/reservation-cancel.component";
 import {ReservationTicketComponent} from "./reservation-ticket/reservation-ticket.component";
 import {SelectPortComponent} from "./select-port/select-port.component";
+import {NearMeComponent} from "./near-me/near-me.component";
 
 @NgModule({
     imports: [
@@ -27,6 +28,6 @@ import {SelectPortComponent} from "./select-port/select-port.component";
         ViewRoutePageModule,
         ZXingScannerModule
     ],
-  declarations: [SearchPage,QrScanComponent,ChargeStationComponent,AmmenitiesComponent,ReservationComponent,ChargingLimitComponent,UnpaidBillComponent,ConnectPortComponent,ReservationCancelComponent,ReservationTicketComponent,SelectPortComponent]
+  declarations: [SearchPage,QrScanComponent,ChargeStationComponent,AmmenitiesComponent,ReservationComponent,ChargingLimitComponent,UnpaidBillComponent,ConnectPortComponent,ReservationCancelComponent,ReservationTicketComponent,SelectPortComponent, NearMeComponent]
 })
 export class SearchPageModule {}

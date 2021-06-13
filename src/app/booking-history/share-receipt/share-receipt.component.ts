@@ -16,4 +16,7 @@ export class ShareReceiptComponent implements OnInit {
     this.modalController.dismiss();
   }
 
+  openShareModal() {
+
+  }
 }
