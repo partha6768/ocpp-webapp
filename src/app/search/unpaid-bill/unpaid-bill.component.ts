@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ModalController} from "@ionic/angular";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-unpaid-bill',
@@ -7,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnpaidBillComponent implements OnInit {
 
-  constructor() { }
+  constructor(public modalController: ModalController, private router: Router) { }
 
   ngOnInit() {}
 
+  close() {
+      this.modalController.dismiss();
+  }
 }

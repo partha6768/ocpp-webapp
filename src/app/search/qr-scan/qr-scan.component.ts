@@ -50,7 +50,7 @@ export class QrScanComponent implements OnInit {
     this.scanQR = flag;
   }
 
-  openLimtScreen() {
-    this.router.navigate(['/home/search/set-limit']);
+  openConnectPortScreen() {
+    this.router.navigate(['/home/search/connect-port']);
   }
 }

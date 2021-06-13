@@ -1,20 +1,16 @@
 <ion-tabs>
-
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="search">
       <ion-img *ngIf="currentRoute != '/home/search'" src="assets/icon/home.svg"></ion-img>
       <ion-img *ngIf="currentRoute == '/home/search'" src="assets/icon/home-icon.svg"></ion-img>
     </ion-tab-button>
-
     <ion-tab-button tab="booking-history">
       <ion-img *ngIf="currentRoute != '/home/booking-history'" src="assets/icon/report.svg"></ion-img>
       <ion-img *ngIf="currentRoute == '/home/booking-history'" src="assets/icon/report-active.svg"></ion-img>
     </ion-tab-button>
-
     <ion-tab-button tab="profile">
       <ion-img *ngIf="currentRoute != '/home/profile'" src="assets/icon/profile.svg"></ion-img>
       <ion-img *ngIf="currentRoute == '/home/profile'" src="assets/icon/profile-active.svg"></ion-img>
     </ion-tab-button>
   </ion-tab-bar>
-
 </ion-tabs>

@@ -132,7 +132,7 @@ height-40{
   margin: 20px;
 }
 .view-charge-station {
-  --height: 75%;
+  --height: 85%;
 }
 .view-charge-station .modal-wrapper{
   bottom: 0;
@@ -198,7 +198,10 @@ ion-select{
   margin: 15px;
 }
 .text-align-center{
-  text-align: center;
+  text-align: center !important;
+}
+.text-align-right{
+  text-align: right !important;
 }
 .padding-t-5{
   padding-top: 5px;
@@ -256,9 +259,13 @@ ion-button{
   padding: 1rem;
 }
 .cancel-reservation{
-  --height: 40%;
+  --height: 50%;
   --width: 85%;
 }
 .cancel-reservation .modal-wrapper{
   border-radius: 10px;
+}
+.unpaid-bill{
+  --height: 85%;
+  --width: 95%;
 }

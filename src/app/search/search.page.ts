@@ -1,9 +1,10 @@
-import {Component, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
+import {Component, ViewChild, ElementRef, AfterViewInit, OnInit} from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import {ViewRoutePage} from "../view-route/view-route.page";
 import {VehicleComponent} from "../home/vehicle/vehicle.component";
 import {Router} from "@angular/router";
 import {ChargeStationComponent} from "./charge-station/charge-station.component";
+import {UnpaidBillComponent} from "./unpaid-bill/unpaid-bill.component";
 
 declare let google;
 
@@ -12,7 +13,7 @@ declare let google;
   templateUrl: 'search.page.html',
   styleUrls: ['search.page.scss']
 })
-export class SearchPage implements AfterViewInit{
+export class SearchPage implements AfterViewInit, OnInit{
 
   @ViewChild('map', { static: false }) mapElement: ElementRef;
   map: any;
@@ -33,6 +34,10 @@ export class SearchPage implements AfterViewInit{
 
   ngAfterViewInit(): void {
     this.mapInitializer();
+  }
+
+  ngOnInit() {
+    this.openPendingModel();
   }
 
   mapInitializer(): void {
@@ -95,6 +100,14 @@ export class SearchPage implements AfterViewInit{
     return await modal.present();
   }
 
+  async openPendingModel() {
+    const modal = await this.modalController.create({
+      component: UnpaidBillComponent,
+      cssClass: 'unpaid-bill'
+    });
+    await modal.present()
+  }
+
   goToScanQR(){
     this.router.navigate(['/home/search/scan-qr']);
   }
@@ -102,4 +115,5 @@ export class SearchPage implements AfterViewInit{
   openDetailModal() {
     this.router.navigate(['/charging/in-progress']);
   }
+
 }

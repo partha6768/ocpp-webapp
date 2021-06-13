@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reservation-cancel.component.scss'],
 })
 export class ReservationCancelComponent implements OnInit {
+  isConfirm = false;
 
   constructor() { }
 
@@ -13,5 +14,9 @@ export class ReservationCancelComponent implements OnInit {
 
   close() {
 
+  }
+
+  redirectPage() {
+    this.isConfirm = true;
   }
 }
