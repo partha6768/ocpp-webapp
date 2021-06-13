@@ -1,0 +1,44 @@
+<ion-content>
+  <ion-header>
+  <div class="model-title">Near me
+    <img class="close-icon" src="./assets/icon/close.svg" (click)="close()"/>
+    <button class="model-spam">CLEAR</button>
+  </div>
+  </ion-header>
+  <ion-grid class="km-slot padding-15 ">
+    <ion-row>
+      <ion-col class="km-text" >
+          <div>500m</div>
+      </ion-col>
+      
+      <ion-col class="km-text">
+        <div>1km</div>
+      </ion-col>
+    
+      <ion-col class="km-text">
+        <div>2km</div>
+      </ion-col>
+     
+      <ion-col class="km-text">
+        <div>5km</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="km-text">
+        <div>10km</div>
+      </ion-col>
+      
+      <ion-col class="km-text">
+        <div>20km</div>
+      </ion-col>
+
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      
+    </ion-row>
+
+  </ion-grid>
+  <ion-button class="padding-5 margin-0 box-shadow-none" expand="full" size="large" (click)="close()">
+    Apply
+  </ion-button>
+</ion-content>

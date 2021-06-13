@@ -265,7 +265,19 @@ ion-button{
 .cancel-reservation .modal-wrapper{
   border-radius: 10px;
 }
-.unpaid-bill{
+.unpaid-bill {
   --height: 85%;
   --width: 95%;
+}
+.near-me {
+  bottom: 0;  
+  min-height: initial;
+  top: initial;
+  height: 30%;
+}
+.share-receipt{
+  bottom: 0;  
+  min-height: initial;
+  top: initial;
+  height: 30%;
 }

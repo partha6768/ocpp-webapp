@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import { ModalController } from '@ionic/angular';
+import { ShareReceiptComponent } from './share-receipt/share-receipt.component';
 
 @Component({
   selector: 'app-booking-history',
@@ -17,7 +19,7 @@ export class BookingHistoryPage implements OnInit {
   monthOptions = [];
   yearOptions = [];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public modalController: ModalController) {}
 
   ngOnInit() {
       this.chargingRecordOptions = [{
@@ -71,4 +73,13 @@ export class BookingHistoryPage implements OnInit {
             this.router.navigate(['/home/booking-history/reservation-details']);
         }
     }
+
+    async openShareModal(){
+      const modal = await this.modalController.create({
+        component: ShareReceiptComponent,
+        cssClass: 'share-receipt'
+      });
+      return await modal.present();
+    }
+
 }

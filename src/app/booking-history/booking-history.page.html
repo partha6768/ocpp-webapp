@@ -65,7 +65,12 @@
             </div>
         </ion-card-content>
     </ion-card>
+    <ion-button class="share-btn" color="none" (click)="openShareModal()">
+        <ion-icon class="share-icon" src="./assets/icon/share.svg"></ion-icon>
+        <div class="text-btn">Share</div>
+    </ion-button>
 </div>
+
 <div *ngIf="!history" class="color-light-grey list-body">
     <ion-card (click)="showDetail()">
         <ion-card-content>
@@ -94,4 +99,5 @@
             </div>
         </ion-card-content>
     </ion-card>
+
 </div>

@@ -5,7 +5,7 @@ import {VehicleComponent} from "../home/vehicle/vehicle.component";
 import {Router} from "@angular/router";
 import {ChargeStationComponent} from "./charge-station/charge-station.component";
 import {UnpaidBillComponent} from "./unpaid-bill/unpaid-bill.component";
-
+import { NearMeComponent } from './near-me/near-me.component';
 declare let google;
 
 @Component({
@@ -106,6 +106,14 @@ export class SearchPage implements AfterViewInit, OnInit{
       cssClass: 'unpaid-bill'
     });
     await modal.present()
+  }
+
+  async openNearMeModal() {
+    const modal = await this.modalController.create({
+      component: NearMeComponent,
+      cssClass: 'near-me'
+    });
+    return await modal.present();
   }
 
   goToScanQR(){
