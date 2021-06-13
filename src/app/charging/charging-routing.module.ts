@@ -5,6 +5,7 @@ import { ChargingPage } from './charging.page';
 import { LateComponent } from "./late/late.component";
 import {InProgressComponent} from "./in-progress/in-progress.component";
 import {ChargeCompleteComponent} from "./charge-complete/charge-complete.component";
+import {PaymentCompleteComponent} from "./payment-complete/payment-complete.component";
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'charge-complete',
     component: ChargeCompleteComponent
+  },
+  {
+    path: 'payment-complete',
+    component: PaymentCompleteComponent
   }
 ];
 

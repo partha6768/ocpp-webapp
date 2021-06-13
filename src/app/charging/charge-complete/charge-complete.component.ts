@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-charge-complete',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChargeCompleteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
 
+  redirectToPayment() {
+    this.router.navigate(['/charging/payment-complete']);
+  }
 }

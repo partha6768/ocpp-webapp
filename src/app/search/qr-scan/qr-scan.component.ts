@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {ModalController} from "@ionic/angular";
+import {NearMeComponent} from "../near-me/near-me.component";
+import {SelectPortComponent} from "../select-port/select-port.component";
 
 @Component({
   selector: 'app-qr-scan',
@@ -8,7 +11,7 @@ import {Router} from "@angular/router";
 })
 export class QrScanComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public modalController: ModalController) { }
 
   ngOnInit() {}
 
@@ -50,7 +53,11 @@ export class QrScanComponent implements OnInit {
     this.scanQR = flag;
   }
 
-  openConnectPortScreen() {
-    this.router.navigate(['/home/search/connect-port']);
+  async openPortScreen() {
+    const modal = await this.modalController.create({
+      component: SelectPortComponent,
+      cssClass: 'select-port'
+    });
+    return await modal.present();
   }
 }

@@ -20,7 +20,7 @@ export class ChargingLimitComponent implements OnInit {
     
   }
 
-    openPortScreen() {
+  openPortScreen() {
 
-    }
+  }
 }

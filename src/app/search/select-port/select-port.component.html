@@ -1,3 +1,11 @@
-<p>
-  select-port works!
-</p>
+<ion-content>
+  <div class="title">Select Port</div>
+  <img class="close-icon" src="./assets/icon/close.svg" (click)="close()"/>
+  <div class="icon-container">
+    <div class="icon-box" *ngFor="let connectorType of connectorTypes">
+      <ion-img [src]="connectorType.icon"></ion-img>
+      <div class="name">{{connectorType.name}}</div>
+    </div>
+  </div>
+</ion-content>
+<ion-button (click)="openLimitScreen()" expand="full" size="large">Next ></ion-button>
