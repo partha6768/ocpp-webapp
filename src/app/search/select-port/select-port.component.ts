@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 export class SelectPortComponent implements OnInit {
 
   connectorTypes = [];
+  isWrongPort = false;
   constructor(public modalController: ModalController, private router: Router) { }
 
   ngOnInit() {
@@ -31,5 +32,9 @@ export class SelectPortComponent implements OnInit {
   openLimitScreen() {
     this.modalController.dismiss();
     this.router.navigate(['/home/search/connect-port']);
+  }
+
+  openWrongPortScreen() {
+    this.isWrongPort = true;
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "ocpp-webapp",
+  "name": "ChargeBud",
   "integrations": {
     "capacitor": {}
   },

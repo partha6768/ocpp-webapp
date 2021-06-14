@@ -1,11 +1,27 @@
-<ion-content>
-  <div class="title">Select Port</div>
+<ion-content scroll-y="false" *ngIf="!isWrongPort">
   <img class="close-icon" src="./assets/icon/close.svg" (click)="close()"/>
-  <div class="icon-container">
-    <div class="icon-box" *ngFor="let connectorType of connectorTypes">
-      <ion-img [src]="connectorType.icon"></ion-img>
-      <div class="name">{{connectorType.name}}</div>
-    </div>
+  <div class="title">Select Port</div>
+  <ion-grid class="padding-0">
+    <ion-row class="margin-lr-1rem">
+      <ion-col size="4"  *ngFor="let connectorType of connectorTypes">
+        <div>
+          <ion-img class="port-icon" [src]="connectorType.icon"></ion-img>
+          <div class="name">{{connectorType.name}}</div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-button *ngIf="!isWrongPort" (click)="openWrongPortScreen()" expand="full" size="large">Next ></ion-button>
+<ion-content *ngIf="isWrongPort" scroll-y="false">
+  <img class="close-icon" src="./assets/icon/close.svg" (click)="close()"/>
+  <div class="title-1">It seems like you are scanning The wrong port</div>
+  <div class="sub-title-1">This is <span class="color-red"><b>B1</b></span></div>
+  <div class="sub-title-2">Look for</div>
+  <div class="padding-l-5rem text-align-center">
+    <ion-img class="wrong-port-icon" src="assets/icon/port/port-1.svg"></ion-img>
+    <span class="port-name">A7</span>
   </div>
 </ion-content>
-<ion-button (click)="openLimitScreen()" expand="full" size="large">Next ></ion-button>
+<ion-button *ngIf="isWrongPort" color="none" class="btn-scan margin-t-1rem" expand="block" size="small">SCAN AGAIN <img class="margin-l-2rem" src="assets/icon/scan.svg" /></ion-button>
+<ion-button *ngIf="isWrongPort" (click)="openLimitScreen()" color="none" class="btn-scan margin-t-1rem bg-green" expand="block" size="small">Start charging anyway</ion-button>
