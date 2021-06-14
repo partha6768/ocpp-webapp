@@ -11,4 +11,7 @@ export class PaymentCompleteComponent implements OnInit {
 
   ngOnInit() {}
 
+    close() {
+
+    }
 }

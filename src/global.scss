@@ -300,3 +300,11 @@ ion-button{
 .margin-lr-1rem{
   margin: 0 1rem;
 }
+.payment-complete{
+  --height: 80%;
+}
+.payment-complete .modal-wrapper{
+  margin: 5%;
+  border-radius: 5px;
+  width: 100%;
+}
