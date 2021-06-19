@@ -1,23 +1,46 @@
 <ion-content [fullscreen]="true">
+  <div class="in-progress-box">
+    <ion-slides pager="true">
+      <ion-slide>
+        <ion-grid>
+          <ion-row style="height: 3.4rem">
+            <ion-icon class="in-progress-icon" name="speedometer-outline"></ion-icon>
+            <ion-col size="8">
+              <div class="in-progress-header-1"><span>1:01:34 </span><span>Charge Time Remaining</span></div>
+              <div class="in-progress-header-2">TCL Station</div>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="openDetailModal()" expand="full" size="large">View</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-slide>
+      <ion-slide>
+
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div class="map-box">
+    <div class="filter-item padding-15" style="width: 42%;" (click)="openVehicleModal()">Tata Nexon EV</div>
+    <div class="filter-item filter-item-selected" style="width: 50%;" (click)="goToScanQR()">
+      <div><b>SCAN QR CODE</b></div><div class="font-size-12">on charger</div>
+      <ion-img class="map-icon" src="assets/icon/scan.svg"></ion-img>
+    </div>
+  </div>
   <div class="search-box">
-    <div>
-      <div class="filter-item" style="width: 42%;" (click)="openVehicleModal()">Tata Nexon EV</div>
-      <div class="filter-item" style="width: 50%;">Scan QR code on charger</div>
+    <div style="display: inline-flex;width: 85%">
+      <ion-searchbar mode="md"></ion-searchbar>
     </div>
-    <div>
-      <div style="display: inline-flex;width: 85%">
-        <ion-searchbar></ion-searchbar>
-      </div>
-      <div class="current-location-icon"><ion-img style="width: 30%;margin-left: 17px;" src="assets/icon/target.svg"></ion-img></div>
-    </div>
+    <div class="current-location-icon"><ion-img style="width: 30%;margin-left: 17px;" src="assets/icon/target.svg"></ion-img></div>
   </div>
   <div #map id="map"></div>
   <div class="filter-box">
     <ion-img class="filter-item-icon" src="assets/icon/filter.svg"></ion-img>
-    <div class="filter-item">Near Me</div>
+    <div class="filter-item" (click)="openNearMeModal()">Near Me</div>
     <div class="filter-item">Available Station</div>
     <div class="filter-item">Discount</div>
     <div class="filter-item">Fast charger</div>
     <div class="filter-item" (click)="openRouteModal()">On Route To</div>
   </div>
 </ion-content>
+

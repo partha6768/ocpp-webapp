@@ -1,0 +1,115 @@
+
+.bill-header-1 {
+  margin: 0 0 0.4rem 1.6rem;
+  font-family: Lexend-Regular;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+}
+.station {
+  letter-spacing: normal;
+  font-family: Lexend-Regular;
+  line-height: 1.25;
+  font-style: normal;
+  font-stretch: normal;
+}
+.station-address {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #c3d0d9;
+  margin: 0 0 0 1.6rem;
+}
+.loader, .loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+  margin: 2rem auto;
+  font-size: 25px;
+  border-top: 0.3em solid #30cf87;
+  border-right: 0.3em solid #f3f7fa;
+  border-bottom: 0.3em solid #f3f7fa;
+  border-left: 0.3em solid #f3f7fa;
+  animation: load8 2s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.body-header {
+  margin: 0 0 0.5rem;
+  font-family: Lexend-Regular;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+  color: #273d4c;
+}
+.body-text {
+  margin: 0.5rem 1.313rem 0 1.125rem;
+  font-family: Lexend-Regular;
+  font-size: 1rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+  color: #273d4c;
+}
+.amount ion-col{
+  padding: 1.5rem;
+  margin-left: 1rem;
+}
+.mr-1rem{
+  margin-right: 1rem;
+}
+.remaining{
+  position: relative;
+  top: 6rem;
+  text-align: center;
+  height: 10px;
+}
+.remaining .header{
+  font-family: Lexend-Regular;
+  font-size: 3rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  color: #273d4c;
+}
+.remaining .sub-header{
+  font-family: Lexend-Regular;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.28;
+  color: #c3d0d9;
+}

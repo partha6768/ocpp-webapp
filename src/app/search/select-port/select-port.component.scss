@@ -1,0 +1,101 @@
+.port-icon {
+  width: 3.25rem;
+  margin: auto;
+}
+.wrong-port-icon{
+  width: 3.25rem;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 1.2rem;
+}
+.close-icon{
+  position: absolute;
+  right: 10px;
+  padding: 10px;
+}
+.title{
+  margin: 1rem 0 1.063rem 2rem;
+  font-family: Lexend-Regular;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.28;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+}
+ion-col > div {
+  background-color: #f3f7fa;
+  padding: 10px;
+  min-height: 6rem;
+  border-radius: 5px;
+}
+.name{
+  font-family: Lexend-Regular;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  padding-top: 0.2rem;
+  letter-spacing: normal;
+  text-align: center;
+}
+.port-name {
+  margin: 1.313rem 4.938rem 4.75rem 0.938rem;
+  font-family: Lexend-Regular;
+  font-size: 4.5rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #30cf87;
+  vertical-align: bottom;
+}
+.title-1{
+  font-family: Lexend-Regular;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ea7267;
+  margin: 5rem 1rem 2rem;
+}
+.sub-title-1{
+  font-family: Lexend-Regular;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+  color: #273d4c;
+}
+.sub-title-2{
+  font-family: Lexend-Regular;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+  color: #273d4c;
+  margin: 2rem 0 1rem;
+}
+.btn-scan{
+  font-family: Lexend-Regular;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #273d4c;
+  align-items: center;
+  border-radius: 4px;
+  height: 3rem;
+  margin-top: 0 !important;
+}

@@ -1,8 +1,11 @@
-import {Component, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
+import {Component, ViewChild, ElementRef, AfterViewInit, OnInit} from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import {ViewRoutePage} from "../view-route/view-route.page";
 import {VehicleComponent} from "../home/vehicle/vehicle.component";
-
+import {Router} from "@angular/router";
+import {ChargeStationComponent} from "./charge-station/charge-station.component";
+import {UnpaidBillComponent} from "./unpaid-bill/unpaid-bill.component";
+import { NearMeComponent } from './near-me/near-me.component';
 declare let google;
 
 @Component({
@@ -10,28 +13,31 @@ declare let google;
   templateUrl: 'search.page.html',
   styleUrls: ['search.page.scss']
 })
-export class SearchPage implements AfterViewInit{
+export class SearchPage implements AfterViewInit, OnInit{
 
   @ViewChild('map', { static: false }) mapElement: ElementRef;
   map: any;
   markers: any;
-
-  //Coordinates to set the center of the map
   lat = 40.73061;
   lng = -73.935242;
   coordinates = new google.maps.LatLng(this.lat, this.lng);
   mapOptions = {
     center: this.coordinates,
-    zoom: 15,
+    zoom: 12,
+    minZoom: 12, maxZoom: 18,
     fullscreenControl: false,
     zoomControl: false,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController, private router: Router) { }
 
   ngAfterViewInit(): void {
     this.mapInitializer();
+  }
+
+  ngOnInit() {
+    this.openPendingModel();
   }
 
   mapInitializer(): void {
@@ -39,15 +45,24 @@ export class SearchPage implements AfterViewInit{
     this.markers = [{
         position: new google.maps.LatLng(40.73061, 73.935242),
         map: this.map,
-        title: 'CP001'
+        title: 'CP001',
+        icon: 'assets/icon/fast_charger_available.svg'
       },{
         position: new google.maps.LatLng(32.06485, 34.763226),
         map: this.map,
-        title: 'CP002'
+        title: 'CP002',
+        icon: 'assets/icon/normal_charger_available.svg'
+      },
+      {
+        position: new google.maps.LatLng(40.73061, -73.935242),
+        map: this.map,
+        title: 'CP003',
+        icon: 'assets/icon/normal_charger_available.svg'
       }
     ];
-    //Adding markers
-    this.loadAllMarkers();
+    google.maps.event.addListenerOnce(this.map, 'idle', () => {
+      this.loadAllMarkers();
+    });
   }
 
   loadAllMarkers(): void {
@@ -56,17 +71,14 @@ export class SearchPage implements AfterViewInit{
       const marker = new google.maps.Marker({
         ...markerInfo
       });
-
-      //creating a new info window with markers info
-      const infoWindow = new google.maps.InfoWindow({
-        content: marker.getTitle()
-      });
-
       //Add click event to open info window on marker
-      marker.addListener('click', () => {
-        infoWindow.open(marker.getMap(), marker);
+      marker.addListener('click', async () => {
+        const modal = await this.modalController.create({
+          component: ChargeStationComponent,
+          cssClass: 'view-charge-station'
+        });
+        return await modal.present();
       });
-
       //Adding marker to google map
       marker.setMap(this.map);
     });
@@ -87,4 +99,29 @@ export class SearchPage implements AfterViewInit{
     });
     return await modal.present();
   }
+
+  async openPendingModel() {
+    const modal = await this.modalController.create({
+      component: UnpaidBillComponent,
+      cssClass: 'unpaid-bill'
+    });
+    await modal.present()
+  }
+
+  async openNearMeModal() {
+    const modal = await this.modalController.create({
+      component: NearMeComponent,
+      cssClass: 'near-me'
+    });
+    return await modal.present();
+  }
+
+  goToScanQR(){
+    this.router.navigate(['/home/search/scan-qr']);
+  }
+
+  openDetailModal() {
+    this.router.navigate(['/charging/in-progress']);
+  }
+
 }

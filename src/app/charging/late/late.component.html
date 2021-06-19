@@ -1,0 +1,23 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="./home" class="back_btn" title="blank"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+<div class="image_layout">
+  <img src="./assets/icon/charge-complete.svg"/>
+</div>
+<div class="display">
+  Your charging is complete
+</div>
+<div class="display_subtitle">
+  Please place gun back to the charger.
+</div>
+<ion-card>
+  <ion-card-content>
+    <div class="card-content">
+      <div>Let other use the charger</div>
+      <div class="color-red">10:30:10 mins late</div>
+    </div>
+  </ion-card-content>
+</ion-card>
+<ion-button expand="full" size="large" (click)="openChargeCompleteScreen()">Proceed to Pay</ion-button>

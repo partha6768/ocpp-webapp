@@ -1,0 +1,57 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="./home" class="back_btn" title="blank"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <div class="bill-header-1">TCL Service Station</div>
+      <div class="station station-address">Gomtinagar Extention, Lucknow</div>
+      <ion-grid class="padding-0">
+        <ion-row>
+          <ion-col>
+            <div class="body-title">Charging Details</div>
+            <div class="body-header">Charging Time</div>
+            <div class="body-header">Energy Consumed</div>
+          </ion-col>
+          <ion-col>
+            <div class="body-text color-black">March 23, 2021</div>
+            <div class="body-text marge-tb color-black">1h 30min</div>
+            <div class="body-text marge-tb color-black">120kWh</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div class="divider"></div>
+      <div class="bill-header-2">Bill Details</div>
+      <ion-grid class="padding-0">
+        <ion-row>
+          <ion-col>
+            <div class="body-header">Charging cost</div>
+            <div class="body-header">GST</div>
+            <div class="body-header">Discount</div>
+            <div class="body-header color-green font-weight-bold">Total Bill</div>
+          </ion-col>
+          <ion-col>
+            <div class="body-text color-lgrey">₹180.00</div>
+            <div class="body-text marge-tb color-lgrey">₹16.00</div>
+            <div class="body-text marge-tb color-green">-₹30.00</div>
+            <div class="body-text marge-tb color-black font-weight-bold">₹166.00</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid class="padding-0">
+        <ion-row>
+          <ion-col>
+            <div class="total-bill">Total Paid</div>
+          </ion-col>
+          <ion-col>
+            <div class="total-bill color-black font-weight-bold float-right">₹166.00</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-button color="secondary" class="margin-b0" expand="full" size="large"><ion-icon class="padding-right-10" name="share-social-outline"></ion-icon> Share Receipt</ion-button>
+<ion-button expand="full" size="large"><ion-icon class="padding-right-10" name="download-outline"></ion-icon> Download Receipt</ion-button>

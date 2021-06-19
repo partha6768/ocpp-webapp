@@ -18,17 +18,14 @@ const routes: Routes = [
   {
     path: 'view-route',
     loadChildren: () => import('./view-route/view-route.module').then( m => m.ViewRoutePageModule)
-  },  {
-    path: 'connect',
-    loadChildren: () => import('./connect/connect.module').then( m => m.ConnectPageModule)
   },
   {
-    path: 'charger-remove',
-    loadChildren: () => import('./charger-remove/charger-remove.module').then( m => m.ChargerRemovePageModule)
+    path: 'charging',
+    loadChildren: () => import('./charging/charging.module').then(m => m.ChargingPageModule)
   },
   {
-    path: 'charge-complete',
-    loadChildren: () => import('./charge-complete/charge-complete.module').then( m => m.ChargeCompletePageModule)
+      path: 'error',
+    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
   }
 
 ];

@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { BookingHistoryPage } from './booking-history.page';
 
 import { BookingHistoryPageRoutingModule } from './booking-history-routing.module';
+import {InvoiceComponent} from "./invoice/invoice.component";
+import {ReservationDetailComponent} from "./reservation-detail/reservation-detail.component";
+import {ShareReceiptComponent} from "./share-receipt/share-receipt.component";
 
 @NgModule({
   imports: [
@@ -13,6 +16,6 @@ import { BookingHistoryPageRoutingModule } from './booking-history-routing.modul
     FormsModule,
     BookingHistoryPageRoutingModule
   ],
-  declarations: [BookingHistoryPage]
+  declarations: [BookingHistoryPage,InvoiceComponent, ReservationDetailComponent, ShareReceiptComponent]
 })
 export class BookingHistoryPageModule {}

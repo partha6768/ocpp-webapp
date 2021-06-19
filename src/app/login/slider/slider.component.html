@@ -27,6 +27,6 @@
       <p>Reach the charger and start charging. You can view live status of charging. Pay after charging and go.</p>
     </ion-slide>
   </ion-slides>
-  <ion-button (click)="openVehicleModal()" *ngIf="currentIndex != 3" style="display: block" fill="clear">Skip >></ion-button>
+  <div class="skip-style" (click)="openVehicleModal()" *ngIf="currentIndex != 3" fill="clear">Skip >></div>
   <ion-button (click)="openVehicleModal()" *ngIf="currentIndex == 3" expand="full" size="large">Next <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
 </ion-content>

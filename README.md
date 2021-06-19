@@ -1,2 +1,2 @@
-# ocpp-webapp
+# ChargeBud
 Webapp for User

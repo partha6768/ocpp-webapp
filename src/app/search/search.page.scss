@@ -6,11 +6,22 @@
   bottom: 10%;
   position: absolute;
 }
-.search-box{
+.map-box{
   padding: 15px 25px;
-  top: 5%;
+  top: 7%;
   left: 50%;
   position: absolute;
+  display: flex;
+  transform: translateX(-50%);
+  width: calc(100% + 40px);
+  z-index: 1;
+}
+.search-box{
+  padding: 15px 25px;
+  top: 17%;
+  left: 51%;
+  position: absolute;
+  display: inline-block;
   transform: translateX(-50%);
   width: calc(100% + 40px);
   z-index: 1;
@@ -21,11 +32,16 @@
   border-radius: 5px;
   background-color: white;
   color: black;
-  display: inline-flex;
   margin-left: 10px;
   margin-top: 10px;
   cursor: pointer;
-  font-family: 'Lexend-Regular';
+  font-family: Lexend-Regular;
+  display: inline-block;
+  flex: 1;
+}
+.filter-item-selected{
+  background: #273D4C 0% 0% no-repeat padding-box;
+  color: white;
 }
 .filter-item-icon{
   display: inline-flex;
@@ -39,4 +55,47 @@
   width: 50px;
   display: inline-flex;
   margin-bottom: 2px;
+}
+.map-icon{
+  loat: right;
+  position: absolute;
+  top: 37px;
+  font-size: 25px;
+  right: 30px;
+}
+.in-progress-box{
+  background: #273d4c;
+  color: white;
+}
+.in-progress-box ion-button{
+  height: 2.188rem;
+  border-radius: 5px;
+  font-family: Lexend-Regular;
+  font-size: 0.875rem;
+  margin: 0;
+  float: right;
+}
+.in-progress-header-1{
+    font-family: Lexend-Regular;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left;
+}
+.in-progress-header-2{
+  font-family: Lexend-Regular;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+}
+.in-progress-icon{
+  font-size: 2rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
 }

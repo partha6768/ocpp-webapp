@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
+  <g id="Group_1361" data-name="Group 1361" transform="translate(-140 -391)">
+    <g id="Group_CCS-1_icon" data-name="Group CCS-1 icon">
+      <circle id="CCS-1" cx="26" cy="26" r="26" transform="translate(140 391)" fill="#f3f7fa"/>
+      <g id="Group_1357" data-name="Group 1357" transform="translate(-304.943 159.739)">
+        <path id="Path_979" data-name="Path 979" d="M482.052,260.771a8.226,8.226,0,0,0,3.535-15.98c-.482-.172-.959-.261-1.108-.867-.034-.137-.309-.264-.492-.3a7.222,7.222,0,0,0-.963-.084l0,.021c-.1,0-.2,0-.3,0-.634-.015-1.224.02-1.434.8-.035.132-.31.232-.492.288a8.24,8.24,0,0,0,1.26,16.121Zm1.8-10.28a2.615,2.615,0,1,1,2.541,2.7A2.644,2.644,0,0,1,483.85,250.491Zm-1.03,3.621a2.56,2.56,0,0,1,2.569,2.591,2.6,2.6,0,1,1-5.2-.057A2.571,2.571,0,0,1,482.82,254.111Zm-3.311-6.125a2.647,2.647,0,0,1,2.62,2.622,2.61,2.61,0,1,1-2.62-2.622Z" transform="translate(-12.044 0)" fill="#273d4c"/>
+        <path id="Path_980" data-name="Path 980" d="M477.115,392.235a19.434,19.434,0,0,0-3.683-.2q-3.676-.041-7.352-.005a4.963,4.963,0,1,0,.041,9.925c1.6.006,3.2,0,4.8,0s3.2,0,4.8,0a4.909,4.909,0,0,0,4.889-3.607A4.844,4.844,0,0,0,477.115,392.235Zm-11.123,7.7a2.928,2.928,0,0,1-2.94-2.987,2.96,2.96,0,0,1,2.956-2.915,2.951,2.951,0,0,1-.016,5.9Zm9.964,0a2.952,2.952,0,1,1,2.906-2.957A2.925,2.925,0,0,1,475.957,399.936Z" transform="translate(0 -130.43)" fill="#273d4c"/>
+        <circle id="Ellipse_188" data-name="Ellipse 188" cx="1.083" cy="1.083" r="1.083" transform="translate(465.944 250.582) rotate(-45)" fill="#273d4c"/>
+        <circle id="Ellipse_189" data-name="Ellipse 189" cx="1.083" cy="1.083" r="1.083" transform="translate(473.423 249.499)" fill="#273d4c"/>
+        <circle id="Ellipse_190" data-name="Ellipse 190" cx="1.083" cy="1.083" r="1.083" transform="translate(464.768 265.748) rotate(-13.282)" fill="#273d4c"/>
+        <circle id="Ellipse_191" data-name="Ellipse 191" cx="1.083" cy="1.083" r="1.083" transform="translate(474.619 265.75) rotate(-13.282)" fill="#273d4c"/>
+        <circle id="Ellipse_192" data-name="Ellipse 192" cx="1.083" cy="1.083" r="1.083" transform="translate(469.522 255.926) rotate(-13.282)" fill="#273d4c"/>
+      </g>
+    </g>
+  </g>
+</svg>

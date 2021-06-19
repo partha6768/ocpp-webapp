@@ -1,3 +1,34 @@
-<p>
-  qr-scan works!
-</p>
+<div class="search-box">
+    <div class="filter-item padding-15" style="width: 42%;" (click)="openVehicleModal()">Tata Nexon EV</div>
+    <div class="filter-item filter-item-selected" style="width: 50%;" (click)="goToMap()">
+        <div><b>GO TO MAP</b></div><div class="font-size-12">To discover chargers</div>
+        <ion-icon class="color-white map-icon" name="map-outline"></ion-icon>
+    </div>
+</div>
+<div class="video-container" *ngIf="scanQR">
+    <zxing-scanner [torch]="torchEnabled" [(device)]="currentDevice" (scanSuccess)="onCodeResult($event)"
+                   [tryHarder]="tryHarder" (permissionResponse)="onHasPermission($event)"
+                   (camerasFound)="onCamerasFound($event)"></zxing-scanner>
+</div>
+<div *ngIf="!scanQR">
+    <div class="image_layout">
+        <img src="./assets/icon/charge-complete.svg"/>
+    </div>
+    <div class="display">
+        Enter code written below QR code
+    </div>
+    <ion-item class="code-text">
+        <ion-input></ion-input>
+    </ion-item>
+    <ion-button (click)="openPortScreen()" class="margin-20" expand="full" size="large">Confirm Code</ion-button>
+</div>
+<div style="margin: 1.5%;">
+    <ion-segment class="bottom-tab" mode="ios" value="scan" (ionChange)="segmentChanged()">
+        <ion-segment-button value="scan" (click)="toggleView(true)">
+            <ion-label>Scan QR code</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="code" (click)="toggleView(false)">
+            <ion-label>Enter code</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+</div>

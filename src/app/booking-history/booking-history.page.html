@@ -1,145 +1,99 @@
-<ion-content class="background">
-  <div class="header_layout">
-  <div class="header">
-      Charging Records
-  </div>
-  <div class="dropdown_bay">
-      <ion-label class="label" (click)="presentActionSheet()">Last Charged</ion-label>
-  </div>
-  </div>
-  <ion-content class="card_layout">
-  <ion-card>
-      <ion-grid>
-        <ion-col class="ion-align-self-start name">
-          TCL1 Service Station
-        </ion-col>
-        <ion-col class="ion-align-self-end date">
-          March 21,2021
-        </ion-col>
-      </ion-grid>
-      <ion-grid>
-        <ion-col class="ion-align-self-start time">
-          1hrs 20 mins
-        </ion-col>
-        <ion-col class="ion-align-self-center amount">
-          250$
-        </ion-col>
-        <ion-col class="ion-align-self-end Share">
-          Share Receipt
-        </ion-col>
-          <ion-icon name="share-social-outline"></ion-icon>
-      </ion-grid>
-    </ion-card>   
-    <ion-card>
-      <ion-grid>
-        <ion-col class="ion-align-self-start name">
-          TCL Service Station
-        </ion-col>
-        <ion-col class="ion-align-self-end date">
-          March 21,2021
-        </ion-col>
-      </ion-grid>
-      <ion-grid>
-        <ion-col class="ion-align-self-start time">
-          1hrs 20 mins
-        </ion-col>
-        <ion-col class="ion-align-self-center amount">
-          250$
-        </ion-col>
-        <ion-col class="ion-align-self-end Share">
-          Share Receipt
-        </ion-col>
-          <ion-icon name="share-social-outline"></ion-icon>
-      </ion-grid>
-    </ion-card> 
-    <ion-card>
-      <ion-grid>
-        <ion-col class="ion-align-self-start name">
-          TCL Service Station
-        </ion-col>
-        <ion-col class="ion-align-self-end date">
-          March 21,2021
-        </ion-col>
-      </ion-grid>
-      <ion-grid>
-        <ion-col class="ion-align-self-start time">
-          1hrs 20 mins
-        </ion-col>
-        <ion-col class="ion-align-self-center amount">
-          250$
-        </ion-col>
-        <ion-col class="ion-align-self-end Share">
-          Share Receipt
-        </ion-col>
-          <ion-icon name="share-social-outline"></ion-icon>
-      </ion-grid>
-    </ion-card> 
-    <ion-card>
-      <ion-grid>
-        <ion-col class="ion-align-self-start name">
-          TCL Service Station
-        </ion-col>
-        <ion-col class="ion-align-self-end date">
-          March 21,2021
-        </ion-col>
-      </ion-grid>
-      <ion-grid>
-        <ion-col class="ion-align-self-start time">
-          1hrs 20 mins
-        </ion-col>
-        <ion-col class="ion-align-self-center amount">
-          250$
-        </ion-col>
-        <ion-col class="ion-align-self-end Share">
-          Share Receipt
-        </ion-col>
-          <ion-icon name="share-social-outline"></ion-icon>
-      </ion-grid>
-    </ion-card> 
-    <ion-card>
-      <ion-grid>
-        <ion-col class="ion-align-self-start name">
-          TCL Service Station
-        </ion-col>
-        <ion-col class="ion-align-self-end date">
-          March 21,2021
-        </ion-col>
-      </ion-grid>
-      <ion-grid>
-        <ion-col class="ion-align-self-start time">
-          1hrs 20 mins
-        </ion-col>
-        <ion-col class="ion-align-self-center amount">
-          250$
-        </ion-col>
-        <ion-col class="ion-align-self-end Share">
-          Share Receipt
-        </ion-col>
-          <ion-icon name="share-social-outline"></ion-icon>
-      </ion-grid>
-    </ion-card> 
-    <ion-card>
-      <ion-grid>
-        <ion-col class="ion-align-self-start name">
-          TCL Service Station
-        </ion-col>
-        <ion-col class="ion-align-self-end date">
-          March 21,2021
-        </ion-col>
-      </ion-grid>
-      <ion-grid>
-        <ion-col class="ion-align-self-start time">
-          1hrs 20 mins
-        </ion-col>
-        <ion-col class="ion-align-self-center amount">
-          250$
-        </ion-col>
-        <ion-col class="ion-align-self-end Share">
-          Share Receipt
-        </ion-col>
-          <ion-icon name="share-social-outline"></ion-icon>
-      </ion-grid>
-    </ion-card> 
-  </ion-content>
-</ion-content>
+<ion-segment class="bottom-tab" mode="md" value="history" (ionChange)="segmentChanged()">
+    <ion-segment-button value="history" (click)="toggleView(true)">
+        <ion-label>Charging Records</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="reservation" (click)="toggleView(false)">
+        <ion-label>Reservation</ion-label>
+    </ion-segment-button>
+</ion-segment>
+<div class="filter-search-box select-button">
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-item *ngIf="history">
+                    <ion-select [(ngModel)]="selectedChargingFilter" interface="action-sheet">
+                        <ion-select-option *ngFor="let option of chargingRecordOptions" value="{{option.value}}">{{option.text}}</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item *ngIf="!history">
+                    <ion-select [(ngModel)]="selectedReservationFilter" interface="action-sheet">
+                        <ion-select-option *ngFor="let option of reservationOptions" value="{{option.value}}">{{option.text}}</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+            <ion-col *ngIf="history">
+                <ion-item *ngIf="selectedChargingFilter == 'MONTHLY'">
+                    <ion-select [(ngModel)]="selectedMonthFilter" interface="action-sheet">
+                        <ion-select-option *ngFor="let option of monthOptions" value="{{option.value}}">{{option.text}}</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item *ngIf="selectedChargingFilter == 'ANNUALLY'">
+                    <ion-select [(ngModel)]="selectedYearFilter" interface="action-sheet">
+                        <ion-select-option *ngFor="let option of yearOptions" value="{{option.value}}">{{option.text}}</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</div>
+<div *ngIf="history" class="color-light-grey list-body">
+    <ion-card (click)="showDetail()">
+        <ion-card-content>
+            <div class="title-text">P.C.M. Enterprises Praveen singh</div>
+            <div class="cost-box">
+                <ion-grid class="padding-0">
+                    <ion-row>
+                        <ion-col class="padding-tb-10">
+                            <div class="header-text">Duration</div>
+                            <div class="body-text">1 h 20 min</div>
+                        </ion-col>
+                        <ion-col class="padding-tb-10">
+                            <div class="header-text">Amount</div>
+                            <div class="body-text">₹250</div>
+                        </ion-col>
+                        <ion-col class="padding-tb-10">
+                            <div class="header-text">Date</div>
+                            <div class="body-text">March 24, 2021</div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+            <div class="footer-text">
+                <ion-icon class="vertical-align-middle" name="reload-outline"></ion-icon> Make Reservation
+                <ion-icon class="share-icon" name="share-social-outline"></ion-icon>
+                <ion-icon class="share-icon" name="download-outline"></ion-icon>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</div>
 
+<div *ngIf="!history" class="color-light-grey list-body">
+    <ion-card (click)="showDetail()">
+        <ion-card-content>
+            <div class="title-text">P.C.M. Enterprises Praveen singh</div>
+            <div class="cost-box">
+                <ion-grid class="padding-0">
+                    <ion-row>
+                        <ion-col class="padding-tb-10">
+                            <div class="header-text">Duration</div>
+                            <div class="body-text">1 h 20 min</div>
+                        </ion-col>
+                        <ion-col class="padding-tb-10">
+                            <div class="header-text">Amount</div>
+                            <div class="body-text">₹250</div>
+                        </ion-col>
+                        <ion-col class="padding-tb-10">
+                            <div class="header-text">Date</div>
+                            <div class="body-text">March 24, 2021</div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </div>
+            <div class="footer-text">
+                <ion-icon class="vertical-align-middle" name="reload-outline"></ion-icon> Reserve Again
+                <span class="reservation-status color-red">Reservation Cancelled</span>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</div>
+<ion-button class="share-btn" color="none" (click)="openShareModal()"><ion-icon class="share-icon" src="assets/icon/share.svg"></ion-icon>Share</ion-button>

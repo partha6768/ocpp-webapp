@@ -7,6 +7,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import {RouterModule} from "@angular/router";
+import {VehicleComponent} from "./vehicle/vehicle.component";
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import {RouterModule} from "@angular/router";
     HomePageRoutingModule,
     RouterModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, VehicleComponent]
 })
 export class HomePageModule {}
