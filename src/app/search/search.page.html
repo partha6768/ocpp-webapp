@@ -35,11 +35,16 @@
   </div>
   <div #map id="map"></div>
   <div class="filter-box">
-    <ion-img class="filter-item-icon" src="assets/icon/filter.svg"></ion-img>
+    <ion-img class="filter-item-icon" src="assets/icon/filter.svg" (click)="selectionModal()"></ion-img>
     <div class="filter-item" (click)="openNearMeModal()">Near Me</div>
     <div class="filter-item">Available Station</div>
     <div class="filter-item">Discount</div>
     <div class="filter-item">Fast charger</div>
+    <ion-select [(ngModel)]="selectedMonthFilter">
+      <ion-select-option *ngFor="let option of monthOptions" value="{{option.value}}">
+        {{option.text}}
+      </ion-select-option>
+    </ion-select>
     <div class="filter-item" (click)="openRouteModal()">On Route To</div>
   </div>
 </ion-content>

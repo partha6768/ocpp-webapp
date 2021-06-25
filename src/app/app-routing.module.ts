@@ -16,10 +16,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'view-route',
-    loadChildren: () => import('./view-route/view-route.module').then( m => m.ViewRoutePageModule)
-  },
-  {
     path: 'charging',
     loadChildren: () => import('./charging/charging.module').then(m => m.ChargingPageModule)
   },

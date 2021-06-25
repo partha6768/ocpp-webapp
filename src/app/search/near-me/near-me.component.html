@@ -4,24 +4,24 @@
   <span class="clr-btn">CLEAR</span>
   <ion-grid class="box">
     <ion-row>
-      <ion-col class="border-box border-box-selected">
+      <ion-col class="border-box" (click)="changeDistance('500m')" [ngClass]="{'bg-green': distance === '500m'}">
           <div>500m</div>
       </ion-col>
-      <ion-col class="border-box">
+      <ion-col class="border-box"(click)="changeDistance('1km')" [ngClass]="{'bg-green': distance === '1km'}">
         <div>1km</div>
       </ion-col>
-      <ion-col class="border-box">
+      <ion-col class="border-box"(click)="changeDistance('2km')" [ngClass]="{'bg-green': distance === '2km'}">
         <div>2km</div>
       </ion-col>
-      <ion-col class="border-box">
+      <ion-col class="border-box"(click)="changeDistance('5km')" [ngClass]="{'bg-green': distance === '5km'}">
         <div>5km</div>
       </ion-col>
     </ion-row>
     <ion-row class="padding-t-5">
-      <ion-col class="border-box">
+      <ion-col class="border-box"(click)="changeDistance('10km')" [ngClass]="{'bg-green': distance === '10km'}">
         <div>10km</div>
       </ion-col>
-      <ion-col class="border-box">
+      <ion-col class="border-box"(click)="changeDistance('20km')" [ngClass]="{'bg-green': distance === '20km'}">
         <div>20km</div>
       </ion-col>
       <ion-col></ion-col>

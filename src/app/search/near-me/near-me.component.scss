@@ -1,7 +1,53 @@
 .close-icon{
-  position: absolute;
-  right: 0px;
-}
+
+    position: absolute;
+    right: 0px;
+  }
+  
+  .model-spam{
+    color: #C3D0D9;
+    font-family: 'Lexend-Regular';
+    font-size: 0.9rem;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  .km-slot ion-col{
+    box-shadow: 0 0 8px 0 rgb(34 62 80 / 8%);
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .km-text{
+    font-family: Lexend-Regular;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    font: normal normal medium 18px/23px Lexend-Regular;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: center;
+    color: #273d4c;
+    background: #f3f7fa;
+  }
+  
+  .border-box{
+    padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+    border-radius: 5px;
+    background-color: #f3f7fa;
+    margin: 5px;
+    text-align: center;
+  }
+  .border-box-selected{
+    background-color: #7f8f88;
+    color: white;
+  }
+
 .clr-btn{
   color: #C3D0D9;
   font-family: Lexend-Regular;

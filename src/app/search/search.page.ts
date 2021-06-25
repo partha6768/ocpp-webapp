@@ -1,11 +1,12 @@
 import {Component, ViewChild, ElementRef, AfterViewInit, OnInit} from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import {ViewRoutePage} from "../view-route/view-route.page";
 import {VehicleComponent} from "../home/vehicle/vehicle.component";
 import {Router} from "@angular/router";
 import {ChargeStationComponent} from "./charge-station/charge-station.component";
 import {UnpaidBillComponent} from "./unpaid-bill/unpaid-bill.component";
 import { NearMeComponent } from './near-me/near-me.component';
+import { OnRouteComponent } from './on-route/on-route.component';
+import { SelectionsComponent } from './selections/selections.component';
 declare let google;
 
 @Component({
@@ -84,9 +85,18 @@ export class SearchPage implements AfterViewInit, OnInit{
     });
   }
 
+  
+  async selectionModal() {
+    const modal = await this.modalController.create({
+      component: SelectionsComponent,
+      cssClass: 'selection'
+    });
+    return await modal.present();
+  }
+
   async openRouteModal() {
     const modal = await this.modalController.create({
-      component: ViewRoutePage,
+      component: OnRouteComponent,
       cssClass: 'view-route'
     });
     return await modal.present();

@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ViewRoutePage } from './view-route.page';
+import { SelectionsComponent } from './selections.component';
 
-describe('ViewRoutePage', () => {
-  let component: ViewRoutePage;
-  let fixture: ComponentFixture<ViewRoutePage>;
+describe('SelectionsComponent', () => {
+  let component: SelectionsComponent;
+  let fixture: ComponentFixture<SelectionsComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewRoutePage ],
+      declarations: [ SelectionsComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ViewRoutePage);
+    fixture = TestBed.createComponent(SelectionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

@@ -7,11 +7,13 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./near-me.component.scss'],
 })
 export class NearMeComponent implements OnInit {
-
+  distance='500m'
   constructor(public modalController: ModalController) { }
 
   ngOnInit() {}
-
+  changeDistance(distance) {
+    this.distance = distance;
+  }
   close() {
     this.modalController.dismiss();
   }

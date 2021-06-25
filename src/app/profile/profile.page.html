@@ -1,4 +1,5 @@
 <ion-content [fullscreen]="true">
+
   <img src="assets/icon/profile/rectangle.svg" class="rectangle">
   <div class="profile-header">Hello Suraj!</div>
   <ion-card class="margin-15">
@@ -29,6 +30,7 @@
     <div class="label-header">Mobile Number</div>
     <div class="label-value">9543443545</div>
   </div>
+
   <div class="divider"></div>
   <ion-list button>
     <ion-item *ngFor="let menu of menus" (click)="viewMenu(menu.routes)">
