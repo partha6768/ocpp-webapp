@@ -1,179 +1,163 @@
 <ion-content>
   <div class="selector-bg">
-  <ion-grid>
-    <ion-row>
-    <ion-col>
-    <div class="sel-title">
-      Filters
-    </div>
-  </ion-col>
-  <img class="close-icon" src="./assets/icon/close.svg" (click)="close()"/>
-  </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <div class="title">
-      Chargers
-    </div>
-    <ion-row>
-      <ion-col (click)="changeSection('ALL')" class="border-box" [ngClass]="{'bg-green': section === 'ALL'}">
-        <div class="header-text" [ngClass]="{'color-white': section === 'ALL'}">ALL</div>
-      </ion-col>
-      <ion-col (click)="changeSection('AC')" class="border-box" [ngClass]="{'bg-green': section === 'AC'}">
-        <div class="header-text" [ngClass]="{'color-white': section === 'AC'}">AC</div>
-      </ion-col>
-      <ion-col (click)="changeSection('DC')" class="border-box" [ngClass]="{'bg-green': section === 'DC'}">
-        <div class="header-text" [ngClass]="{'color-white': section === 'DC'}">DC</div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <div class="title">
-      Distance
-    </div>
-    <ion-row>
-      <ion-col class="border-box-km" (click)="changeDistance('500m')" [ngClass]="{'bg-green': distance === '500m'}">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="header-title">Filters</div>
+        </ion-col>
+        <img class="close-icon" src="./assets/icon/close.svg" (click)="close()"/>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <div class="title">Chargers</div>
+      <ion-row>
+        <ion-col (click)="changeSection('ALL')" class="border-box" [ngClass]="{'selected-bg': section === 'ALL'}">
+          <div class="header-text">ALL</div>
+        </ion-col>
+        <ion-col (click)="changeSection('AC')" class="border-box" [ngClass]="{'selected-bg': section === 'AC'}">
+          <div class="header-text">AC</div>
+        </ion-col>
+        <ion-col (click)="changeSection('DC')" class="border-box" [ngClass]="{'selected-bg': section === 'DC'}">
+          <div class="header-text">DC</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <div class="title">Distance</div>
+      <ion-row>
+        <ion-col size="2.7" class="border-box-km" (click)="changeDistance('500m')" [ngClass]="{'selected-bg': distance === '500m'}">
           <div>500m</div>
+        </ion-col>
+        <ion-col size="2.7" class="border-box-km" (click)="changeDistance('1km')" [ngClass]="{'selected-bg': distance === '1km'}">
+          <div>1km</div>
+        </ion-col>
+        <ion-col size="2.7" class="border-box-km" (click)="changeDistance('2km')" [ngClass]="{'selected-bg': distance === '2km'}">
+          <div>2km</div>
+        </ion-col>
+        <ion-col size="2.7" class="border-box-km" (click)="changeDistance('5km')" [ngClass]="{'selected-bg': distance === '5km'}">
+          <div>5km</div>
+        </ion-col>
+        <ion-col size="2.7" class="border-box-km" (click)="changeDistance('10km')" [ngClass]="{'selected-bg': distance === '10km'}">
+          <div>10km</div>
+        </ion-col>
+        <ion-col size="2.7" class="border-box-km" (click)="changeDistance('20km')" [ngClass]="{'selected-bg': distance === '20km'}">
+          <div>20km</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <ion-grid>
+    <div class="title">Connectors</div>
+    <ion-row class="connector-ammenities-col">
+      <ion-col size="3.7" (click)="changeSelector('All Connectors')" [ngClass]="{'selected-bg': selector === 'All Connectors'}">
+        <div class="name-center-vertical" style="padding-top: 1.5rem;">All</div>
       </ion-col>
-      <ion-col class="border-box-km"(click)="changeDistance('1km')" [ngClass]="{'bg-green': distance === '1km'}">
-        <div>1km</div>
-      </ion-col>
-      <ion-col class="border-box-km"(click)="changeDistance('2km')" [ngClass]="{'bg-green': distance === '2km'}">
-        <div>2km</div>
-      </ion-col>
-      <ion-col class="border-box-km"(click)="changeDistance('5km')" [ngClass]="{'bg-green': distance === '5km'}">
-        <div>5km</div>
-      </ion-col>
-    </ion-row>
-    <ion-row class="padding-t-5">
-      <ion-col class="border-box-km"(click)="changeDistance('10km')" [ngClass]="{'bg-green': distance === '10km'}">
-        <div>10km</div>
-      </ion-col>
-      <ion-col class="border-box-km"(click)="changeDistance('20km')" [ngClass]="{'bg-green': distance === '20km'}">
-        <div>20km</div>
-      </ion-col>
-      <ion-col></ion-col>
-      <ion-col></ion-col>
-    </ion-row>
-  </ion-grid>
-  <div class="title">Select Port</div>
-  <ion-grid class="padding-0">
-    <ion-row class="margin-lr-1rem">
-      <ion-col size="4" (click)="changeSelector('All Connectors')" [ngClass]="{'bg-green': selector === 'All Connectors'}">
-        <div class="name-def" >All Connectors</div>
-      </ion-col>
-      <ion-col size="4" (click)="changeSelector('CCS-2')" [ngClass]="{'bg-green': selector === 'CCS-2'}">
+      <ion-col size="3.7" (click)="changeSelector('CCS-2')" [ngClass]="{'selected-bg': selector === 'CCS-2'}">
           <ion-img class="border-box-sel" src='assets/icon/port/type-1.svg'></ion-img>
           <div class="name" >CCS-2</div>
       </ion-col>
-      <ion-col size="4" (click)="changeSelector('AC Type-1')" [ngClass]="{'bg-green': selector === 'AC Type-1'}">
+      <ion-col size="3.7" (click)="changeSelector('AC Type-1')" [ngClass]="{'selected-bg': selector === 'AC Type-1'}">
         <ion-img class="border-box-sel" src='assets/icon/port/type-2.svg'></ion-img>
         <div class="name" >AC Type-1</div>
       </ion-col>
-      <ion-col size="4" (click)="changeSelector('CCS-1')" [ngClass]="{'bg-green': selector === 'CCS-1'}">
+      <ion-col size="3.7" (click)="changeSelector('CCS-1')" [ngClass]="{'selected-bg': selector === 'CCS-1'}">
         <ion-img class="border-box-sel" src='assets/icon/port/type-3.svg'></ion-img>
         <div class="name" >CCS-1</div>
       </ion-col>
-      <ion-col size="4" (click)="changeSelector('AC Type-2')" [ngClass]="{'bg-green': selector === 'AC Type-2'}">
+      <ion-col size="3.7" (click)="changeSelector('AC Type-2')" [ngClass]="{'selected-bg': selector === 'AC Type-2'}">
         <ion-img class="border-box-sel" src='assets/icon/port/type-4.svg'></ion-img>
         <div class="name" >AC Type-2</div>
       </ion-col>
-      <ion-col size="4" (click)="changeSelector('BharatAC001')" [ngClass]="{'bg-green': selector === 'BharatAC001'}">
+      <ion-col size="3.7" (click)="changeSelector('BharatAC001')" [ngClass]="{'selected-bg': selector === 'BharatAC001'}">
         <ion-img class="border-box-sel" src='assets/icon/port/type-5.svg'></ion-img>
         <div class="name" >BharatAC001</div>
       </ion-col>
-      <ion-col size="4" (click)="changeSelector('Tesla Charger')" [ngClass]="{'bg-green': selector === 'Tesla Charger'}">
+      <ion-col size="3.7" (click)="changeSelector('Tesla Charger')" [ngClass]="{'selected-bg': selector === 'Tesla Charger'}">
         <ion-img class="border-box-sel" src='assets/icon/port/type-6.svg'></ion-img>
         <div class="name" >Tesla Charger</div>
       </ion-col>
-      <ion-col size="4" (click)="changeSelector('Bharat DC001 GB/T')" [ngClass]="{'bg-green': selector === 'Bharat DC001 GB/T'}">
+      <ion-col size="3.7" (click)="changeSelector('Bharat DC001 GB/T')" [ngClass]="{'selected-bg': selector === 'Bharat DC001 GB/T'}">
         <ion-img class="border-box-sel" src='assets/icon/port/type-7.svg'></ion-img>
         <div class="name" >Bharat DC001 GB/T</div>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-grid class="padding-t-20">
+  <ion-grid>
     <ion-row>
-      <ion-col class="btn-txt">Only Available Chargers</ion-col>
+      <ion-col class="btn-txt name-center-vertical">Only Available Chargers</ion-col>
       <ion-col><ion-toggle class="btn-switch" color="primary"></ion-toggle></ion-col>
-  </ion-row>
+    </ion-row>
   </ion-grid>
   <ion-grid>
     <ion-row>
-      <ion-col class="btn-txt">Only Free Chargers</ion-col>
+      <ion-col class="btn-txt name-center-vertical">Only Free Chargers</ion-col>
       <ion-col><ion-toggle class="btn-switch" color="primary"></ion-toggle></ion-col>
-  </ion-row>
+    </ion-row>
   </ion-grid>
-  <div class="selector-bg1">
-    <ion-header class="title">
-      Ammenities
-    </ion-header>
-    <ion-grid class="padding-0">
-      <ion-row class="margin-lr-1rem">
-        <ion-col size="4" (click)="changeAmmenities('All Ammenities')" [ngClass]="{'bg-green': Ammenitie === 'All Ammenities'}">
-          <div class="name-def">All Ammenities</div>
+    <ion-grid>
+      <div class="title">Ammenities</div>
+      <ion-row class="connector-ammenities-col">
+        <ion-col size="3.7" (click)="changeAmmenities('All Ammenities')" [ngClass]="{'selected-bg': Ammenitie === 'All Ammenities'}">
+          <div class="name-center-vertical" style="padding-top: 1.5rem;">All</div>
         </ion-col>
-      <ion-col size="4" (click)="changeAmmenities('auto-service-station')" [ngClass]="{'bg-green': Ammenitie === 'auto-service-station'}">
-        <img class="border-box-sel" src='assets/icon/ammenities/auto-service-station.svg' />
-        <div class="ammenities-name">auto-service-station</div>
-      </ion-col>
-      <ion-col size="4" (click)="changeAmmenities('cafeteria')" [ngClass]="{'bg-green': Ammenitie === 'cafeteria'}">
-        <img class="border-box-sel" src='assets/icon/ammenities/cafeteria.svg' />
-        <div class="ammenities-name">cafeteria</div>
-      </ion-col>
-      <ion-col size="4" (click)="changeAmmenities('chemist-shop')" [ngClass]="{'bg-green': Ammenitie === 'chemist-shop'}">
-        <img class="border-box-sel" src='assets/icon/ammenities/chemist-shop.svg' />
-        <div class="ammenities-name">chemist-shop</div>
-      </ion-col>
-      <ion-col size="4" (click)="changeAmmenities('food-stall')" [ngClass]="{'bg-green': Ammenitie === 'food-stall'}">
-        <img class="border-box-sel" src='assets/icon/ammenities/food-stall.svg' />
-        <div class="ammenities-name">food-stall</div>
-      </ion-col>
-      <ion-col size="4" (click)="changeAmmenities('hotel')" [ngClass]="{'bg-green': Ammenitie === 'hotel'}">
-        <img class="border-box-sel" src='assets/icon/ammenities/hotel.svg' />
-        <div class="ammenities-name">hotel</div>
-      </ion-col>
-      <ion-col size="4" (click)="changeAmmenities('mall')" [ngClass]="{'bg-green': Ammenitie === 'mall'}">
-        <img class="border-box-sel" src='assets/icon/ammenities/mall.svg' />
-        <div class="ammenities-name">mall</div>
-      </ion-col>
-      <ion-col size="4" (click)="changeAmmenities('park-garden')" [ngClass]="{'bg-green': Ammenitie === 'park-garden'}">
-        <img class="border-box-sel" src='assets/icon/ammenities/park-garden.svg' />
-        <div class="ammenities-name">park-garden</div>
-      </ion-col>
-      <ion-col size="4" (click)="changeAmmenities('parking')" [ngClass]="{'bg-green': Ammenitie === 'parking'}">
-        <img class="border-box-sel" src='assets/icon/ammenities/parking.svg' />
-        <div class="ammenities-name">parking</div>
-      </ion-col>
-      <ion-col size="4" (click)="changeAmmenities('rest-room')" [ngClass]="{'bg-green': Ammenitie === 'rest-room'}">
-        <img class="border-box-sel" src='assets/icon/ammenities/rest-room.svg' />
-        <div class="ammenities-name">rest-room</div>
-      </ion-col>
-      <ion-col size="4" (click)="changeAmmenities('retail-store')" [ngClass]="{'bg-green': Ammenitie === 'retail-store'}">
-        <img class="border-box-sel" src='assets/icon/ammenities/retail-store.svg' />
-        <div class="ammenities-name">retail-store</div>
-      </ion-col>
-      <ion-col size="4" (click)="changeAmmenities('salon')" [ngClass]="{'bg-green': Ammenitie === 'salon'}">
-        <img class="border-box-sel" src='assets/icon/ammenities/salon.svg' />
-        <div class="ammenities-name">salon</div>
-      </ion-col>
-      <ion-col size="4" (click)="changeAmmenities('wifi')" [ngClass]="{'bg-green': Ammenitie === 'wifi'}">
-        <img class="border-box-sel" src='assets/icon/ammenities/wifi.svg' />
-        <div class="ammenities-name">wifi</div>
-      </ion-col>      
+        <ion-col size="3.7" (click)="changeAmmenities('auto-service-station')" [ngClass]="{'selected-bg': Ammenitie === 'auto-service-station'}">
+          <img class="border-box-sel" src='assets/icon/ammenities/auto-service-station.svg' />
+          <div class="ammenities-name">auto-service-station</div>
+        </ion-col>
+        <ion-col size="3.7" (click)="changeAmmenities('cafeteria')" [ngClass]="{'selected-bg': Ammenitie === 'cafeteria'}">
+          <img class="border-box-sel" src='assets/icon/ammenities/cafeteria.svg' />
+          <div class="ammenities-name">cafeteria</div>
+        </ion-col>
+        <ion-col size="3.7" (click)="changeAmmenities('chemist-shop')" [ngClass]="{'selected-bg': Ammenitie === 'chemist-shop'}">
+          <img class="border-box-sel" src='assets/icon/ammenities/chemist-shop.svg' />
+          <div class="ammenities-name">chemist-shop</div>
+        </ion-col>
+        <ion-col size="3.7" (click)="changeAmmenities('food-stall')" [ngClass]="{'selected-bg': Ammenitie === 'food-stall'}">
+          <img class="border-box-sel" src='assets/icon/ammenities/food-stall.svg' />
+          <div class="ammenities-name">food-stall</div>
+        </ion-col>
+        <ion-col size="3.7" (click)="changeAmmenities('hotel')" [ngClass]="{'selected-bg': Ammenitie === 'hotel'}">
+          <img class="border-box-sel" src='assets/icon/ammenities/hotel.svg' />
+          <div class="ammenities-name">hotel</div>
+        </ion-col>
+        <ion-col size="3.7" (click)="changeAmmenities('mall')" [ngClass]="{'selected-bg': Ammenitie === 'mall'}">
+          <img class="border-box-sel" src='assets/icon/ammenities/mall.svg' />
+          <div class="ammenities-name">mall</div>
+        </ion-col>
+        <ion-col size="3.7" (click)="changeAmmenities('park-garden')" [ngClass]="{'selected-bg': Ammenitie === 'park-garden'}">
+          <img class="border-box-sel" src='assets/icon/ammenities/park-garden.svg' />
+          <div class="ammenities-name">park-garden</div>
+        </ion-col>
+        <ion-col size="3.7" (click)="changeAmmenities('parking')" [ngClass]="{'selected-bg': Ammenitie === 'parking'}">
+          <img class="border-box-sel" src='assets/icon/ammenities/parking.svg' />
+          <div class="ammenities-name">parking</div>
+        </ion-col>
+        <ion-col size="3.7" (click)="changeAmmenities('rest-room')" [ngClass]="{'selected-bg': Ammenitie === 'rest-room'}">
+          <img class="border-box-sel" src='assets/icon/ammenities/rest-room.svg' />
+          <div class="ammenities-name">rest-room</div>
+        </ion-col>
+        <ion-col size="3.7" (click)="changeAmmenities('retail-store')" [ngClass]="{'selected-bg': Ammenitie === 'retail-store'}">
+          <img class="border-box-sel" src='assets/icon/ammenities/retail-store.svg' />
+          <div class="ammenities-name">retail-store</div>
+        </ion-col>
+        <ion-col size="3.7" (click)="changeAmmenities('salon')" [ngClass]="{'selected-bg': Ammenitie === 'salon'}">
+          <img class="border-box-sel" src='assets/icon/ammenities/salon.svg' />
+          <div class="ammenities-name">salon</div>
+        </ion-col>
+        <ion-col size="3.7" (click)="changeAmmenities('wifi')" [ngClass]="{'selected-bg': Ammenitie === 'wifi'}">
+          <img class="border-box-sel" src='assets/icon/ammenities/wifi.svg' />
+          <div class="ammenities-name">wifi</div>
+        </ion-col>
       </ion-row>
-      </ion-grid> 
-  </div>
-  </div>
-  <div>
+    </ion-grid>
   </div>
 </ion-content>
-<ion-content scroll-y="false" class="btn-sec">
+<ion-content scroll-y="false" class="btn-section">
   <ion-grid>
     <ion-row>
-    <ion-col><ion-button  class="reset-btn" expand="full" color="danger" fill="outline" size="large">Reset</ion-button></ion-col>
-    <ion-col><ion-button  class="reset-btn" expand="full" size="large">Apply</ion-button></ion-col>
+      <ion-col><ion-button class="reset-btn" expand="full" color="danger" fill="outline" size="large">Reset</ion-button></ion-col>
+      <ion-col><ion-button class="reset-btn" expand="full" size="large">Apply</ion-button></ion-col>
     </ion-row>
-    </ion-grid>
+  </ion-grid>
 </ion-content>
 
   

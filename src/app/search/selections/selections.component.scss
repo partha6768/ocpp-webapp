@@ -1,34 +1,15 @@
 .selector-bg{
     background: #F3F7FA 0% 0% no-repeat padding-box;
-    box-shadow: 0px 5px 10px #00000029;
-    height:120%;
-    width: 100%;
-}
-.selector-bg1{
-  background: #F3F7FA 0% 0% no-repeat padding-box;
-  box-shadow: 0px 5px 10px #00000029;
-  height:60%;
-  width: 100%;
 }
 .close-icon{
   position: absolute;
   right: 10px;
 }
-.sel-title{
+.header-title{
   font: normal normal bold 20px/25px Lexend-Regular;
   color: #273D4C;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  margin: 0.9rem;
-  margin-right: 0.3rem;
-}
-
-.close-icon{
-  position: absolute;
-  right: 10px;
-  padding: 10px;
+  margin: 0.9rem 0.3rem 0 0;
+  text-align: center;
 }
 .title{
   margin: 1rem 0 1rem 1rem;
@@ -42,10 +23,35 @@
   text-align: left;
   color: #273d4c;
 }
-ion-col > div {
-  min-height: 0.5rem;
-  min-width: 5rem;
-  border-radius: 2px;
+.header-text{
+  font-family: Lexend-Regular;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  text-align: center;
+  text-transform: uppercase;
+}
+.border-box-km{
+  padding: 1rem 0;
+  border-radius: 5px;
+  margin: 0.2rem;
+  text-align: center;
+  background-color: white;
+}
+.connector-ammenities-col ion-col{
+  padding: 0.5rem 0;
+  border-radius: 5px;
+  margin: 0.2rem;
+  text-align: center;
+  background-color: white;
+}
+.selected-bg{
+  background-color: #30CF87 !important;
+  color: white !important;
+  font-weight: bold;
 }
 .name{
   font-family: Lexend-Regular;
@@ -58,15 +64,9 @@ ion-col > div {
   letter-spacing: normal;
   text-align: center;
 }
-
-ion-col{
-  border-radius: 5px;
-  text-align: center;
-}
-
 .btn-txt{
   font-family: normal 600 10px/10px Lexend-Regular;
-  font-size: 0.89rem;
+  font-size: 1rem;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
@@ -81,24 +81,17 @@ ion-col{
   border-radius: 5px;
   margin: 5px;
   text-align: center;
-  background: #F3F7FA;
+  background: white;
 }
-.border-box-selected{
-  background-color: #30cf87;
-}
-
 .border-box-sel{
-  border-radius: 5px;
-  margin: 5px;
-  text-align: center;
   width: 3.25rem;
   margin: auto;
 }
-.border-box-selected-sel{
-  background-color: #30cf87;
-}
-.name-def{
-  padding-top: 1rem;
+.name-center-vertical{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
 .btn-switch{
   padding-left: 3rem;
@@ -113,17 +106,7 @@ ion-col{
   margin:0;
   border-radius: 10px;
 }
-.btn-sec{
-  max-height: 8%;
-}
-.border-box-km{
-  padding: 1rem 0;
-  border-radius: 5px;
-  background-color: #f3f7fa;
-  margin: 0 0.2rem;
-  text-align: center;
-}
-.border-box-selected-km{
-  background-color: #30cf87;
-  color: white;
+.btn-section{
+  max-height: 10%;
+  margin-bottom: 1rem;
 }
