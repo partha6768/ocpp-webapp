@@ -6,6 +6,7 @@ import {Router} from "@angular/router";
 import {ChargeStationComponent} from "./charge-station/charge-station.component";
 import {UnpaidBillComponent} from "./unpaid-bill/unpaid-bill.component";
 import { NearMeComponent } from './near-me/near-me.component';
+import {SelectionsComponent} from "./selections/selections.component";
 declare let google;
 
 @Component({
@@ -112,6 +113,14 @@ export class SearchPage implements AfterViewInit, OnInit{
     const modal = await this.modalController.create({
       component: NearMeComponent,
       cssClass: 'near-me'
+    });
+    return await modal.present();
+  }
+
+  async openFilterMeModal() {
+    const modal = await this.modalController.create({
+      component: SelectionsComponent,
+      cssClass: 'main-filter'
     });
     return await modal.present();
   }

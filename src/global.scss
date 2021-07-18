@@ -36,7 +36,7 @@
   display: none !important;
 }
 .view-route {
-  --height: 50%;
+  --height: 37%;
 }
 .view-route .modal-wrapper{
   bottom: 0;
@@ -307,4 +307,14 @@ ion-button{
   margin: 5%;
   border-radius: 5px;
   width: 100%;
+}
+.main-filter{
+  --height: 90%;
+}
+.main-filter .modal-wrapper{
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }

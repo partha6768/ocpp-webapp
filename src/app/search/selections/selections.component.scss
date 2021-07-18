@@ -1,0 +1,129 @@
+.selector-bg{
+    background: #F3F7FA 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 10px #00000029;
+    height:120%;
+    width: 100%;
+}
+.selector-bg1{
+  background: #F3F7FA 0% 0% no-repeat padding-box;
+  box-shadow: 0px 5px 10px #00000029;
+  height:60%;
+  width: 100%;
+}
+.close-icon{
+  position: absolute;
+  right: 10px;
+}
+.sel-title{
+  font: normal normal bold 20px/25px Lexend-Regular;
+  color: #273D4C;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin: 0.9rem;
+  margin-right: 0.3rem;
+}
+
+.close-icon{
+  position: absolute;
+  right: 10px;
+  padding: 10px;
+}
+.title{
+  margin: 1rem 0 1rem 1rem;
+  font-family: Lexend-Regular;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.28;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+}
+ion-col > div {
+  min-height: 0.5rem;
+  min-width: 5rem;
+  border-radius: 2px;
+}
+.name{
+  font-family: Lexend-Regular;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  padding-top: 0.2rem;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+ion-col{
+  border-radius: 5px;
+  text-align: center;
+}
+
+.btn-txt{
+  font-family: normal 600 10px/10px Lexend-Regular;
+  font-size: 0.89rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  padding-top: 0.2rem;
+  letter-spacing: normal;
+  padding-left: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+.border-box{
+  border-radius: 5px;
+  margin: 5px;
+  text-align: center;
+  background: #F3F7FA;
+}
+.border-box-selected{
+  background-color: #30cf87;
+}
+
+.border-box-sel{
+  border-radius: 5px;
+  margin: 5px;
+  text-align: center;
+  width: 3.25rem;
+  margin: auto;
+}
+.border-box-selected-sel{
+  background-color: #30cf87;
+}
+.name-def{
+  padding-top: 1rem;
+}
+.btn-switch{
+  padding-left: 3rem;
+  margin: 0;
+}
+.reset-btn{
+  font-family: Lexend-Regular;
+  font-size: 1.125rem;
+  font-weight: 600;
+  align-items: center;
+  height: 3rem;
+  margin:0;
+  border-radius: 10px;
+}
+.btn-sec{
+  max-height: 8%;
+}
+.border-box-km{
+  padding: 1rem 0;
+  border-radius: 5px;
+  background-color: #f3f7fa;
+  margin: 0 0.2rem;
+  text-align: center;
+}
+.border-box-selected-km{
+  background-color: #30cf87;
+  color: white;
+}
