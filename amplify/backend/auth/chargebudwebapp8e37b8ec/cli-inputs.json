@@ -1,14 +1,16 @@
 {
-    "identityPoolName": "ocppwebapp639c1e93_identitypool_639c1e93",
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "chargebudwebapp8e37b8ec_identitypool_8e37b8ec",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "ocppwe639c1e93",
-    "userPoolName": "ocppwebapp639c1e93_userpool_639c1e93",
+    "resourceNameTruncated": "charge8e37b8ec",
+    "userPoolName": "chargebudwebapp8e37b8ec_userpool_8e37b8ec",
     "autoVerifiedAttributes": [
-        "email"
+      "email"
     ],
     "mfaConfiguration": "OFF",
     "mfaTypes": [
-        "SMS Text Message"
+      "SMS Text Message"
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
@@ -18,44 +20,34 @@
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
-        "email"
+      "email"
     ],
+    "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
-        "email"
+      "email"
     ],
     "userpoolClientReadAttributes": [
-        "email"
+      "email"
     ],
-    "userpoolClientLambdaRole": "ocppwe639c1e93_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "charge8e37b8ec_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "639c1e93",
-    "resourceName": "ocppwebapp639c1e93",
+    "sharedId": "8e37b8ec",
+    "resourceName": "chargebudwebapp8e37b8ec",
     "authSelections": "identityPoolAndUserPool",
-    "authRoleArn": {
-        "Fn::GetAtt": [
-            "AuthRole",
-            "Arn"
-        ]
-    },
-    "unauthRoleArn": {
-        "Fn::GetAtt": [
-            "UnauthRole",
-            "Arn"
-        ]
-    },
     "useDefault": "defaultSocial",
     "hostedUI": true,
     "usernameAttributes": [
-        "email, phone_number"
+      "email, phone_number"
     ],
-    "hostedUIDomainName": "ocpp-webapp",
+    "hostedUIDomainName": "chargebud-webapp",
     "authProvidersUserPool": [],
     "hostedUIProviderMeta": "[]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:4200/home/\"],\"LogoutURLs\":[\"http://localhost:4200/login/\"]}",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:8080/\",\"http://localhost:8080/\",\"http://localhost:8080/\"],\"LogoutURLs\":[\"http://localhost:8080/\"]}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
-    "dependsOn": []
+    "useEnabledMfas": true
+  }
 }

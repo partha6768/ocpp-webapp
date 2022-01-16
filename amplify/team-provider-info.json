@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-ocppwebapp-dev-91602-authRole",
-      "UnauthRoleArn": "arn:aws:iam::348744811720:role/amplify-ocppwebapp-dev-91602-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::348744811720:role/amplify-ocppwebapp-dev-91602-authRole",
+      "AuthRoleName": "amplify-chargebudwebapp-dev-213008-authRole",
+      "UnauthRoleArn": "arn:aws:iam::298254671116:role/amplify-chargebudwebapp-dev-213008-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::298254671116:role/amplify-chargebudwebapp-dev-213008-authRole",
       "Region": "ap-south-1",
-      "DeploymentBucketName": "amplify-ocppwebapp-dev-91602-deployment",
-      "UnauthRoleName": "amplify-ocppwebapp-dev-91602-unauthRole",
-      "StackName": "amplify-ocppwebapp-dev-91602",
-      "StackId": "arn:aws:cloudformation:ap-south-1:348744811720:stack/amplify-ocppwebapp-dev-91602/700fc7a0-a3e6-11eb-8de2-028816af8b40",
-      "AmplifyAppId": "d3tge8427t2j9p"
+      "DeploymentBucketName": "amplify-chargebudwebapp-dev-213008-deployment",
+      "UnauthRoleName": "amplify-chargebudwebapp-dev-213008-unauthRole",
+      "StackName": "amplify-chargebudwebapp-dev-213008",
+      "StackId": "arn:aws:cloudformation:ap-south-1:298254671116:stack/amplify-chargebudwebapp-dev-213008/64422e90-76e5-11ec-929a-0a7d81e77c22",
+      "AmplifyAppId": "dwsqscisji4q8"
     },
     "categories": {
       "auth": {
-        "ocppwebapp639c1e93": {}
+        "chargebudwebapp8e37b8ec": {}
       }
     }
   }
