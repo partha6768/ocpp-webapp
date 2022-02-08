@@ -6,6 +6,10 @@ export class CommonService {
     constructor() {
     }
 
+    currentUserInfo() {
+        return sessionStorage.getItem('username');
+    }
+
     cleanObject(obj) {
         for (const propName in obj) {
             if (obj[propName] === null || obj[propName] === undefined || obj[propName] === '') {

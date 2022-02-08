@@ -3,23 +3,13 @@
   <div class="header">Please select your car</div>
   <ion-searchbar class="padding-top-20"></ion-searchbar>
   <ion-list class="padding-top-20">
-    <ion-radio-group value="biff">
-      <ion-item>
-        <ion-label>Tata Tigor EV</ion-label>
-        <ion-radio slot="end" value="biff"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Tata Nexon EV</ion-label>
-        <ion-radio slot="end" value="griff"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>MG ZS EV</ion-label>
-        <ion-radio slot="end" value="buford"></ion-radio>
+    <ion-radio-group [(ngModel)]="userSelectionFromDB">
+      <ion-item *ngFor="let vehicle of userVehiclePreferences">
+        <ion-label>{{vehicle.code}}</ion-label>
+        <ion-radio slot="end" value="{{vehicle.code}}"></ion-radio>
       </ion-item>
     </ion-radio-group>
   </ion-list>
 </ion-content>
-<ion-button expand="full" size="large" (click)="loadSearch()">Confirm</ion-button>
+<ion-button expand="full" size="large" (click)="saveUserPreference()">Confirm</ion-button>
 

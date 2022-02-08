@@ -10,7 +10,19 @@ export class UserService {
     constructor(private http: HttpClient) {
     }
 
-    getAllUser() {
-        return this.http.get(this.apiUrl + `users`);
+    saveUserPreference(username, request) {
+        return this.http.put(this.apiUrl + `users/${username}/update/vehicleMapping`, request);
+    }
+
+    getAllElectricVehicle() {
+        return this.http.get(this.apiUrl + `master-data/evs?projection=code`);
+    }
+
+    getUserVehicle(username) {
+        return this.http.get(this.apiUrl + `users/${username}?projection=vehicleMapping.evNames`);
+    }
+
+    saveUser(request) {
+        return this.http.post(this.apiUrl + `users`, request);
     }
 }

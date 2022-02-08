@@ -9,6 +9,9 @@ export class AuthGuardService implements CanActivate {
 	}
 
 	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
+		Auth.currentUserInfo().then(user => {
+			sessionStorage.setItem('username', user.attributes.email);
+		});
 		return new Promise((resolve) => {
 			Auth.currentSession().then(loginSession => {
 				if (loginSession) {

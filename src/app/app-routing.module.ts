@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {AuthGuardService} from "./_guard/auth-guard.service";
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: 'home', canActivate: [AuthGuardService],
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
@@ -16,18 +17,17 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'view-route',
+    path: 'view-route', canActivate: [AuthGuardService],
     loadChildren: () => import('./view-route/view-route.module').then( m => m.ViewRoutePageModule)
   },
   {
-    path: 'charging',
+    path: 'charging', canActivate: [AuthGuardService],
     loadChildren: () => import('./charging/charging.module').then(m => m.ChargingPageModule)
   },
   {
-      path: 'error',
+    path: 'error',
     loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
   }
-
 ];
 @NgModule({
   imports: [

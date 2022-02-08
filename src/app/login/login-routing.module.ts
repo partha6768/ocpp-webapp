@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LoginPage } from './login.page';
 import {SliderComponent} from "./slider/slider.component";
+import {AuthGuardService} from "../_guard/auth-guard.service";
 
 const routes: Routes = [
   {
@@ -11,7 +12,8 @@ const routes: Routes = [
   },
   {
     path: 'slider',
-    component: SliderComponent
+    component: SliderComponent,
+    canActivate: [AuthGuardService]
   }
 ];
 
