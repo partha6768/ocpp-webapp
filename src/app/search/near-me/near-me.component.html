@@ -1,27 +1,27 @@
 <ion-content>
   <img class="close-icon" src="./assets/icon/close.svg" (click)="close()"/>
   <div class="model-title">Near me</div>
-  <span class="clr-btn">CLEAR</span>
+  <span class="clr-btn" (click)="radiusInKm=20">CLEAR</span>
   <ion-grid class="box">
     <ion-row>
-      <ion-col class="border-box border-box-selected">
+      <ion-col class="border-box" (click)="changeDistance(0.5)" [ngClass]="{'border-box-selected': radiusInKm === 0.5}">
           <div>500m</div>
       </ion-col>
-      <ion-col class="border-box">
+      <ion-col class="border-box" (click)="changeDistance(1)" [ngClass]="{'border-box-selected': radiusInKm === 1}">
         <div>1km</div>
       </ion-col>
-      <ion-col class="border-box">
+      <ion-col class="border-box" (click)="changeDistance(2)" [ngClass]="{'border-box-selected': radiusInKm === 2}">
         <div>2km</div>
       </ion-col>
-      <ion-col class="border-box">
+      <ion-col class="border-box" (click)="changeDistance(5)" [ngClass]="{'border-box-selected': radiusInKm === 5}">
         <div>5km</div>
       </ion-col>
     </ion-row>
     <ion-row class="padding-t-5">
-      <ion-col class="border-box">
+      <ion-col class="border-box" (click)="changeDistance(10)" [ngClass]="{'border-box-selected': radiusInKm === 10}">
         <div>10km</div>
       </ion-col>
-      <ion-col class="border-box">
+      <ion-col class="border-box" (click)="changeDistance(20)" [ngClass]="{'border-box-selected': radiusInKm === 20}">
         <div>20km</div>
       </ion-col>
       <ion-col></ion-col>

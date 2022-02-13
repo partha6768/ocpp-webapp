@@ -29,10 +29,14 @@ export class SearchPage implements AfterViewInit, OnInit{
     minZoom: 12, maxZoom: 18,
     fullscreenControl: false,
     zoomControl: false,
+    mapTypeControl: false,
+    streetViewControl: false,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   filterLocation: string;
   locationList = [];
+  availableStationFlag = false;
+  fastChargerFlag = false;
 
   constructor(public commonService: CommonService, public modalController: ModalController, private router: Router) { }
 
@@ -152,5 +156,13 @@ export class SearchPage implements AfterViewInit, OnInit{
   filterSelected(data) {
     this.filterLocation = data.formatted_address;
     this.locationList = [];
+  }
+
+  changeFilter(section) {
+    if (section === 'AvailableStation'){
+      this.availableStationFlag = !this.availableStationFlag;
+    } else if (section === 'FastCharger'){
+      this.fastChargerFlag = !this.fastChargerFlag;
+    }
   }
 }

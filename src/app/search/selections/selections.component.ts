@@ -7,30 +7,36 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./selections.component.scss'],
 })
 export class SelectionsComponent implements OnInit {
-  ammenities = [];
-  connectorTypes = [];
-  section = 'ALL';
-  selector= 'All Connectors'
-  Ammenitie= 'All Ammenities'
-  distance = '500m'
+  selectedChargerType: string;
+  selectedConnectorType: string;
+  distance: number;
+  isOnlyFree: boolean;
+  isOnlyAvailable: boolean;
+
   constructor(public modalController: ModalController) { }
 
   ngOnInit() {
+    this.resetFilter();
   }
 
-  changeSection(section) {
-    this.section = section;
+  changeChargerType(chargerType) {
+    this.selectedChargerType = chargerType;
   }
-  changeSelector(selector){
-    this.selector = selector;
-  }
-  changeAmmenities(Ammenitie){
-    this.Ammenitie = Ammenitie;
+  changeConnectorType(connectorType){
+    this.selectedConnectorType = connectorType;
   }
   changeDistance(distance) {
     this.distance = distance;
   }
   close() {
     this.modalController.dismiss();
+  }
+
+  resetFilter() {
+    this.isOnlyFree = false;
+    this.isOnlyAvailable = true;
+    this.selectedChargerType = 'ALL';
+    this.selectedConnectorType= 'ALL';
+    this.distance = 20;
   }
 }

@@ -42,10 +42,10 @@
   <div class="filter-box">
     <ion-img (click)="openFilterMeModal()" class="filter-item-icon" src="assets/icon/filter.svg"></ion-img>
     <div class="filter-item" (click)="openNearMeModal()">Near Me</div>
-    <div class="filter-item">Available Station</div>
-    <div class="filter-item">Discount</div>
-    <div class="filter-item">Fast charger</div>
-    <div class="filter-item" (click)="openRouteModal()">On Route To</div>
+    <div class="filter-item" (click)="changeFilter('AvailableStation')" [ngClass]="{'border-box-selected': availableStationFlag}">Available Station</div>
+    <!--<div class="filter-item">Discount</div>-->
+    <div class="filter-item" (click)="changeFilter('FastCharger')" [ngClass]="{'border-box-selected': fastChargerFlag}">Fast charger</div>
+    <!--<div class="filter-item" (click)="openRouteModal()">On Route To</div>-->
   </div>
 </ion-content>
 

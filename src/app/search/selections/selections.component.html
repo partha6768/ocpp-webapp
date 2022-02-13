@@ -11,13 +11,13 @@
     <ion-grid>
       <div class="title">Chargers</div>
       <ion-row>
-        <ion-col (click)="changeSection('ALL')" class="border-box" [ngClass]="{'selected-bg': section === 'ALL'}">
+        <ion-col (click)="changeChargerType('ALL')" class="border-box" [ngClass]="{'selected-bg': selectedChargerType === 'ALL'}">
           <div class="header-text">ALL</div>
         </ion-col>
-        <ion-col (click)="changeSection('AC')" class="border-box" [ngClass]="{'selected-bg': section === 'AC'}">
+        <ion-col (click)="changeChargerType('AC')" class="border-box" [ngClass]="{'selected-bg': selectedChargerType === 'AC'}">
           <div class="header-text">AC</div>
         </ion-col>
-        <ion-col (click)="changeSection('DC')" class="border-box" [ngClass]="{'selected-bg': section === 'DC'}">
+        <ion-col (click)="changeChargerType('DC')" class="border-box" [ngClass]="{'selected-bg': selectedChargerType === 'DC'}">
           <div class="header-text">DC</div>
         </ion-col>
       </ion-row>
@@ -25,22 +25,22 @@
     <ion-grid>
       <div class="title">Distance</div>
       <ion-row>
-        <ion-col size="2.7" class="border-box-km" (click)="changeDistance('500m')" [ngClass]="{'selected-bg': distance === '500m'}">
+        <ion-col size="2.7" class="border-box-km" (click)="changeDistance(0.5)" [ngClass]="{'selected-bg': distance === 0.5}">
           <div>500m</div>
         </ion-col>
-        <ion-col size="2.7" class="border-box-km" (click)="changeDistance('1km')" [ngClass]="{'selected-bg': distance === '1km'}">
+        <ion-col size="2.7" class="border-box-km" (click)="changeDistance(1)" [ngClass]="{'selected-bg': distance === 1}">
           <div>1km</div>
         </ion-col>
-        <ion-col size="2.7" class="border-box-km" (click)="changeDistance('2km')" [ngClass]="{'selected-bg': distance === '2km'}">
+        <ion-col size="2.7" class="border-box-km" (click)="changeDistance(2)" [ngClass]="{'selected-bg': distance === 2}">
           <div>2km</div>
         </ion-col>
-        <ion-col size="2.7" class="border-box-km" (click)="changeDistance('5km')" [ngClass]="{'selected-bg': distance === '5km'}">
+        <ion-col size="2.7" class="border-box-km" (click)="changeDistance(5)" [ngClass]="{'selected-bg': distance === 5}">
           <div>5km</div>
         </ion-col>
-        <ion-col size="2.7" class="border-box-km" (click)="changeDistance('10km')" [ngClass]="{'selected-bg': distance === '10km'}">
+        <ion-col size="2.7" class="border-box-km" (click)="changeDistance(10)" [ngClass]="{'selected-bg': distance === 10}">
           <div>10km</div>
         </ion-col>
-        <ion-col size="2.7" class="border-box-km" (click)="changeDistance('20km')" [ngClass]="{'selected-bg': distance === '20km'}">
+        <ion-col size="2.7" class="border-box-km" (click)="changeDistance(20)" [ngClass]="{'selected-bg': distance === 20}">
           <div>20km</div>
         </ion-col>
       </ion-row>
@@ -48,34 +48,34 @@
   <ion-grid>
     <div class="title">Connectors</div>
     <ion-row class="connector-ammenities-col">
-      <ion-col size="3.7" (click)="changeSelector('All Connectors')" [ngClass]="{'selected-bg': selector === 'All Connectors'}">
+      <ion-col size="3.7" (click)="changeConnectorType('ALL')" [ngClass]="{'selected-bg': selectedConnectorType === 'ALL'}">
         <div class="name-center-vertical" style="padding-top: 1.5rem;">All</div>
       </ion-col>
-      <ion-col size="3.7" (click)="changeSelector('CCS-2')" [ngClass]="{'selected-bg': selector === 'CCS-2'}">
+      <ion-col size="3.7" (click)="changeConnectorType('CCS-2')" [ngClass]="{'selected-bg': selectedConnectorType === 'CCS-2'}">
           <ion-img class="border-box-sel" src='assets/icon/port/type-1.svg'></ion-img>
           <div class="name" >CCS-2</div>
       </ion-col>
-      <ion-col size="3.7" (click)="changeSelector('AC Type-1')" [ngClass]="{'selected-bg': selector === 'AC Type-1'}">
+      <ion-col size="3.7" (click)="changeConnectorType('AC Type-1')" [ngClass]="{'selected-bg': selectedConnectorType === 'AC Type-1'}">
         <ion-img class="border-box-sel" src='assets/icon/port/type-2.svg'></ion-img>
         <div class="name" >AC Type-1</div>
       </ion-col>
-      <ion-col size="3.7" (click)="changeSelector('CCS-1')" [ngClass]="{'selected-bg': selector === 'CCS-1'}">
+      <ion-col size="3.7" (click)="changeConnectorType('CCS-1')" [ngClass]="{'selected-bg': selectedConnectorType === 'CCS-1'}">
         <ion-img class="border-box-sel" src='assets/icon/port/type-3.svg'></ion-img>
         <div class="name" >CCS-1</div>
       </ion-col>
-      <ion-col size="3.7" (click)="changeSelector('AC Type-2')" [ngClass]="{'selected-bg': selector === 'AC Type-2'}">
+      <ion-col size="3.7" (click)="changeConnectorType('AC Type-2')" [ngClass]="{'selected-bg': selectedConnectorType === 'AC Type-2'}">
         <ion-img class="border-box-sel" src='assets/icon/port/type-4.svg'></ion-img>
         <div class="name" >AC Type-2</div>
       </ion-col>
-      <ion-col size="3.7" (click)="changeSelector('BharatAC001')" [ngClass]="{'selected-bg': selector === 'BharatAC001'}">
+      <ion-col size="3.7" (click)="changeConnectorType('BharatAC001')" [ngClass]="{'selected-bg': selectedConnectorType === 'BharatAC001'}">
         <ion-img class="border-box-sel" src='assets/icon/port/type-5.svg'></ion-img>
         <div class="name" >BharatAC001</div>
       </ion-col>
-      <ion-col size="3.7" (click)="changeSelector('Tesla Charger')" [ngClass]="{'selected-bg': selector === 'Tesla Charger'}">
+      <ion-col size="3.7" (click)="changeConnectorType('Tesla Charger')" [ngClass]="{'selected-bg': selectedConnectorType === 'Tesla Charger'}">
         <ion-img class="border-box-sel" src='assets/icon/port/type-6.svg'></ion-img>
         <div class="name" >Tesla Charger</div>
       </ion-col>
-      <ion-col size="3.7" (click)="changeSelector('Bharat DC001 GB/T')" [ngClass]="{'selected-bg': selector === 'Bharat DC001 GB/T'}">
+      <ion-col size="3.7" (click)="changeConnectorType('Bharat DC001 GB/T')" [ngClass]="{'selected-bg': selectedConnectorType === 'Bharat DC001 GB/T'}">
         <ion-img class="border-box-sel" src='assets/icon/port/type-7.svg'></ion-img>
         <div class="name" >Bharat DC001 GB/T</div>
       </ion-col>
@@ -84,16 +84,16 @@
   <ion-grid>
     <ion-row>
       <ion-col class="btn-txt name-center-vertical">Only Available Chargers</ion-col>
-      <ion-col><ion-toggle class="btn-switch" color="primary"></ion-toggle></ion-col>
+      <ion-col><ion-toggle (ionChange)="isOnlyAvailable = !isOnlyAvailable" checked="{{isOnlyAvailable}}" class="btn-switch" color="primary"></ion-toggle></ion-col>
     </ion-row>
   </ion-grid>
   <ion-grid>
     <ion-row>
       <ion-col class="btn-txt name-center-vertical">Only Free Chargers</ion-col>
-      <ion-col><ion-toggle class="btn-switch" color="primary"></ion-toggle></ion-col>
+      <ion-col><ion-toggle (ionChange)="isOnlyFree = !isOnlyFree" checked="{{isOnlyFree}}" class="btn-switch" color="primary"></ion-toggle></ion-col>
     </ion-row>
   </ion-grid>
-    <ion-grid>
+    <!--<ion-grid>
       <div class="title">Ammenities</div>
       <ion-row class="connector-ammenities-col">
         <ion-col size="3.7" (click)="changeAmmenities('All Ammenities')" [ngClass]="{'selected-bg': Ammenitie === 'All Ammenities'}">
@@ -148,13 +148,13 @@
           <div class="ammenities-name">wifi</div>
         </ion-col>
       </ion-row>
-    </ion-grid>
+    </ion-grid>-->
   </div>
 </ion-content>
 <ion-content scroll-y="false" class="btn-section">
   <ion-grid>
     <ion-row>
-      <ion-col><ion-button class="reset-btn" expand="full" color="danger" fill="outline" size="large">Reset</ion-button></ion-col>
+      <ion-col><ion-button class="reset-btn" expand="full" color="danger" fill="outline" size="large" (click)="resetFilter()">Reset</ion-button></ion-col>
       <ion-col><ion-button class="reset-btn" expand="full" size="large">Apply</ion-button></ion-col>
     </ion-row>
   </ion-grid>
