@@ -29,9 +29,14 @@
   </div>
   <div class="search-box">
     <div style="display: inline-flex;width: 85%">
-      <ion-searchbar mode="md"></ion-searchbar>
+      <ion-searchbar mode="md" [(ngModel)]="filterLocation" (ionInput)="searchLocation()"></ion-searchbar>
     </div>
     <div class="current-location-icon"><ion-img style="width: 30%;margin-left: 17px;" src="assets/icon/target.svg"></ion-img></div>
+    <ion-list style="width: 98%" *ngIf="filterLocation && locationList.length !== 0">
+      <ion-item (click)="filterSelected(data)" *ngFor="let data of locationList">
+        <ion-label>{{data.formatted_address}}</ion-label>
+      </ion-item>
+    </ion-list>
   </div>
   <div #map id="map"></div>
   <div class="filter-box">

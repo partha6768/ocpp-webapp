@@ -138,9 +138,19 @@ export class SearchPage implements AfterViewInit, OnInit{
 
   searchLocation() {
     this.commonService.searchLocation(this.filterLocation).subscribe((data: any) => {
+      this.locationList = [];
       if (data.results) {
-        this.locationList = data.results;
+        data.results.forEach(i => {
+          if (this.filterLocation != i.formatted_address) {
+            this.locationList.push(i);
+          }
+        });
       }
     });
+  }
+
+  filterSelected(data) {
+    this.filterLocation = data.formatted_address;
+    this.locationList = [];
   }
 }
