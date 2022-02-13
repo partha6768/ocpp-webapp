@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable()
 export class CommonService {
 
-    constructor() {
+    constructor(private http: HttpClient) {
     }
 
     currentUserInfo() {
@@ -24,5 +25,9 @@ export class CommonService {
             return '';
         }
         return obj;
+    }
+
+    searchLocation(search) {
+        return this.http.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=${search}&key=AIzaSyDH-JIjvzwccPIxPHOusrTFKZtDT8hohHE`);
     }
 }

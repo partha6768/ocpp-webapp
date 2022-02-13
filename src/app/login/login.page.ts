@@ -32,9 +32,8 @@ export class LoginPage implements OnInit, OnDestroy {
   saveUser(user) {
       if (user && user.attributes) {
         const request = {
-          username: user.attributes.email,
+          username: user.username,
           userDetails: {
-            username: user.username,
             email: user.attributes.email,
             phoneNumber: user.attributes.phone_number,
             emailVerified: user.attributes.email_verified,

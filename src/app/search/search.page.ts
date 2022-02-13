@@ -7,6 +7,7 @@ import {ChargeStationComponent} from "./charge-station/charge-station.component"
 import {UnpaidBillComponent} from "./unpaid-bill/unpaid-bill.component";
 import { NearMeComponent } from './near-me/near-me.component';
 import {SelectionsComponent} from "./selections/selections.component";
+import {CommonService} from "../_service/common-service";
 declare let google;
 
 @Component({
@@ -30,8 +31,10 @@ export class SearchPage implements AfterViewInit, OnInit{
     zoomControl: false,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
+  filterLocation: string;
+  locationList = [];
 
-  constructor(public modalController: ModalController, private router: Router) { }
+  constructor(public commonService: CommonService, public modalController: ModalController, private router: Router) { }
 
   ngAfterViewInit(): void {
     this.mapInitializer();
@@ -133,4 +136,11 @@ export class SearchPage implements AfterViewInit, OnInit{
     this.router.navigate(['/charging/in-progress']);
   }
 
+  searchLocation() {
+    this.commonService.searchLocation(this.filterLocation).subscribe((data: any) => {
+      if (data.results) {
+        this.locationList = data.results;
+      }
+    });
+  }
 }
