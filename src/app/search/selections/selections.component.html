@@ -51,33 +51,9 @@
       <ion-col size="3.7" (click)="changeConnectorType('ALL')" [ngClass]="{'selected-bg': selectedConnectorType === 'ALL'}">
         <div class="name-center-vertical" style="padding-top: 1.5rem;">All</div>
       </ion-col>
-      <ion-col size="3.7" (click)="changeConnectorType('CCS-2')" [ngClass]="{'selected-bg': selectedConnectorType === 'CCS-2'}">
-          <ion-img class="border-box-sel" src='assets/icon/port/type-1.svg'></ion-img>
-          <div class="name" >CCS-2</div>
-      </ion-col>
-      <ion-col size="3.7" (click)="changeConnectorType('AC Type-1')" [ngClass]="{'selected-bg': selectedConnectorType === 'AC Type-1'}">
-        <ion-img class="border-box-sel" src='assets/icon/port/type-2.svg'></ion-img>
-        <div class="name" >AC Type-1</div>
-      </ion-col>
-      <ion-col size="3.7" (click)="changeConnectorType('CCS-1')" [ngClass]="{'selected-bg': selectedConnectorType === 'CCS-1'}">
-        <ion-img class="border-box-sel" src='assets/icon/port/type-3.svg'></ion-img>
-        <div class="name" >CCS-1</div>
-      </ion-col>
-      <ion-col size="3.7" (click)="changeConnectorType('AC Type-2')" [ngClass]="{'selected-bg': selectedConnectorType === 'AC Type-2'}">
-        <ion-img class="border-box-sel" src='assets/icon/port/type-4.svg'></ion-img>
-        <div class="name" >AC Type-2</div>
-      </ion-col>
-      <ion-col size="3.7" (click)="changeConnectorType('BharatAC001')" [ngClass]="{'selected-bg': selectedConnectorType === 'BharatAC001'}">
-        <ion-img class="border-box-sel" src='assets/icon/port/type-5.svg'></ion-img>
-        <div class="name" >BharatAC001</div>
-      </ion-col>
-      <ion-col size="3.7" (click)="changeConnectorType('Tesla Charger')" [ngClass]="{'selected-bg': selectedConnectorType === 'Tesla Charger'}">
-        <ion-img class="border-box-sel" src='assets/icon/port/type-6.svg'></ion-img>
-        <div class="name" >Tesla Charger</div>
-      </ion-col>
-      <ion-col size="3.7" (click)="changeConnectorType('Bharat DC001 GB/T')" [ngClass]="{'selected-bg': selectedConnectorType === 'Bharat DC001 GB/T'}">
-        <ion-img class="border-box-sel" src='assets/icon/port/type-7.svg'></ion-img>
-        <div class="name" >Bharat DC001 GB/T</div>
+      <ion-col *ngFor="let connectorType of connectorTypeList" size="3.7" (click)="changeConnectorType(connectorType)" [ngClass]="{'selected-bg': selectedConnectorType === connectorType}">
+          <img onerror="this.onerror=null; this.src='assets/icon/port/ACType-1.svg'" class="border-box-sel" src='assets/icon/port/{{connectorType}}.svg' />
+          <div class="name">{{connectorType}}</div>
       </ion-col>
     </ion-row>
   </ion-grid>

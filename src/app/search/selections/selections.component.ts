@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import {CommonService} from "../../_service/common-service";
 
 @Component({
   selector: 'app-selections',
@@ -12,10 +13,12 @@ export class SelectionsComponent implements OnInit {
   distance: number;
   isOnlyFree: boolean;
   isOnlyAvailable: boolean;
+  connectorTypeList = [];
 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController, private commonService: CommonService) { }
 
   ngOnInit() {
+    this.connectorTypeList = this.commonService.getConnectorTypeListForFilter();
     this.resetFilter();
   }
 

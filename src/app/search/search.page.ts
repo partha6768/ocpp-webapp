@@ -46,6 +46,7 @@ export class SearchPage implements AfterViewInit, OnInit{
 
   ngOnInit() {
     this.openPendingModel();
+    this.getCurrentLocation();
   }
 
   mapInitializer(): void {
@@ -164,5 +165,11 @@ export class SearchPage implements AfterViewInit, OnInit{
     } else if (section === 'FastCharger'){
       this.fastChargerFlag = !this.fastChargerFlag;
     }
+  }
+
+  getCurrentLocation() {
+    this.commonService.getCurrentLocation().then((pos) => {
+      console.log(`Positon: ${pos.lng} ${pos.lat}`);
+    });
   }
 }

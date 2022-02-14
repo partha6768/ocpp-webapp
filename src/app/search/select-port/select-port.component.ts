@@ -15,13 +15,13 @@ export class SelectPortComponent implements OnInit {
 
   ngOnInit() {
     this.connectorTypes = [
-      { icon: 'assets/icon/port/type-1.svg', name: 'CCS-2'},
-      { icon: 'assets/icon/port/type-2.svg', name: 'AC Type-1'},
-      { icon: 'assets/icon/port/type-3.svg', name: 'CCS-1'},
-      { icon: 'assets/icon/port/type-4.svg', name: 'AC Type-2'},
-      { icon: 'assets/icon/port/type-5.svg', name: 'BharatAC001'},
-      { icon: 'assets/icon/port/type-6.svg', name: 'Tesla Charger'},
-      { icon: 'assets/icon/port/type-7.svg', name: 'Bharat DC001 GB/T'}
+      { icon: 'assets/icon/port/CCS-2.svg', name: 'CCS-2'},
+      { icon: 'assets/icon/port/ACType-1.svg', name: 'AC Type-1'},
+      { icon: 'assets/icon/port/CCS-1.svg', name: 'CCS-1'},
+      { icon: 'assets/icon/port/ACType-2.svg', name: 'AC Type-2'},
+      { icon: 'assets/icon/port/BharatAC001.svg', name: 'BharatAC001'},
+      { icon: 'assets/icon/port/TeslaCharger.svg', name: 'Tesla Charger'},
+      { icon: 'assets/icon/port/Bharat-DC001-GB-T.svg', name: 'Bharat DC001 GB/T'}
     ];
   }
 
