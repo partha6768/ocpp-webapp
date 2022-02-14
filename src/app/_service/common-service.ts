@@ -37,6 +37,7 @@ export class CommonService {
     getCurrentLocation(): Promise<any> {
         return new Promise((resolve, reject) => {
             navigator.geolocation.getCurrentPosition(resp => {
+                console.log(resp.coords);
                 resolve({lng: resp.coords.longitude, lat: resp.coords.latitude});
             }, err => {
                 reject(err);

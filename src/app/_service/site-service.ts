@@ -10,8 +10,8 @@ export class SiteService {
     constructor(private http: HttpClient) {
     }
 
-    getAllSites() {
-        return this.http.get(this.apiUrl + `sites?projection=code,siteDetails,address`);
+    getAllSites(lat, lng, radiusInKm, urlParam) {
+        return this.http.get(this.apiUrl + `sites-nearby?lat=${lat}&lng=${lng}&radiusInKm=${radiusInKm}${urlParam}`);
     }
     getSiteById(id) {
         return this.http.get(this.apiUrl + `sites/${id}`);

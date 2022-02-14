@@ -8,6 +8,7 @@ import {UnpaidBillComponent} from "./unpaid-bill/unpaid-bill.component";
 import { NearMeComponent } from './near-me/near-me.component';
 import {SelectionsComponent} from "./selections/selections.component";
 import {CommonService} from "../_service/common-service";
+import {SiteService} from "../_service/site-service";
 declare let google;
 
 @Component({
@@ -20,25 +21,16 @@ export class SearchPage implements AfterViewInit, OnInit{
   @ViewChild('map', { static: false }) mapElement: ElementRef;
   map: any;
   markers: any;
-  lat = 40.73061;
-  lng = -73.935242;
-  coordinates = new google.maps.LatLng(this.lat, this.lng);
-  mapOptions = {
-    center: this.coordinates,
-    zoom: 12,
-    minZoom: 12, maxZoom: 18,
-    fullscreenControl: false,
-    zoomControl: false,
-    mapTypeControl: false,
-    streetViewControl: false,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
+  coordinates: any;
+  mapOptions: any;
   filterLocation: string;
   locationList = [];
   availableStationFlag = false;
   fastChargerFlag = false;
 
-  constructor(public commonService: CommonService, public modalController: ModalController, private router: Router) { }
+  constructor(public commonService: CommonService, public siteService: SiteService, public modalController: ModalController, private router: Router) {
+    this.getCurrentLocation();
+  }
 
   ngAfterViewInit(): void {
     this.mapInitializer();
@@ -46,29 +38,23 @@ export class SearchPage implements AfterViewInit, OnInit{
 
   ngOnInit() {
     this.openPendingModel();
-    this.getCurrentLocation();
   }
 
   mapInitializer(): void {
     this.map = new google.maps.Map(this.mapElement.nativeElement, this.mapOptions);
-    this.markers = [{
-        position: new google.maps.LatLng(40.73061, 73.935242),
-        map: this.map,
-        title: 'CP001',
-        icon: 'assets/icon/fast_charger_available.svg'
-      },{
-        position: new google.maps.LatLng(32.06485, 34.763226),
-        map: this.map,
-        title: 'CP002',
-        icon: 'assets/icon/normal_charger_available.svg'
-      },
-      {
-        position: new google.maps.LatLng(40.73061, -73.935242),
-        map: this.map,
-        title: 'CP003',
-        icon: 'assets/icon/normal_charger_available.svg'
+    this.siteService.getAllSites(20.313038, 85.781894,20, '').subscribe((items: any) => {
+      this.markers = [];
+      if (items.result && items.result.length != 0) {
+        items.result.forEach(item => {
+          this.markers.push({
+            position: new google.maps.LatLng(item.latlng.lat, item.latlng.lng),
+            map: this.map,
+            title: item.siteDetails.dispName,
+            icon: 'assets/icon/fast_charger_available.svg'
+          });
+        });
       }
-    ];
+    });
     google.maps.event.addListenerOnce(this.map, 'idle', () => {
       this.loadAllMarkers();
     });
@@ -156,6 +142,7 @@ export class SearchPage implements AfterViewInit, OnInit{
 
   filterSelected(data) {
     this.filterLocation = data.formatted_address;
+    this.focusToPosition(data.geometry.location.lat, data.geometry.location.lng);
     this.locationList = [];
   }
 
@@ -169,7 +156,23 @@ export class SearchPage implements AfterViewInit, OnInit{
 
   getCurrentLocation() {
     this.commonService.getCurrentLocation().then((pos) => {
-      console.log(`Positon: ${pos.lng} ${pos.lat}`);
+      this.focusToPosition(pos.lat, pos.lng);
+      this.mapInitializer();
     });
+  }
+
+  focusToPosition(lat, lng) {
+    this.coordinates = new google.maps.LatLng(lat, lng);
+    this.mapOptions = {
+      center: this.coordinates,
+      zoom: 12,
+      minZoom: 12, maxZoom: 18,
+      fullscreenControl: false,
+      zoomControl: false,
+      mapTypeControl: false,
+      streetViewControl: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    this.mapInitializer();
   }
 }

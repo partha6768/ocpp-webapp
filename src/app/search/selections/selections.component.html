@@ -52,7 +52,7 @@
         <div class="name-center-vertical" style="padding-top: 1.5rem;">All</div>
       </ion-col>
       <ion-col *ngFor="let connectorType of connectorTypeList" size="3.7" (click)="changeConnectorType(connectorType)" [ngClass]="{'selected-bg': selectedConnectorType === connectorType}">
-          <img onerror="this.onerror=null; this.src='assets/icon/port/ACType-1.svg'" class="border-box-sel" src='assets/icon/port/{{connectorType}}.svg' />
+          <img onerror="this.src='assets/icon/port/ACType-1.svg'" class="border-box-sel" src='assets/icon/port/{{connectorType}}.svg' />
           <div class="name">{{connectorType}}</div>
       </ion-col>
     </ion-row>
