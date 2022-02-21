@@ -11,12 +11,13 @@ import {AuthGuardService} from "./_guard/auth-guard.service";
 import {SiteService} from "./_service/site-service";
 import {HttpClientModule} from "@angular/common/http";
 import {CommonService} from "./_service/common-service";
+import {DataService} from "./_service/data.service";
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule, AmplifyUIAngularModule],
-  providers: [SiteService, UserService, CommonService, AuthGuardService, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [SiteService, UserService, DataService, CommonService, AuthGuardService, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

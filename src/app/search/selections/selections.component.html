@@ -11,7 +11,7 @@
     <ion-grid>
       <div class="title">Chargers</div>
       <ion-row>
-        <ion-col (click)="changeChargerType('ALL')" class="border-box" [ngClass]="{'selected-bg': selectedChargerType === 'ALL'}">
+        <ion-col (click)="changeChargerType('')" class="border-box" [ngClass]="{'selected-bg': selectedChargerType === ''}">
           <div class="header-text">ALL</div>
         </ion-col>
         <ion-col (click)="changeChargerType('AC')" class="border-box" [ngClass]="{'selected-bg': selectedChargerType === 'AC'}">
@@ -48,7 +48,7 @@
   <ion-grid>
     <div class="title">Connectors</div>
     <ion-row class="connector-ammenities-col">
-      <ion-col size="3.7" (click)="changeConnectorType('ALL')" [ngClass]="{'selected-bg': selectedConnectorType === 'ALL'}">
+      <ion-col size="3.7" (click)="changeConnectorType('')" [ngClass]="{'selected-bg': selectedConnectorType === ''}">
         <div class="name-center-vertical" style="padding-top: 1.5rem;">All</div>
       </ion-col>
       <ion-col *ngFor="let connectorType of connectorTypeList" size="3.7" (click)="changeConnectorType(connectorType)" [ngClass]="{'selected-bg': selectedConnectorType === connectorType}">
@@ -131,7 +131,7 @@
   <ion-grid>
     <ion-row>
       <ion-col><ion-button class="reset-btn" expand="full" color="danger" fill="outline" size="large" (click)="resetFilter()">Reset</ion-button></ion-col>
-      <ion-col><ion-button class="reset-btn" expand="full" size="large">Apply</ion-button></ion-col>
+      <ion-col><ion-button class="reset-btn" expand="full" size="large" (click)="applyFilter()">Apply</ion-button></ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

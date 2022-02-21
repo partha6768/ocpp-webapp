@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import {CommonService} from "../../_service/common-service";
+import {DataService} from "../../_service/data.service";
 
 @Component({
   selector: 'app-selections',
@@ -8,18 +9,17 @@ import {CommonService} from "../../_service/common-service";
   styleUrls: ['./selections.component.scss'],
 })
 export class SelectionsComponent implements OnInit {
-  selectedChargerType: string;
-  selectedConnectorType: string;
-  distance: number;
-  isOnlyFree: boolean;
-  isOnlyAvailable: boolean;
+  selectedChargerType = '';
+  selectedConnectorType = '';
+  distance = 20;
+  isOnlyFree = false;
+  isOnlyAvailable = true;
   connectorTypeList = [];
 
-  constructor(public modalController: ModalController, private commonService: CommonService) { }
+  constructor(public modalController: ModalController, private dataService: DataService, private commonService: CommonService) { }
 
   ngOnInit() {
     this.connectorTypeList = this.commonService.getConnectorTypeListForFilter();
-    this.resetFilter();
   }
 
   changeChargerType(chargerType) {
@@ -38,8 +38,19 @@ export class SelectionsComponent implements OnInit {
   resetFilter() {
     this.isOnlyFree = false;
     this.isOnlyAvailable = true;
-    this.selectedChargerType = 'ALL';
-    this.selectedConnectorType= 'ALL';
+    this.selectedChargerType = '';
+    this.selectedConnectorType= '';
     this.distance = 20;
+  }
+
+  applyFilter() {
+    const filterObj = {
+      distance: this.distance,
+      connectorType: this.selectedConnectorType,
+      chargerType: this.selectedChargerType,
+      isFree: this.isOnlyFree,
+      isAvailable: this.isOnlyAvailable
+    };
+    this.dataService.updateFilter(filterObj);
   }
 }

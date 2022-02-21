@@ -9,6 +9,7 @@ import { NearMeComponent } from './near-me/near-me.component';
 import {SelectionsComponent} from "./selections/selections.component";
 import {CommonService} from "../_service/common-service";
 import {SiteService} from "../_service/site-service";
+import {DataService} from "../_service/data.service";
 declare let google;
 
 @Component({
@@ -28,7 +29,7 @@ export class SearchPage implements AfterViewInit, OnInit{
   availableStationFlag = false;
   fastChargerFlag = false;
 
-  constructor(public commonService: CommonService, public siteService: SiteService, public modalController: ModalController, private router: Router) {
+  constructor(public commonService: CommonService, private dataService: DataService, public siteService: SiteService, public modalController: ModalController, private router: Router) {
     this.getCurrentLocation();
   }
 
@@ -38,6 +39,9 @@ export class SearchPage implements AfterViewInit, OnInit{
 
   ngOnInit() {
     this.openPendingModel();
+    this.dataService.filter.subscribe((obj: any) => {
+      console.log(obj);
+    });
   }
 
   mapInitializer(): void {
