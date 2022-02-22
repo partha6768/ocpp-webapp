@@ -57,18 +57,22 @@ export class ChargingLimitComponent implements OnInit {
   }
 
   startCharging() {
-    const obj = this.dataService.getStartChargeData();
-    const request = {
-      username: "godsonherpatt@gmail.com",
-      connectorCode: obj.connectorCode,
-      requestedTimeMins: this.selectedTimeSlotInMin,
-      pricing: obj.pricing,
-      userLatLng: this.userLatLng
-    };
-    this.siteService.startCharging(request).subscribe((data: any) => {
-      if (data.result) {
-        this.router.navigate(['/charging/in-progress']);
+    this.dataService.startCharge.subscribe((obj: any) => {
+      if (obj == null) {
+        this.router.navigate(['/home/search/scan-qr']);
       }
+      const request = {
+        username: "godsonherpatt@gmail.com",
+        connectorCode: obj.connectorCode,
+        requestedTimeMins: this.selectedTimeSlotInMin,
+        pricing: obj.pricing,
+        userLatLng: this.userLatLng
+      };
+      this.siteService.startCharging(request).subscribe((data: any) => {
+        if (data.result) {
+          this.router.navigate(['/charging/in-progress']);
+        }
+      });
     });
   }
 }

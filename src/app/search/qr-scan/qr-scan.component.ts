@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {ModalController} from "@ionic/angular";
+import {ModalController, ToastController} from "@ionic/angular";
 import {SelectPortComponent} from "../select-port/select-port.component";
 import {DataService} from "../../_service/data.service";
 import {SiteService} from "../../_service/site-service";
+import {CommonService} from "../../_service/common-service";
 
 @Component({
   selector: 'app-qr-scan',
@@ -12,7 +13,7 @@ import {SiteService} from "../../_service/site-service";
 })
 export class QrScanComponent implements OnInit {
 
-  constructor(private router: Router, public modalController: ModalController, private dataService: DataService, private siteService: SiteService) { }
+  constructor(private router: Router, private commonService: CommonService, public modalController: ModalController, private dataService: DataService, private siteService: SiteService) { }
 
   ngOnInit() {}
 
@@ -34,13 +35,15 @@ export class QrScanComponent implements OnInit {
     this.qrResultString = resultString;
     const chargePointId = this.qrResultString.split('-')[0] + '-' + this.qrResultString.split('-')[1];
     this.siteService.getChargePointById(chargePointId).subscribe((data: any) => {
-      if (data.result) {
+      if (data.result && data.result.length > 0) {
         this.dataService.updateStartChargeCode({
           connectorCode: this.qrResultString,
-          pricing: data.result.pricing
+          pricing: data.result[0].pricing
         });
         this.openPortScreen();
       }
+    }, error => {
+      this.commonService.showToast('Wrong QR Code');
     });
   }
 

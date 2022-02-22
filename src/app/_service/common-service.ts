@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {environment} from "../../environments/environment";
+import {ToastController} from "@ionic/angular";
 
 @Injectable()
 export class CommonService {
 
     private apiUrl = environment.apiURL + '/api/cb/v1/';
 
-    constructor(private http: HttpClient) {
+    constructor(public toastController: ToastController, private http: HttpClient) {
     }
 
     currentUserInfo() {
@@ -56,5 +57,15 @@ export class CommonService {
             }
         });
         return list;
+    }
+
+    async showToast(msg) {
+        const toast = await this.toastController.create({
+            message: msg,
+            duration: 2000,
+            cssClass: 'toast_style',
+            color: 'secondary'
+        });
+        await toast.present();
     }
 }
