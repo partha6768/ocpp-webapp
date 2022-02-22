@@ -19,6 +19,9 @@ export class DataService {
 	private readonly filterSubject: BehaviorSubject<boolean>;
 	public filter: Observable<boolean>;
 
+	private readonly startChargeSubject: BehaviorSubject<any>;
+	public startCharge: Observable<any>;
+
 	constructor() {
 		this.chargerTypeFilterSubject = new BehaviorSubject<string>('');
 		this.chargerTypeFilter = this.chargerTypeFilterSubject.asObservable();
@@ -34,6 +37,9 @@ export class DataService {
 
 		this.filterSubject = new BehaviorSubject<boolean>(false);
 		this.filter = this.filterSubject.asObservable();
+
+		this.startChargeSubject = new BehaviorSubject<any>(null);
+		this.startCharge = this.startChargeSubject.asObservable();
 	}
 
 	public get getFilter(): any {
@@ -42,6 +48,14 @@ export class DataService {
 
 	updateFilter(obj: any) {
 		this.filterSubject.next(obj);
+	}
+
+	public get getStartChargeData(): string {
+		return this.startChargeSubject.value;
+	}
+
+	updateStartChargeCode(obj: any) {
+		this.startChargeSubject.next(obj);
 	}
 
 	public get getAvailabilityForFilter(): boolean {

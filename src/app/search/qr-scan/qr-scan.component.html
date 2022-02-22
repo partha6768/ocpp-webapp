@@ -18,7 +18,7 @@
         Enter code written below QR code
     </div>
     <ion-item class="code-text">
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="qrResultString"></ion-input>
     </ion-item>
     <ion-button (click)="openPortScreen()" class="margin-20" expand="full" size="large">Confirm Code</ion-button>
 </div>

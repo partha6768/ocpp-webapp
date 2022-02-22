@@ -1,6 +1,8 @@
 .port-icon {
   width: 3.25rem;
   margin: auto;
+  text-align: center;
+  display: block;
 }
 .wrong-port-icon{
   width: 3.25rem;
@@ -26,7 +28,6 @@
   color: #273d4c;
 }
 ion-col > div {
-  background-color: #f3f7fa;
   padding: 10px;
   min-height: 6rem;
   border-radius: 5px;
@@ -98,4 +99,9 @@ ion-col > div {
   border-radius: 4px;
   height: 3rem;
   margin-top: 0 !important;
+}
+.selected-bg{
+  background-color: #30CF87 !important;
+  color: white !important;
+  font-weight: bold;
 }

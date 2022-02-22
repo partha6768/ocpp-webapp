@@ -19,7 +19,6 @@ export class LoginPage implements OnInit, OnDestroy {
       this.user = authData as CognitoUserInterface;
       if(this.authState === 'signedin' && this.user){
         this.saveUser(this.user);
-        this.router.navigate(['/login/slider']);
       }
       this.ref.detectChanges();
     });
@@ -38,11 +37,20 @@ export class LoginPage implements OnInit, OnDestroy {
             phoneNumber: user.attributes.phone_number,
             emailVerified: user.attributes.email_verified,
             phoneNumberVerified: user.attributes.phone_number_verified
+          },
+          address: {
+            address1: " ",
+            address2: " ",
+            city: " ",
+            state: " ",
+            country: " ",
+            zipCode: " "
           }
         };
         this.userService.saveUser(request).subscribe((data: any) => {
           if (data.result && data.result.status) {
             console.log('-----USER INFO SAVED------');
+            this.router.navigate(['/login/slider']);
           }
         });
       }

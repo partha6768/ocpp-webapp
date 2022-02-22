@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ModalController} from "@ionic/angular";
 import {Router} from "@angular/router";
+import {CommonService} from "../../_service/common-service";
+import {DataService} from "../../_service/data.service";
 
 @Component({
   selector: 'app-select-port',
@@ -11,18 +13,11 @@ export class SelectPortComponent implements OnInit {
 
   connectorTypes = [];
   isWrongPort = false;
-  constructor(public modalController: ModalController, private router: Router) { }
+  selectedConnectorType: any;
+  constructor(public modalController: ModalController, private router: Router, private commonService: CommonService, private dataService: DataService) { }
 
   ngOnInit() {
-    this.connectorTypes = [
-      { icon: 'assets/icon/port/CCS-2.svg', name: 'CCS-2'},
-      { icon: 'assets/icon/port/ACType-1.svg', name: 'AC Type-1'},
-      { icon: 'assets/icon/port/CCS-1.svg', name: 'CCS-1'},
-      { icon: 'assets/icon/port/ACType-2.svg', name: 'AC Type-2'},
-      { icon: 'assets/icon/port/BharatAC001.svg', name: 'BharatAC001'},
-      { icon: 'assets/icon/port/TeslaCharger.svg', name: 'Tesla Charger'},
-      { icon: 'assets/icon/port/Bharat-DC001-GB-T.svg', name: 'Bharat DC001 GB/T'}
-    ];
+    this.connectorTypes = this.commonService.getConnectorTypeListForFilter();
   }
 
   close() {
@@ -36,5 +31,9 @@ export class SelectPortComponent implements OnInit {
 
   openWrongPortScreen() {
     this.isWrongPort = true;
+  }
+
+  changeConnectorType(connectorType) {
+    this.selectedConnectorType = connectorType;
   }
 }

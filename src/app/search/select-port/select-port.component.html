@@ -3,10 +3,10 @@
   <div class="title">Select Port</div>
   <ion-grid class="padding-0">
     <ion-row class="margin-lr-1rem">
-      <ion-col size="4"  *ngFor="let connectorType of connectorTypes">
+      <ion-col style="background-color: #f3f7fa;" *ngFor="let connectorType of connectorTypes" size="4" (click)="changeConnectorType(connectorType)" [ngClass]="{'selected-bg': selectedConnectorType === connectorType}">
         <div>
-          <ion-img class="port-icon" [src]="connectorType.icon"></ion-img>
-          <div class="name">{{connectorType.name}}</div>
+          <img onerror="this.src='assets/icon/port/ACType-1.svg'" class="port-icon" src='assets/icon/port/{{connectorType}}.svg' />
+          <div class="name">{{connectorType}}</div>
         </div>
       </ion-col>
     </ion-row>

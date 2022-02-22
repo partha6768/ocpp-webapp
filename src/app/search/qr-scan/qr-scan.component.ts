@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {ModalController} from "@ionic/angular";
-import {NearMeComponent} from "../near-me/near-me.component";
 import {SelectPortComponent} from "../select-port/select-port.component";
+import {DataService} from "../../_service/data.service";
 
 @Component({
   selector: 'app-qr-scan',
@@ -11,7 +11,7 @@ import {SelectPortComponent} from "../select-port/select-port.component";
 })
 export class QrScanComponent implements OnInit {
 
-  constructor(private router: Router, public modalController: ModalController) { }
+  constructor(private router: Router, public modalController: ModalController, private dataService: DataService) { }
 
   ngOnInit() {}
 
@@ -31,6 +31,7 @@ export class QrScanComponent implements OnInit {
 
   onCodeResult(resultString: string) {
     this.qrResultString = resultString;
+    this.openPortScreen();
   }
 
   onHasPermission(has: boolean) {
@@ -54,6 +55,9 @@ export class QrScanComponent implements OnInit {
   }
 
   async openPortScreen() {
+    this.dataService.updateStartChargeCode({
+      connectorCode: this.qrResultString
+    });
     const modal = await this.modalController.create({
       component: SelectPortComponent,
       cssClass: 'select-port'

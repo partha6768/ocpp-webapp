@@ -46,7 +46,7 @@ export class SearchPage implements AfterViewInit, OnInit{
 
   mapInitializer(): void {
     this.map = new google.maps.Map(this.mapElement.nativeElement, this.mapOptions);
-    this.siteService.getAllSites(20.313038, 85.781894,20, '').subscribe((items: any) => {
+    this.siteService.getAllSites(20.462196, 85.882962,20, '').subscribe((items: any) => {
       this.markers = [];
       if (items.result && items.result.length != 0) {
         items.result.forEach(item => {
