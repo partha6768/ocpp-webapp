@@ -30,7 +30,9 @@ export class SelectPortComponent implements OnInit {
   }
 
   openWrongPortScreen() {
-    this.isWrongPort = true;
+    this.isWrongPort = false;
+    this.modalController.dismiss();
+    this.router.navigate(['/home/search/connect-port']);
   }
 
   changeConnectorType(connectorType) {

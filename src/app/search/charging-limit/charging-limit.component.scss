@@ -56,9 +56,13 @@
 }
 .time-slot ion-col{
   border-radius: 5px;
+  cursor: pointer;
   box-shadow: 0 0 8px 0 rgb(34 62 80 / 8%);
   height: 5rem;
   display: flex;
+  min-width: 10%;
+  max-width: 10%;
+  margin: 2px;
   justify-content: center;
   align-items: center;
 }

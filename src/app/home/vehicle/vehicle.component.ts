@@ -28,7 +28,7 @@ export class VehicleComponent implements OnInit {
 
   saveUserPreference() {
     const request = {
-      evNames: this.userSelectionFromDB
+      evNames: [this.userSelectionFromDB]
     };
     this.userService.saveUserPreference(this.userName, request).subscribe((data: any) => {
       if (data.result) {

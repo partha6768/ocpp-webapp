@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {ModalController} from "@ionic/angular";
 import {SelectPortComponent} from "../select-port/select-port.component";
 import {DataService} from "../../_service/data.service";
+import {SiteService} from "../../_service/site-service";
 
 @Component({
   selector: 'app-qr-scan',
@@ -11,7 +12,7 @@ import {DataService} from "../../_service/data.service";
 })
 export class QrScanComponent implements OnInit {
 
-  constructor(private router: Router, public modalController: ModalController, private dataService: DataService) { }
+  constructor(private router: Router, public modalController: ModalController, private dataService: DataService, private siteService: SiteService) { }
 
   ngOnInit() {}
 
@@ -31,7 +32,16 @@ export class QrScanComponent implements OnInit {
 
   onCodeResult(resultString: string) {
     this.qrResultString = resultString;
-    this.openPortScreen();
+    const chargePointId = this.qrResultString.split('-')[0] + '-' + this.qrResultString.split('-')[1];
+    this.siteService.getChargePointById(chargePointId).subscribe((data: any) => {
+      if (data.result) {
+        this.dataService.updateStartChargeCode({
+          connectorCode: this.qrResultString,
+          pricing: data.result.pricing
+        });
+        this.openPortScreen();
+      }
+    });
   }
 
   onHasPermission(has: boolean) {
@@ -55,9 +65,6 @@ export class QrScanComponent implements OnInit {
   }
 
   async openPortScreen() {
-    this.dataService.updateStartChargeCode({
-      connectorCode: this.qrResultString
-    });
     const modal = await this.modalController.create({
       component: SelectPortComponent,
       cssClass: 'select-port'

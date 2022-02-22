@@ -8,43 +8,8 @@
     <div class="content-title">Select time slots</div>
     <ion-grid class="time-slot padding-15">
       <ion-row>
-        <ion-col (click)="selectTimeSlot($event)" class="color-light-grey">
-          <div class="time-text time-text-selected">12am</div>
-        </ion-col>
-        <ion-col>
-
-        </ion-col>
-        <ion-col>
-          <div class="time-text">1am</div>
-        </ion-col>
-        <ion-col>
-
-        </ion-col>
-        <ion-col>
-          <div class="time-text">2am</div>
-        </ion-col>
-        <ion-col>
-
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <div class="time-text">3am</div>
-        </ion-col>
-        <ion-col>
-
-        </ion-col>
-        <ion-col>
-          <div class="time-text">4am</div>
-        </ion-col>
-        <ion-col>
-
-        </ion-col>
-        <ion-col>
-          <div class="time-text">5am</div>
-        </ion-col>
-        <ion-col>
-
+        <ion-col *ngFor="let time of times" (click)="selectTimeSlot(time)" [ngClass]="{'color-light-grey': time?.selected}">
+          <div class="time-text" [ngClass]="{'time-text-selected': time?.selected}">{{time?.dspValue}}</div>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -54,7 +19,7 @@
     <div class="margin-content">
       <span class="content-sub-text-1">₹</span>
       <ion-item class="content-sub-text-2 ml-1rem">
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="selectedAmount"></ion-input>
       </ion-item>
     </div>
     <div class="content-footer"><span class="fw-600">₹ 200</span> Maximum allowed</div>
@@ -63,7 +28,7 @@
     <div class="content-title">How much kWh?</div>
     <div class="margin-content">
       <ion-item class="content-sub-text-2">
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="selectedKWh"></ion-input>
       </ion-item>
       <span class="content-sub-text-1">kWh</span>
     </div>
@@ -73,15 +38,15 @@
     <ion-grid>
       <ion-row>
         <ion-col (click)="changeSection('time')" class="border-box" [ngClass]="{'bg-green': section === 'time'}">
-          <div class="header-text" [ngClass]="{'color-white': section === 'time'}">30 mins</div>
+          <div class="header-text" [ngClass]="{'color-white': section === 'time'}">{{selectedTimeSlotInMin}} mins</div>
           <div class="body-text" [ngClass]="{'color-darkgreen': section === 'time'}">Charging time</div>
         </ion-col>
         <ion-col (click)="changeSection('amount')" class="border-box" [ngClass]="{'bg-green': section === 'amount'}">
-          <div class="header-text" [ngClass]="{'color-white': section === 'amount'}">₹10.00</div>
+          <div class="header-text" [ngClass]="{'color-white': section === 'amount'}">₹{{selectedAmount}}</div>
           <div class="body-text" [ngClass]="{'color-darkgreen': section === 'amount'}">Amount</div>
         </ion-col>
         <ion-col (click)="changeSection('charge')" class="border-box" [ngClass]="{'bg-green': section === 'charge'}">
-          <div class="header-text" [ngClass]="{'color-white': section === 'charge'}">10kW</div>
+          <div class="header-text" [ngClass]="{'color-white': section === 'charge'}">{{selectedKWh}}kW</div>
           <div class="body-text" [ngClass]="{'color-darkgreen': section === 'charge'}">Charge</div>
         </ion-col>
       </ion-row>

@@ -16,6 +16,9 @@ export class SiteService {
     getSiteById(id) {
         return this.http.get(this.apiUrl + `sites/${id}`);
     }
+    getChargePointById(id) {
+        return this.http.get(this.apiUrl + `charge-points//${id}?projection=code,pricing`);
+    }
     getSiteListForFilter(tenantCode) {
         const list = [];
         this.http.get(this.apiUrl + 'sites?projection=code,siteDetails.dispName,siteDetails.tenantCode').subscribe((item: any) => {
