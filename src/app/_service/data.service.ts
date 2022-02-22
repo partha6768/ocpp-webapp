@@ -50,7 +50,7 @@ export class DataService {
 		this.filterSubject.next(obj);
 	}
 
-	public get getStartChargeData(): string {
+	public get getStartChargeData(): any {
 		return this.startChargeSubject.value;
 	}
 

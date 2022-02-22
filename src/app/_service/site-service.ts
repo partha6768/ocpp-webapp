@@ -47,4 +47,8 @@ export class SiteService {
         });
         return list;
     }
+
+    startCharging(request) {
+        return this.http.post(this.apiUrl + `charging/start`, request);
+    }
 }

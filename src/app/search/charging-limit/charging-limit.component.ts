@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from "../../_service/data.service";
+import {CommonService} from "../../_service/common-service";
+import {SiteService} from "../../_service/site-service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-charging-limit',
@@ -11,7 +15,15 @@ export class ChargingLimitComponent implements OnInit {
   selectedKWh = 0;
   times = [];
   selectedTimeSlotInMin = 0;
-  constructor() { }
+  userLatLng: any;
+  constructor(private router: Router, private dataService: DataService, private commonService: CommonService, private siteService: SiteService) {
+    this.commonService.getCurrentLocation().then((pos) => {
+      this.userLatLng = {
+        lat: pos.lat,
+        lng: pos.lng
+      }
+    });
+  }
 
   ngOnInit() {
     const x = 30;
@@ -44,7 +56,19 @@ export class ChargingLimitComponent implements OnInit {
     obj.selected = !obj.selected;
   }
 
-  openPortScreen() {
-
+  startCharging() {
+    const obj = this.dataService.getStartChargeData();
+    const request = {
+      username: "godsonherpatt@gmail.com",
+      connectorCode: obj.connectorCode,
+      requestedTimeMins: this.selectedTimeSlotInMin,
+      pricing: obj.pricing,
+      userLatLng: this.userLatLng
+    };
+    this.siteService.startCharging(request).subscribe((data: any) => {
+      if (data.result) {
+        this.router.navigate(['/charging/in-progress']);
+      }
+    });
   }
 }
