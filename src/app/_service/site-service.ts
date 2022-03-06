@@ -51,4 +51,7 @@ export class SiteService {
     startCharging(request) {
         return this.http.post(this.apiUrl + `charging/start`, request);
     }
+    stopCharging(request) {
+        return this.http.post(this.apiUrl + `charging/stop`, request);
+    }
 }

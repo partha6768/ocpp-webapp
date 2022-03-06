@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ModalController} from "@ionic/angular";
 import {StopConfirmationComponent} from "../stop-confirmation/stop-confirmation.component";
+import {DataService} from "../../_service/data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-in-progress',
@@ -9,9 +11,17 @@ import {StopConfirmationComponent} from "../stop-confirmation/stop-confirmation.
 })
 export class InProgressComponent implements OnInit {
 
-  constructor(public modalController: ModalController) { }
+  transactionData: any;
+  constructor(private router: Router, public modalController: ModalController, private dataService: DataService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.dataService.startTransaction.subscribe((obj: any) => {
+      if (obj == null) {
+        this.router.navigate(['/home/search/scan-qr']);
+      }
+      this.transactionData = obj;
+    });
+  }
 
   async onChargeStop() {
     const modal = await this.modalController.create({

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {ModalController} from "@ionic/angular";
-import {StopConfirmationComponent} from "../stop-confirmation/stop-confirmation.component";
 import {PaymentCompleteComponent} from "../payment-complete/payment-complete.component";
 
 @Component({

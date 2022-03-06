@@ -22,6 +22,9 @@ export class DataService {
 	private readonly startChargeSubject: BehaviorSubject<any>;
 	public startCharge: Observable<any>;
 
+	private readonly startTransactionSubject: BehaviorSubject<any>;
+	public startTransaction: Observable<any>;
+
 	constructor() {
 		this.chargerTypeFilterSubject = new BehaviorSubject<string>('');
 		this.chargerTypeFilter = this.chargerTypeFilterSubject.asObservable();
@@ -40,6 +43,9 @@ export class DataService {
 
 		this.startChargeSubject = new BehaviorSubject<any>(null);
 		this.startCharge = this.startChargeSubject.asObservable();
+
+		this.startTransactionSubject = new BehaviorSubject<any>(null);
+		this.startTransaction = this.startTransactionSubject.asObservable();
 	}
 
 	public get getFilter(): any {
@@ -48,6 +54,14 @@ export class DataService {
 
 	updateFilter(obj: any) {
 		this.filterSubject.next(obj);
+	}
+
+	public get getStartTransactionData(): any {
+		return this.startTransactionSubject.value;
+	}
+
+	updateStartTransaction(obj: any) {
+		this.startTransactionSubject.next(obj);
 	}
 
 	public get getStartChargeData(): any {
