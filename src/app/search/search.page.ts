@@ -38,7 +38,7 @@ export class SearchPage implements AfterViewInit, OnInit{
   }
 
   ngOnInit() {
-    this.openPendingModel();
+    // this.openPendingModel();
     this.dataService.filter.subscribe((obj: any) => {
       console.log(obj);
     });

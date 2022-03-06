@@ -23,8 +23,10 @@ export class StopConfirmationComponent implements OnInit {
   }
 
   stopTrasaction() {
+    const connectorCode = this.transactionData.transactionData.connectorCode;
     const request = {
-      connectorCode: this.transactionData.transactionData.connectorCode,
+      vendorCode: connectorCode.split('-')[0],
+      chargePointIdentity: connectorCode.split('-')[1],
       transactionId: this.transactionData.transactionId
     };
     this.siteService.stopCharging(request).subscribe((data: any) => {

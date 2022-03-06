@@ -20,7 +20,7 @@ export class VehicleComponent implements OnInit {
   ngOnInit() {
     this.userService.getUserVehicle(this.userName).subscribe((data: any) => {
       if (data.result && data.result.length !== 0) {
-        this.userSelectionFromDB = data.result.vehicleMapping.evNames;
+        this.userSelectionFromDB = data.result.vehicleMapping.evNames[0];
       }
     });
     this.loadElectricVehicle();

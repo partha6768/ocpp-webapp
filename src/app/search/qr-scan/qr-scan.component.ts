@@ -68,10 +68,11 @@ export class QrScanComponent implements OnInit {
   }
 
   async openPortScreen() {
-    const modal = await this.modalController.create({
+    /*const modal = await this.modalController.create({
       component: SelectPortComponent,
       cssClass: 'select-port'
     });
-    return await modal.present();
+    return await modal.present();*/
+    this.router.navigate(['/home/search/connect-port']);
   }
 }
