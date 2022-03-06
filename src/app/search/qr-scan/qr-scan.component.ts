@@ -38,7 +38,8 @@ export class QrScanComponent implements OnInit {
       if (data.result && data.result.length > 0) {
         this.dataService.updateStartChargeCode({
           connectorCode: this.qrResultString,
-          pricing: data.result[0].pricing
+          pricing: data.result[0].pricing,
+          maxKwh: data.result[0].maxKwh
         });
         this.openPortScreen();
       }

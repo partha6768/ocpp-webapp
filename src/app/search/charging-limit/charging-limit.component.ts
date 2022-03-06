@@ -16,6 +16,7 @@ export class ChargingLimitComponent implements OnInit {
   times = [];
   selectedTimeSlotInMin = 0;
   userLatLng: any;
+  qrObj: any;
   constructor(private router: Router, private dataService: DataService, private commonService: CommonService, private siteService: SiteService) {
     this.commonService.getCurrentLocation().then((pos) => {
       this.userLatLng = {
@@ -26,6 +27,12 @@ export class ChargingLimitComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.dataService.startCharge.subscribe((obj: any) => {
+      if (obj == null) {
+        this.router.navigate(['/home/search/scan-qr']);
+      }
+      this.qrObj = obj;
+    });
     const x = 30;
     let tt = 0;
     const ap = ['AM', 'PM'];
@@ -57,30 +64,33 @@ export class ChargingLimitComponent implements OnInit {
   }
 
   startCharging() {
-    this.dataService.startCharge.subscribe((obj: any) => {
-      if (obj == null) {
-        this.router.navigate(['/home/search/scan-qr']);
+    if (this.qrObj === null || this.qrObj === undefined) {
+      this.router.navigate(['/home/search/scan-qr']);
+    }
+    let request = {
+      username: sessionStorage.getItem('username'),
+      connectorCode: this.qrObj.connectorCode,
+      requestedTimeMins: this.selectedTimeSlotInMin,
+      pricing: this.qrObj.pricing,
+      userLatLng: this.userLatLng,
+      estimates: {
+        estimatedKwh: this.selectedKWh,
+        estimatedCost: this.selectedAmount
       }
-      let request = {
-        username: sessionStorage.getItem('username'),
-        connectorCode: obj.connectorCode,
-        requestedTimeMins: this.selectedTimeSlotInMin,
-        pricing: obj.pricing,
-        userLatLng: this.userLatLng,
-        estimates: {
-          estimatedKwh: this.selectedKWh,
-          estimatedCost: this.selectedAmount
-        }
-      };
-      this.siteService.startCharging(request).subscribe((data: any) => {
-        if (data.result) {
-          this.dataService.updateStartTransaction({
-            transactionData: request,
-            transactionId: data.result.transactionId
-          });
-          this.router.navigate(['/charging/in-progress']);
-        }
-      });
+    };
+    this.siteService.startCharging(request).subscribe((data: any) => {
+      if (data.result) {
+        this.dataService.updateStartTransaction({
+          transactionData: request,
+          transactionId: data.result.transactionId
+        });
+        this.router.navigate(['/charging/in-progress']);
+      }
     });
+  }
+
+  calculateEstimatedValue() {
+    this.selectedAmount = this.qrObj.maxKwh * (this.selectedTimeSlotInMin / 60);
+    this.selectedKWh = this.selectedAmount * this.qrObj.pricing.perUnitPrice;
   }
 }
