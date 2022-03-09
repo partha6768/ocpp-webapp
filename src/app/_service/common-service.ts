@@ -35,10 +35,13 @@ export class CommonService {
         return this.http.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=${search}&key=AIzaSyDH-JIjvzwccPIxPHOusrTFKZtDT8hohHE`);
     }
 
+    getDistance(origin, destination) {
+        return this.http.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?origins=${origin}&destinations=${destination}&key=AIzaSyDH-JIjvzwccPIxPHOusrTFKZtDT8hohHE`);
+    }
+
     getCurrentLocation(): Promise<any> {
         return new Promise((resolve, reject) => {
             navigator.geolocation.getCurrentPosition(resp => {
-                console.log(resp.coords);
                 resolve({lng: resp.coords.longitude, lat: resp.coords.latitude});
             }, err => {
                 reject(err);

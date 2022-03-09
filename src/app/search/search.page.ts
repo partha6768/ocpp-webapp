@@ -30,7 +30,11 @@ export class SearchPage implements AfterViewInit, OnInit{
   fastChargerFlag = false;
 
   constructor(public commonService: CommonService, private dataService: DataService, public siteService: SiteService, public modalController: ModalController, private router: Router) {
-    this.getCurrentLocation();
+    this.commonService.getCurrentLocation().then((pos) => {
+      localStorage.setItem('userLat', pos.lat);
+      localStorage.setItem('userLng', pos.lng);
+      this.getCurrentLocation();
+    });
   }
 
   ngAfterViewInit(): void {
@@ -53,7 +57,7 @@ export class SearchPage implements AfterViewInit, OnInit{
           this.markers.push({
             position: new google.maps.LatLng(item.latlng.lat, item.latlng.lng),
             map: this.map,
-            title: item.siteDetails.dispName,
+            title: item.code,
             icon: 'assets/icon/fast_charger_available.svg'
           });
         });
@@ -74,7 +78,8 @@ export class SearchPage implements AfterViewInit, OnInit{
       marker.addListener('click', async () => {
         const modal = await this.modalController.create({
           component: ChargeStationComponent,
-          cssClass: 'view-charge-station'
+          cssClass: 'view-charge-station',
+          componentProps: { siteCode: marker.title }
         });
         return await modal.present();
       });
@@ -159,10 +164,8 @@ export class SearchPage implements AfterViewInit, OnInit{
   }
 
   getCurrentLocation() {
-    this.commonService.getCurrentLocation().then((pos) => {
-      this.focusToPosition(pos.lat, pos.lng);
-      this.mapInitializer();
-    });
+    this.focusToPosition(localStorage.getItem('userLat'), localStorage.getItem('userlng'));
+    this.mapInitializer();
   }
 
   focusToPosition(lat, lng) {

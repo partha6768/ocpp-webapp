@@ -17,13 +17,11 @@ export class ChargingLimitComponent implements OnInit {
   selectedTimeSlotInMin = 0;
   userLatLng: any;
   qrObj: any;
-  constructor(private router: Router, private dataService: DataService, private commonService: CommonService, private siteService: SiteService) {
-    this.commonService.getCurrentLocation().then((pos) => {
-      this.userLatLng = {
-        lat: pos.lat,
-        lng: pos.lng
-      }
-    });
+  constructor(private router: Router, private dataService: DataService, private siteService: SiteService) {
+    this.userLatLng = {
+      lat: localStorage.getItem('userLat'),
+      lng: localStorage.getItem('userlng')
+    }
   }
 
   ngOnInit() {
@@ -90,7 +88,7 @@ export class ChargingLimitComponent implements OnInit {
   }
 
   calculateEstimatedValue() {
-    this.selectedAmount = this.qrObj.maxKwh * (this.selectedTimeSlotInMin / 60);
-    this.selectedKWh = this.selectedAmount * this.qrObj.pricing.perUnitPrice;
+    this.selectedKWh = this.qrObj.maxKwh * (this.selectedTimeSlotInMin / 60);
+    this.selectedAmount = this.selectedKWh * this.qrObj.pricing.perUnitPrice;
   }
 }

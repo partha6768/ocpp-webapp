@@ -1,41 +1,25 @@
 <div class="title-text"><img class="padding-right-10" src="./assets/icon/percentage.svg"/><span>Get 20% off</span><span class="color-yellow float-right">SAVENATURE</span></div>
 <div class="station open-till">Open till 10:00pm</div>
-<div class="station station-name">TCL Station</div>
-<div class="station station-address">Gomtinagar Extention, Lucknow</div>
-<div class="station station-distance">5.6 kms away</div>
+<div class="station station-name">{{siteData.siteDetails.dispName}}</div>
+<div class="station station-address">{{siteData.address.address1}}, {{siteData.address.city}}, {{siteData.address.state}} - {{siteData.address.zipCode}}</div>
+<div class="station station-distance">{{distanceFromUserLocation}} away</div>
 <div>
     <span *ngFor="let ammenitieIcon of ammenitieIcons;let i=index">
-        <img *ngIf="i <= 4" class="ammenitie-icon" [src]="ammenitieIcon.icon" />
-        <span *ngIf="i == 5 " class="more-text" fill="clear" (click)="openAmmenitiesModal()">{{ammenitieIcons.length - 5}} more</span>
+        <img *ngIf="i <= 4" class="ammenitie-icon" onerror="this.src='assets/icon/ammenities/park-garden.svg'" src='assets/icon/ammenities/{{ammenitieIcon.icon}}.svg' />
+        <span *ngIf="i == 5 " class="more-text" fill="clear" (click)="openAmmenitiesModal(ammenitieIcons)">{{ammenitieIcons.length - 5}} more</span>
     </span>
 </div>
 <ion-content class="ion-padding" scroll-y="false">
     <ion-slides [options]="slideOpts">
-        <ion-slide>
+        <ion-slide *ngFor="let chargeStation of chargeStations;">
             <div class="connector-box">
-                <div class="max-power"><img src="./assets/icon/single-tunder.svg"/><span> 10 kW</span></div>
-                <div class="price-text">₹10 / kWh</div>
-                <div class="available-text">3 / 5 available</div>
-                <img class="padding-5" *ngFor="let portIcon of connectiorPorts;" [src]="portIcon" />
-                <ion-button class="padding-5 margin-0 box-shadow-none" expand="full" size="large" (click)="reservation()">Reserve</ion-button>
-            </div>
-        </ion-slide>
-        <ion-slide>
-            <div class="connector-box">
-                <div class="max-power"><img src="./assets/icon/single-tunder.svg"/><span> 20 kW</span></div>
-                <div class="price-text">₹20 / kWh</div>
-                <div class="available-text">3 / 5 available</div>
-                <img class="padding-5" *ngFor="let portIcon of connectiorPorts;" [src]="portIcon" />
-                <ion-button class="padding-5 margin-0 box-shadow-none" expand="full" size="large" (click)="reservation()">Reserve</ion-button>
-            </div>
-        </ion-slide>
-        <ion-slide>
-            <div class="connector-box">
-                <div class="max-power"><img src="./assets/icon/single-tunder.svg"/><span> 30 kW</span></div>
-                <div class="price-text">₹30 / kWh</div>
-                <div class="available-text">3 / 5 available</div>
-                <img class="padding-5" *ngFor="let portIcon of connectiorPorts;" [src]="portIcon" />
-                <ion-button class="padding-5 margin-0 box-shadow-none" expand="full" size="large" (click)="reservation()">Reserve</ion-button>
+                <div class="max-power"><img src="./assets/icon/single-tunder.svg"/><span> {{chargeStation.maxKwh}} kW</span></div>
+                <div class="price-text">₹{{chargeStation.pricing}} / kWh</div>
+                <div class="available-text">{{chargeStation.availableConnectorCount}} / {{chargeStation.totalConnectorCount}} available</div>
+                <div *ngFor="let portIcon of chargeStation.connectiorPorts;" >
+                    <img onerror="this.src='assets/icon/port/ACType-1.svg'" class="port-icon" src='assets/icon/port/{{portIcon}}.svg' />
+                </div>
+                <ion-button [disabled]="chargeStation.availableConnectorCount == 0" class="padding-5 margin-0 box-shadow-none" expand="full" size="large" (click)="scanQR()">Scan QR</ion-button>
             </div>
         </ion-slide>
     </ion-slides>

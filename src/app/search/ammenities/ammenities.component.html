@@ -2,7 +2,7 @@
 <img class="close-icon-ammenities" src="./assets/icon/close.svg" (click)="close()"/>
 <div class="icon-container">
   <div class="icon-box" *ngFor="let ammenitie of ammenities">
-    <img [src]="ammenitie.icon" />
+    <img onerror="this.src='assets/icon/ammenities/park-garden.svg'" src='assets/icon/ammenities/{{ammenitie.icon}}.svg' />
     <div class="ammenities-name">{{ammenitie.name}}</div>
     <div class="ammenities-distance">{{ammenitie.distance}}</div>
   </div>

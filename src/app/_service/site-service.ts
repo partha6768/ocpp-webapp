@@ -54,4 +54,8 @@ export class SiteService {
     stopCharging(request) {
         return this.http.post(this.apiUrl + `charging/stop`, request);
     }
+
+    getChargeStationBySiteId(siteCode) {
+        return this.http.get(this.apiUrl + `charge-points?siteCode=${siteCode}`);
+    }
 }
