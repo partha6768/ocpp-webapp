@@ -52,5 +52,6 @@ export class SelectionsComponent implements OnInit {
       isAvailable: this.isOnlyAvailable
     };
     this.dataService.updateFilter(filterObj);
+    this.modalController.dismiss();
   }
 }

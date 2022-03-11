@@ -25,4 +25,12 @@ export class UserService {
     saveUser(request) {
         return this.http.post(this.apiUrl + `users`, request);
     }
+
+    getUserSettings(username) {
+        return this.http.get(this.apiUrl + `users/${username}?projection=userSettings`);
+    }
+
+    updateUserSettings(username, request) {
+        return this.http.put(this.apiUrl + `users/${username}/update/userSettings`, request);
+    }
 }

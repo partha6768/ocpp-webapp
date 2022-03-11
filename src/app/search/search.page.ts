@@ -38,19 +38,39 @@ export class SearchPage implements AfterViewInit, OnInit{
   }
 
   ngAfterViewInit(): void {
-    this.mapInitializer();
+    this.getFilterData({
+      distance: 20
+    });
+    this.dataService.filter.subscribe((obj: any) => {
+        this.getFilterData(obj);
+    });
+    this.dataService.distanceFilter.subscribe((obj: any) => {
+      this.getFilterData({
+        distance: obj
+      });
+    });
   }
 
   ngOnInit() {
     // this.openPendingModel();
-    this.dataService.filter.subscribe((obj: any) => {
-      console.log(obj);
-    });
   }
 
-  mapInitializer(): void {
+  getFilterData(obj): void {
+    let url = '';
+    if (obj.chargerType) {
+      url += '&chargerType=' + obj.chargerType;
+    }
+    if (obj.connectorType) {
+      url += '&connectorType=' + obj.connectorType;
+    }
+    if (obj.isAvailable) {
+      url += '&status=Available';
+    }
+    if (!obj.distance) {
+      obj.distance = 20
+    }
     this.map = new google.maps.Map(this.mapElement.nativeElement, this.mapOptions);
-    this.siteService.getAllSites(20.462196, 85.882962,20, '').subscribe((items: any) => {
+    this.siteService.getAllSites(localStorage.getItem('userLat'), localStorage.getItem('userLng'),obj.distance, url).subscribe((items: any) => {
       this.markers = [];
       if (items.result && items.result.length != 0) {
         items.result.forEach(item => {
@@ -158,14 +178,22 @@ export class SearchPage implements AfterViewInit, OnInit{
   changeFilter(section) {
     if (section === 'AvailableStation'){
       this.availableStationFlag = !this.availableStationFlag;
+      this.getFilterData({
+        connectorType: this.availableStationFlag
+      });
     } else if (section === 'FastCharger'){
       this.fastChargerFlag = !this.fastChargerFlag;
+      this.getFilterData({
+        chargerType: this.fastChargerFlag
+      });
     }
   }
 
   getCurrentLocation() {
     this.focusToPosition(localStorage.getItem('userLat'), localStorage.getItem('userlng'));
-    this.mapInitializer();
+    this.getFilterData({
+      distance: 20
+    });
   }
 
   focusToPosition(lat, lng) {
@@ -180,6 +208,8 @@ export class SearchPage implements AfterViewInit, OnInit{
       streetViewControl: false,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    this.mapInitializer();
+    this.getFilterData({
+      distance: 20
+    });
   }
 }
