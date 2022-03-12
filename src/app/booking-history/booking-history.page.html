@@ -2,9 +2,9 @@
     <ion-segment-button value="history" (click)="toggleView(true)">
         <ion-label>Charging Records</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="reservation" (click)="toggleView(false)">
+    <!--<ion-segment-button value="reservation" (click)="toggleView(false)">
         <ion-label>Reservation</ion-label>
-    </ion-segment-button>
+    </ion-segment-button>-->
 </ion-segment>
 <div class="filter-search-box select-button">
     <ion-grid>
@@ -37,9 +37,9 @@
     </ion-grid>
 </div>
 <div *ngIf="history" class="color-light-grey list-body">
-    <ion-card (click)="showDetail()">
+    <ion-card  *ngFor="let transaction of userTransactions" (click)="showDetail()">
         <ion-card-content>
-            <div class="title-text">P.C.M. Enterprises Praveen singh</div>
+            <div class="title-text">{{transaction.siteDispName}}</div>
             <div class="cost-box">
                 <ion-grid class="padding-0">
                     <ion-row>
@@ -49,17 +49,17 @@
                         </ion-col>
                         <ion-col class="padding-tb-10">
                             <div class="header-text">Amount</div>
-                            <div class="body-text">₹250</div>
+                            <div class="body-text">₹{{transaction.estimates.estimatedCost}}</div>
                         </ion-col>
                         <ion-col class="padding-tb-10">
                             <div class="header-text">Date</div>
-                            <div class="body-text">March 24, 2021</div>
+                            <div class="body-text">{{transaction.createdOn | date: 'MMMM dd, yyyy'}}</div>
                         </ion-col>
                     </ion-row>
                 </ion-grid>
             </div>
             <div class="footer-text">
-                <ion-icon class="vertical-align-middle" name="reload-outline"></ion-icon> Make Reservation
+                <!--<ion-icon class="vertical-align-middle" name="reload-outline"></ion-icon> Make Reservation-->
                 <ion-icon class="share-icon" name="share-social-outline"></ion-icon>
                 <ion-icon class="share-icon" name="download-outline"></ion-icon>
             </div>

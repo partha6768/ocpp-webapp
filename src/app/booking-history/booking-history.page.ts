@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import { ModalController } from '@ionic/angular';
 import { ShareReceiptComponent } from './share-receipt/share-receipt.component';
+import {UserService} from "../_service/user-service";
+import {CommonService} from "../_service/common-service";
 
 @Component({
   selector: 'app-booking-history',
@@ -18,10 +20,18 @@ export class BookingHistoryPage implements OnInit {
   reservationOptions = [];
   monthOptions = [];
   yearOptions = [];
-
-  constructor(private router: Router, public modalController: ModalController) {}
+  userTransactions = [];
+  userName: string;
+  constructor(private router: Router, public modalController: ModalController, public userService: UserService, private commonService: CommonService) {
+      this.userName = this.commonService.currentUserInfo();
+  }
 
   ngOnInit() {
+      this.userService.getUserTransactions(this.userName).subscribe((data: any) => {
+          if (data.result && data.result.data) {
+              this.userTransactions = data.result.data;
+          }
+      });
       this.chargingRecordOptions = [{
         text: 'Last Charged',
         value: 'LAST_CHARGED'
