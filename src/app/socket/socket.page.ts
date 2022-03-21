@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-socket',
@@ -11,7 +12,7 @@ export class SocketPage implements OnInit {
   chargerOptions = [];
   selectedMonthFilter: string;
   selectedCharger: string;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     const monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
@@ -30,6 +31,6 @@ export class SocketPage implements OnInit {
   }
 
   saveSocket() {
-
+    this.router.navigate(['/socket/scan-qr']);
   }
 }

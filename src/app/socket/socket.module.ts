@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { SocketPageRoutingModule } from './socket-routing.module';
 
 import { SocketPage } from './socket.page';
+import {QrScanComponent} from "./qr-scan/qr-scan.component";
+import {SettingsComponent} from "./settings/settings.component";
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { SocketPage } from './socket.page';
     IonicModule,
     SocketPageRoutingModule
   ],
-  declarations: [SocketPage]
+  declarations: [SocketPage, QrScanComponent, SettingsComponent]
 })
 export class SocketPageModule {}

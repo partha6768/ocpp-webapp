@@ -1,0 +1,43 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="./socket/scan-qr" class="back_btn" title="blank"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header">Add Smart Socket</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <div class="color-light-grey list-body">
+    <ion-grid>
+      <ion-row class="padding-t-10">
+        <ion-col>
+          <ion-label position="stacked">Charger Name</ion-label>
+          <ion-input></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label position="stacked">Charger Location</ion-label>
+          <ion-input></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row class="padding-t-10">
+        <ion-item>
+          <ion-label class="body-text">Enable Peer to Peer charging</ion-label>
+          <ion-toggle slot="" [(ngModel)]="peerToPeer" (ngModelChange)="updateSettings()" name="notifications" checked></ion-toggle>
+        </ion-item>
+      </ion-row>
+      <ion-row class="padding-t-10">
+        <ion-col>
+          <ion-label position="stacked">Charging Tariff</ion-label>
+          <ion-input type="number"></ion-input>
+        </ion-col>
+        <ion-col class="kw">
+          per kW
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <ion-button expand="full" size="large" (click)="save()">+ Add Charger</ion-button>
+</ion-content>
+

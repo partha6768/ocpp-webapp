@@ -1,0 +1,49 @@
+.header {
+  font-family: Lexend-Regular;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+}
+.body-text{
+  font-family: Lexend-Regular;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.44;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+}
+.list-body{
+  height: 90%;
+  overflow-y: scroll;
+}
+ion-item{
+  --background: #f3f7fa !important;
+  background: #f3f7fa !important;
+  border-color: #f3f7fa !important;
+  --border-color: #f3f7fa !important;
+  box-shadow: none !important;
+  width: 100%;
+}
+ion-col{
+  ion-input{
+    border: solid 2px #c3d0d9;
+    border-radius: 5px;
+    background-color: white;
+  }
+}
+ion-label{
+  line-height: 2.5rem;
+}
+.kw{
+  align-items: center;
+  display: flex;
+  padding-top: 40px;
+}
