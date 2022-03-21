@@ -82,6 +82,15 @@ height-40{
 .font-size-12{
   font-size: 12px;
 }
+.font-size-2rem{
+  font-size: 2rem;
+}
+.font-size-1p5rem {
+  font-size: 1.5rem;
+}
+.font-size-p8rem{
+  font-size: 0.8rem;
+}
 .in-list{
   --border-color: white;
 }
@@ -232,6 +241,9 @@ ion-select{
 }
 .padding-t-10{
   padding-top: 10px;
+}
+.padding-t-20{
+  padding-top: 20px;
 }
 .margin-t-1rem{
   margin-top: 1rem !important;

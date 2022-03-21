@@ -3,7 +3,32 @@
   align-items: center;
   justify-content: left;
 }
+.revenue-txt{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
 .list-body{
   height: 90%;
   overflow-y: scroll;
+}
+.socket-history-header{
+  font-family: Lexend-Regular;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  position: relative;
+  color: #f3f7fa;
+  letter-spacing: normal;
+}
+.rectangle{
+  position: absolute;
+  height: 24%;
+  width: 100%;
+  object-fit: cover;
+}
+ion-select{
+  border: 1px solid;
+  border-radius: 5px;
 }
