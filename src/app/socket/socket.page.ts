@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./socket.page.scss'],
 })
 export class SocketPage implements OnInit {
+  history = true;
 
   constructor() { }
 
@@ -13,10 +14,14 @@ export class SocketPage implements OnInit {
   }
 
   segmentChanged() {
-    
+
   }
 
-  toggleView(b: boolean) {
-    
+  toggleView(flag) {
+    this.history = flag;
+  }
+
+  saveSocket() {
+
   }
 }

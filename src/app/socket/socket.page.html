@@ -15,4 +15,20 @@
         <ion-label>Charging Records</ion-label>
     </ion-segment-button>
   </ion-segment>
+  <div *ngIf="history" class="color-light-grey list-body">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="zero-charge">
+          0 Chargers
+        </ion-col>
+        <ion-col>
+          <ion-button expand="full" (click)="saveSocket()">+ Add new charger</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <img class="margin-t-5rem" src="../assets/icon/error/error-1.svg"/>
+  </div>
+  <div *ngIf="!history" class="color-light-grey list-body">
+
+  </div>
 </ion-content>
