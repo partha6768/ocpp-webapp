@@ -1,0 +1,18 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="./home/profile" class="back_btn" title="blank"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header">Smart Socket</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <ion-segment class="bottom-tab" mode="md" value="history" (ionChange)="segmentChanged()">
+    <ion-segment-button value="history" (click)="toggleView(true)">
+      <ion-label>Chargers</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="reservation" (click)="toggleView(false)">
+        <ion-label>Charging Records</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-content>

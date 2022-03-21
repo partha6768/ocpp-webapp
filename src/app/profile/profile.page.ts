@@ -65,4 +65,8 @@ export class ProfilePage implements OnInit, OnDestroy {
     });
     return await modal.present();
   }
+
+  redirectToSocket() {
+    this.router.navigate(['/socket']);
+  }
 }
