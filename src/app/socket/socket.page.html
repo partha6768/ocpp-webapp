@@ -27,6 +27,34 @@
       </ion-row>
     </ion-grid>
     <img class="error-icon margin-t-5rem" src="../assets/icon/error/error-1.svg"/>
+    <ion-grid>
+      <ion-card class="padding-1-rem">
+          <div class="so-header">Gomti Nagar Shop</div>
+          <div class="so-header-type color-green">PERSONAL CHARGER</div>
+          <ion-row>
+            <ion-col size="9" class="so-address padding-0">
+              <ion-icon class="so-address-icon" name="location-outline"></ion-icon>
+              <span>Shop 4, Tandon Building, Kaiserbagh Cir, Lucknow, Uttar Pradesh 226001</span>
+            </ion-col>
+            <ion-col size="3" class="so-header-type color-green padding-0 text-align-right">
+              CHARGING
+            </ion-col>
+          </ion-row>
+      </ion-card>
+      <ion-card class="padding-1-rem">
+        <div class="so-header">Gomti Nagar Shop</div>
+        <div class="so-header-type color-green">₹10 / kWh</div>
+        <ion-row>
+          <ion-col size="9" class="so-address padding-0">
+            <ion-icon class="so-address-icon" name="location-outline"></ion-icon>
+            <span>Shop 4, Tandon Building, Kaiserbagh Cir, Lucknow, Uttar Pradesh 226001</span>
+          </ion-col>
+          <ion-col size="3" class="so-header-type color-green padding-0 text-align-right">
+            CHARGING
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-grid>
   </div>
   <div *ngIf="!history" class="color-light-grey list-body">
     <div class="socket-history-header">
@@ -66,5 +94,30 @@
       </ion-row>
     </ion-grid>
     <img class="error-icon padding-top-20" src="../assets/icon/error/error-2.svg"/>
+    <ion-grid>
+      <ion-card (click)="showDetail()">
+        <ion-card-content>
+          <div class="title-text">Praveen singh</div>
+          <div class="cost-box">
+            <ion-grid class="padding-0">
+              <ion-row>
+                <ion-col class="padding-tb-10">
+                  <div class="header-text">Duration</div>
+                  <div class="body-text">1 h 20 min (10kW)</div>
+                </ion-col>
+                <ion-col class="padding-tb-10">
+                  <div class="header-text">Amount</div>
+                  <div class="body-text">₹250</div>
+                </ion-col>
+                <ion-col class="padding-tb-10">
+                  <div class="header-text">Date</div>
+                  <div class="body-text">March 24, 2021</div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-grid>
   </div>
 </ion-content>

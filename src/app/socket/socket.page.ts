@@ -33,4 +33,8 @@ export class SocketPage implements OnInit {
   saveSocket() {
     this.router.navigate(['/socket/scan-qr']);
   }
+
+    showDetail() {
+
+    }
 }
