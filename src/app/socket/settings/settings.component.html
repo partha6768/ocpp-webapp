@@ -22,10 +22,13 @@
         </ion-col>
       </ion-row>
       <ion-row class="padding-t-10">
-        <ion-item>
+        <ion-item class="ion-no-padding">
           <ion-label class="body-text">Enable Peer to Peer charging</ion-label>
           <ion-toggle slot="" [(ngModel)]="peerToPeer" (ngModelChange)="updateSettings()" name="notifications" checked></ion-toggle>
         </ion-item>
+      </ion-row>
+      <ion-row class="padding-t-10">
+        <div class="desc-text">* This will enable other EV owners to charge from your charge and you will be paid on every public charging</div>
       </ion-row>
       <ion-row class="padding-t-10">
         <ion-col>
@@ -36,8 +39,14 @@
           per kW
         </ion-col>
       </ion-row>
+      <ion-row class="padding-t-10">
+        <div class="desc-text-1">Suggested Tariff price in Lucknow is </div>
+      </ion-row>
+      <ion-row class="padding-t-10">
+        <div class="desc-text-value">₹10 / kW</div>
+      </ion-row>
     </ion-grid>
   </div>
-  <ion-button expand="full" size="large" (click)="save()">+ Add Charger</ion-button>
+  <ion-button class="margin-0" expand="full" size="large" (click)="save()">+ Add Charger</ion-button>
 </ion-content>
 

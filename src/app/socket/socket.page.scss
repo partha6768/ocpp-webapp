@@ -24,11 +24,16 @@
 }
 .rectangle{
   position: absolute;
-  height: 24%;
+  height: 105%;
   width: 100%;
   object-fit: cover;
 }
 ion-select{
   border: 1px solid;
   border-radius: 5px;
+}
+img.error-icon{
+  display: block;
+  margin: auto;
+  padding-top: 3rem;
 }
