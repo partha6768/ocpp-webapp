@@ -1,0 +1,110 @@
+.zero-charge{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.revenue-txt{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+.list-body{
+  height: 90%;
+  overflow-y: scroll;
+}
+.socket-history-header{
+  font-family: Lexend-Regular;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  position: relative;
+  color: #f3f7fa;
+  letter-spacing: normal;
+}
+.rectangle{
+  position: absolute;
+  height: 105%;
+  width: 100%;
+  object-fit: cover;
+}
+ion-select{
+  border: 1px solid;
+  border-radius: 5px;
+}
+img.error-icon{
+  display: block;
+  margin: auto;
+  padding-top: 3rem;
+}
+.so-header{
+  font-family: Lexend-Regular;
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.28;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+}
+.so-header-type {
+  font-family: Lexend-Regular;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  padding-top: 5px;
+  letter-spacing: normal;
+}
+.so-address{
+  padding-top: 10px;
+}
+.so-address-icon{
+  padding-right: 5px;
+  color: black;
+}
+.title-text{
+  font-family: Lexend-Regular;
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.28;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+}
+.header-text{
+  font-family: Lexend-Regular;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: #c3d0d9;
+  text-transform: uppercase;
+}
+.body-text{
+  font-family: Lexend-Regular;
+  font-size: 1rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #273d4c;
+}
+.his{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.edit-icon{
+  font-size: 25px;
+  padding-right: 10px;
+}

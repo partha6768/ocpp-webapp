@@ -1,18 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-socket',
-  templateUrl: './socket.page.html',
-  styleUrls: ['./socket.page.scss'],
+  selector: 'app-charger-detail',
+  templateUrl: './charger-detail.component.html',
+  styleUrls: ['./charger-detail.component.scss'],
 })
-export class SocketPage implements OnInit {
-  history = true;
+export class ChargerDetailComponent implements OnInit {
   monthOptions = [];
-  chargerOptions = [];
   selectedMonthFilter: string;
-  selectedCharger: string;
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
     const monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
@@ -22,19 +18,4 @@ export class SocketPage implements OnInit {
     this.selectedMonthFilter = this.monthOptions[new Date().getMonth()].value;
   }
 
-  segmentChanged() {
-
-  }
-
-  toggleView(flag) {
-    this.history = flag;
-  }
-
-  saveSocket() {
-    this.router.navigate(['/socket/scan-qr']);
-  }
-
-  showDetail() {
-    this.router.navigate(['/socket/detail']);
-  }
 }

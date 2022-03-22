@@ -1,0 +1,73 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="./home/profile" class="back_btn" title="blank"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="header">Charger 1</ion-title>
+    <ion-icon slot="end" class="edit-icon" name="create-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <div class="color-light-grey list-body">
+    <div class="socket-history-header">
+      <img src="assets/icon/profile/rectangle.svg" class="rectangle">
+      <ion-grid>
+        <ion-row class="padding-t-10">
+          <ion-col size="3" class="revenue-txt his">
+            <ion-icon class="color-green" size="large" style="display: none;" name="person-outline"></ion-icon>
+            <ion-icon class="color-green" size="large" name="people-outline"></ion-icon>
+          </ion-col>
+          <ion-col size="9" class="revenue-txt padding-110">
+            <div>Charging Tariff</div>
+            <div class="color-green font-size-1p5rem">₹10/kW</div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="padding-t-10 color-light-grey">
+          <ion-col size="12" class="revenue-txt">
+            <div>Location</div>
+            <div class="font-size-p8rem padding-t-10">
+              <ion-icon class="so-address-icon color-green" name="location-outline"></ion-icon>
+              <span>Shop 4, Tandon Building, Kaiserbagh Cir, Lucknow, Uttar Pradesh 226001</span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ion-grid>
+      <ion-row class="padding-t-10">
+        <ion-col class="his">Charging History</ion-col>
+        <ion-col>
+          <ion-select [(ngModel)]="selectedMonthFilter" interface="action-sheet">
+            <ion-select-option *ngFor="let option of monthOptions" value="{{option.value}}">{{option.text}}</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <img class="error-icon padding-top-20" src="../assets/icon/error/error-2.svg"/>
+    <ion-grid>
+      <ion-card>
+        <ion-card-content>
+          <div class="title-text">Praveen singh</div>
+          <div class="cost-box">
+            <ion-grid class="padding-0">
+              <ion-row>
+                <ion-col class="padding-tb-10">
+                  <div class="header-text">Duration</div>
+                  <div class="body-text">1 h 20 min (10kW)</div>
+                </ion-col>
+                <ion-col class="padding-tb-10">
+                  <div class="header-text">Amount</div>
+                  <div class="body-text">₹250</div>
+                </ion-col>
+                <ion-col class="padding-tb-10">
+                  <div class="header-text">Date</div>
+                  <div class="body-text">March 24, 2021</div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-grid>
+  </div>
+</ion-content>

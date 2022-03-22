@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SocketPage } from './socket.page';
 import {QrScanComponent} from "./qr-scan/qr-scan.component";
 import {SettingsComponent} from "./settings/settings.component";
+import {ChargerDetailComponent} from "./charger-detail/charger-detail.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'settings',
     component: SettingsComponent,
+  },
+  {
+    path: 'detail',
+    component: ChargerDetailComponent,
   }
 ];
 
