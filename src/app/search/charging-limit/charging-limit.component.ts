@@ -20,7 +20,7 @@ export class ChargingLimitComponent implements OnInit {
   constructor(private router: Router, private dataService: DataService, private siteService: SiteService) {
     this.userLatLng = {
       lat: localStorage.getItem('userLat'),
-      lng: localStorage.getItem('userlng')
+      lng: localStorage.getItem('userLng')
     }
   }
 
