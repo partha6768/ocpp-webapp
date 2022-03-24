@@ -9,15 +9,18 @@ import { AppComponent } from './app.component';
 import {UserService} from "./_service/user-service";
 import {AuthGuardService} from "./_guard/auth-guard.service";
 import {SiteService} from "./_service/site-service";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {CommonService} from "./_service/common-service";
 import {DataService} from "./_service/data.service";
+import {LoaderInterceptor} from "./loader/loader.interceptor";
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule, AmplifyUIAngularModule],
-  providers: [SiteService, UserService, DataService, CommonService, AuthGuardService, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [SiteService, UserService, DataService, CommonService, AuthGuardService,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    {provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
