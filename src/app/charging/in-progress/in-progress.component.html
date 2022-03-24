@@ -11,7 +11,14 @@
     <div class="header">1:01:34</div>
     <div class="sub-header">Time remaining</div>
   </div>
-  <div class="loader"></div>
+  <div class="progress-b">
+    <circle-progress
+            [percent]="85"
+            [radius]="125"
+            [outerStrokeWidth]="10"
+            [outerStrokeColor]="'#78C000'"
+    ></circle-progress>
+  </div>
   <ion-grid class="amount padding-top-20">
     <ion-row>
       <ion-col>
