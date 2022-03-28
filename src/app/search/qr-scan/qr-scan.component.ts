@@ -36,11 +36,14 @@ export class QrScanComponent implements OnInit {
     const chargePointId = this.qrResultString.split('-')[0] + '-' + this.qrResultString.split('-')[1];
     this.siteService.getChargePointById(chargePointId).subscribe((data: any) => {
       if (data.result && data.result.length > 0) {
-        this.dataService.updateStartChargeCode({
-          connectorCode: this.qrResultString,
-          pricing: data.result[0].pricing,
-          maxKwh: data.result[0].maxKwh
-        });
+        const tnx = {
+          connectorInfo : {
+            connectorCode: this.qrResultString,
+            pricing: data.result[0].pricing,
+            maxKwh: data.result[0].maxKwh
+          }
+        };
+        localStorage.setItem('TRANSACTION', JSON.stringify(tnx));
         this.openPortScreen();
       }
     }, error => {

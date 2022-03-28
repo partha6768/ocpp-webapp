@@ -25,12 +25,12 @@ export class ChargingLimitComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataService.startCharge.subscribe((obj: any) => {
-      if (obj == null) {
-        this.router.navigate(['/home/search/scan-qr']);
-      }
-      this.qrObj = obj;
-    });
+    const txt = localStorage.getItem('TRANSACTION');
+    const txtObj  = JSON.parse(txt);
+    if (txtObj == null) {
+      this.router.navigate(['/home/search/scan-qr']);
+    }
+    this.qrObj = txtObj.connectorInfo;
     const x = 30;
     let tt = 0;
     const ap = ['AM', 'PM'];
@@ -78,10 +78,16 @@ export class ChargingLimitComponent implements OnInit {
     };
     this.siteService.startCharging(request).subscribe((data: any) => {
       if (data.result) {
-        this.dataService.updateStartTransaction({
+        const txt = {
+          connectorInfo: this.qrObj,
           transactionData: request,
-          transactionId: data.result.transactionId
-        });
+          startChargingData: {
+            transactionId: data.result.transactionId,
+            startTime: new Date(),
+            stopTime: new Date(new Date().getTime() + request.requestedTimeMins * 60000)
+          }
+        };
+        localStorage.setItem('TRANSACTION', JSON.stringify(txt));
         this.router.navigate(['/charging/in-progress']);
       }
     });

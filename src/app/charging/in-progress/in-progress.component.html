@@ -8,7 +8,7 @@
 <ion-content>
   <div class="remaining">
     <img src="assets/icon/tunder-double.svg" />
-    <div class="header">1:01:34</div>
+    <div class="header">{{message}}</div>
     <div class="sub-header">Time remaining</div>
   </div>
   <div class="progress-b">
@@ -22,21 +22,21 @@
   <ion-grid class="amount padding-top-20">
     <ion-row>
       <ion-col>
-        <div class="body-header">02:45 PM</div>
+        <div class="body-header">{{startChargingData.startTime | date:'shortTime'}}</div>
         <div class="body-text">Start Time</div>
       </ion-col>
       <ion-col>
-        <div class="body-header">03:35 PM</div>
+        <div class="body-header">{{startChargingData.stopTime | date:'shortTime'}}</div>
         <div class="body-text">End Time</div>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col class="color-light-grey">
-        <div class="body-header">₹10.00</div>
+        <div class="body-header">₹{{transactionData?.estimates.estimatedCost}}</div>
         <div class="body-text color-lgrey">Amount</div>
       </ion-col>
       <ion-col class="color-light-grey mr-1rem">
-        <div class="body-header">10kW</div>
+        <div class="body-header">{{transactionData?.estimates.estimatedKwh}}kW</div>
         <div class="body-text color-lgrey">Charge</div>
       </ion-col>
     </ion-row>
