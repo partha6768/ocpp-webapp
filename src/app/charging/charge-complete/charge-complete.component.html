@@ -14,7 +14,7 @@
         <div class="bill-header-1">TCL Service Station</div>
       </ion-col>
       <ion-col>
-        <div class="body-text color-black text-align-right">24/03/21</div>
+        <div class="body-text color-black text-align-right">{{txtObj?.stopChargingData.stopTimestamp | date:'longDate'}}</div>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -22,15 +22,15 @@
     <ion-row>
       <ion-col>
         <div class="body-header text-align-center">Start Time</div>
-        <div class="body-text color-black text-align-center">1h 30min</div>
+        <div class="body-text color-black text-align-center">{{txtObj?.stopChargingData.startTimestamp | date:'shortTime'}}</div>
       </ion-col>
       <ion-col>
         <div class="body-header text-align-center">End Time</div>
-        <div class="body-text color-black text-align-center">1h 30min</div>
+        <div class="body-text color-black text-align-center">{{txtObj?.stopChargingData.stopTimestamp | date:'shortTime'}}</div>
       </ion-col>
       <ion-col>
         <div class="body-header text-align-center">Duration</div>
-        <div class="body-text color-black text-align-center">1h 30min</div>
+        <div class="body-text color-black text-align-center">{{txtObj?.stopChargingData.actuals.actualTimeMins}} mins</div>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -38,7 +38,7 @@
         <div class="body-header text-align-center">Energy Consumed</div>
       </ion-col>
       <ion-col>
-        <div class="body-text marge-tb color-black text-align-center">120kWh</div>
+        <div class="body-text marge-tb color-black text-align-center">{{txtObj?.stopChargingData.actuals.actualKwh}} kWh</div>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -51,15 +51,15 @@
       <ion-row>
         <ion-col class="bill-margin">
           <div class="body-header">Charging cost</div>
-          <div class="body-header">GST</div>
-          <div class="body-header">Discount</div>
+         <!-- <div class="body-header">GST</div>
+          <div class="body-header">Discount</div>-->
           <div class="body-header color-green font-weight-bold">Total Payable</div>
         </ion-col>
         <ion-col>
-          <div class="body-text marge-tbr color-lgrey text-align-right">₹180.00</div>
-          <div class="body-text marge-tbr color-lgrey text-align-right">₹16.00</div>
-          <div class="body-text marge-tbr color-green text-align-right">-₹30.00</div>
-          <div class="body-text marge-tbr color-black font-weight-bold text-align-right">₹166.00</div>
+          <div class="body-text marge-tbr color-lgrey text-align-right">₹{{txtObj?.stopChargingData.actuals.actualCost}}</div>
+         <!-- <div class="body-text marge-tbr color-lgrey text-align-right">₹16.00</div>
+          <div class="body-text marge-tbr color-green text-align-right">-₹30.00</div>-->
+          <div class="body-text marge-tbr color-black font-weight-bold text-align-right">₹{{txtObj?.stopChargingData.actuals.actualCost}}</div>
         </ion-col>
       </ion-row>
     </ion-grid>

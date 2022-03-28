@@ -9,10 +9,13 @@ import {PaymentCompleteComponent} from "../payment-complete/payment-complete.com
   styleUrls: ['./charge-complete.component.scss'],
 })
 export class ChargeCompleteComponent implements OnInit {
-
+  txtObj: any;
   constructor(private router: Router, public modalController: ModalController) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const txt = localStorage.getItem('TRANSACTION');
+    this.txtObj = JSON.parse(txt);
+  }
 
   async redirectToPayment() {
     const modal = await this.modalController.create({
