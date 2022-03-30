@@ -10,13 +10,15 @@ import { SocketPage } from './socket.page';
 import {QrScanComponent} from "./qr-scan/qr-scan.component";
 import {SettingsComponent} from "./settings/settings.component";
 import {ChargerDetailComponent} from "./charger-detail/charger-detail.component";
+import {ZXingScannerModule} from "@zxing/ngx-scanner";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SocketPageRoutingModule
+    SocketPageRoutingModule,
+    ZXingScannerModule
   ],
   declarations: [SocketPage, QrScanComponent, SettingsComponent, ChargerDetailComponent]
 })

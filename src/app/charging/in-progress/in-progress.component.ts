@@ -13,9 +13,9 @@ export class InProgressComponent implements OnInit, OnDestroy {
 
   transactionData: any;
   startChargingData: any;
-  private counter$: Observable<number>;
-  private subscription: Subscription;
-  private message: string;
+  counter$: Observable<number>;
+  subscription: Subscription;
+  message: string;
   counter: any;
 
   constructor(private router: Router, public modalController: ModalController) { }
