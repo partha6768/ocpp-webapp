@@ -50,11 +50,11 @@
           <div class="body-text" [ngClass]="{'color-darkgreen': section === 'time'}">Charging time</div>
         </ion-col>
         <ion-col class="border-box" [ngClass]="{'bg-green': section === 'amount'}">
-          <div class="header-text" [ngClass]="{'color-white': section === 'amount'}">₹{{selectedAmount}}</div>
+          <div class="header-text" [ngClass]="{'color-white': section === 'amount'}">₹{{selectedAmount | number : '1.2-2'}}</div>
           <div class="body-text" [ngClass]="{'color-darkgreen': section === 'amount'}">Est Amount</div>
         </ion-col>
         <ion-col class="border-box" [ngClass]="{'bg-green': section === 'charge'}">
-          <div class="header-text" [ngClass]="{'color-white': section === 'charge'}">{{selectedKWh}}kWh</div>
+          <div class="header-text" [ngClass]="{'color-white': section === 'charge'}">{{selectedKWh | number : '1.2-2'}}kWh</div>
           <div class="body-text" [ngClass]="{'color-darkgreen': section === 'charge'}">Est Charge</div>
         </ion-col>
       </ion-row>
