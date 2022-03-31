@@ -104,23 +104,25 @@ export class SearchPage implements AfterViewInit, OnInit{
   }
 
   loadAllMarkers(): void {
-    this.markers.forEach(markerInfo => {
-      //Creating a new marker object
-      const marker = new google.maps.Marker({
-        ...markerInfo
-      });
-      //Add click event to open info window on marker
-      marker.addListener('click', async () => {
-        const modal = await this.modalController.create({
-          component: ChargeStationComponent,
-          cssClass: 'view-charge-station',
-          componentProps: { siteCode: marker.title }
+    if (this.markers) {
+      this.markers.forEach(markerInfo => {
+        //Creating a new marker object
+        const marker = new google.maps.Marker({
+          ...markerInfo
         });
-        return await modal.present();
+        //Add click event to open info window on marker
+        marker.addListener('click', async () => {
+          const modal = await this.modalController.create({
+            component: ChargeStationComponent,
+            cssClass: 'view-charge-station',
+            componentProps: { siteCode: marker.title }
+          });
+          return await modal.present();
+        });
+        //Adding marker to google map
+        marker.setMap(this.map);
       });
-      //Adding marker to google map
-      marker.setMap(this.map);
-    });
+    }
   }
 
   async openRouteModal() {

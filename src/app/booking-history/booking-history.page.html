@@ -49,11 +49,12 @@
                         </ion-col>
                         <ion-col class="padding-tb-10">
                             <div class="header-text">Amount</div>
-                            <div class="body-text">₹{{transaction.estimates.estimatedCost}}</div>
+                            <div class="body-text" *ngIf="transaction?.estimates">₹{{transaction?.estimates?.estimatedCost}}</div>
+                            <div class="body-text" *ngIf="!transaction?.estimates">₹0</div>
                         </ion-col>
                         <ion-col class="padding-tb-10">
                             <div class="header-text">Date</div>
-                            <div class="body-text">{{transaction.createdOn | date: 'MMMM dd, yyyy'}}</div>
+                            <div class="body-text">{{transaction?.createdOn | date: 'MMMM dd, yyyy'}}</div>
                         </ion-col>
                     </ion-row>
                 </ion-grid>

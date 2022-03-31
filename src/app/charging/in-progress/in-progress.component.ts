@@ -35,7 +35,7 @@ export class InProgressComponent implements OnInit, OnDestroy {
               },
               transactionData: {
                 username: sessionStorage.getItem('username'),
-                connectorCode: txt.chargePointId + '' + txt.connectorId,
+                connectorCode: txt.chargePointId + '-' + txt.connectorId,
                 requestedTimeMins: txt.requestedTimeMins,
                 pricing: txt.pricing,
                 userLatLng: txt.userLatLng,
@@ -54,6 +54,8 @@ export class InProgressComponent implements OnInit, OnDestroy {
             });
             this.subscription = this.counter$.subscribe((x) => this.message = this.dhms(x));
             localStorage.setItem('TRANSACTION', JSON.stringify(txtLocalStorage));
+          } else {
+            this.router.navigate(['/home/search/scan-qr']);
           }
         });
       } else {
