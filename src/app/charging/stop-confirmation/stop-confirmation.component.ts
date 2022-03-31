@@ -37,7 +37,7 @@ export class StopConfirmationComponent implements OnInit {
       if (data.result) {
         this.txtObj.stopChargingData = data.result;
         localStorage.setItem('TRANSACTION', JSON.stringify(this.txtObj));
-        this.router.navigate(['/charging/charge-complete']);
+        this.router.navigate(['/charging/charge-complete', this.startChargingData.transactionId]);
       }
     });
   }

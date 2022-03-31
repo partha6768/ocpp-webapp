@@ -62,7 +62,7 @@ export class SearchPage implements AfterViewInit, OnInit{
   getUserOnGoingTxt() {
     this.userService.getUserOnGoingTransactions(this.userName).subscribe((data: any) => {
       this.userOnGoingTransactions = [];
-      if (data.result && data.result.length > 0) {
+      if (data && data.result && data.result.length > 0) {
         data.result.forEach(item => {
           this.userOnGoingTransactions.push(item);
         });

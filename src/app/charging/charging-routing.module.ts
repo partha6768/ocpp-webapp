@@ -20,7 +20,7 @@ const routes: Routes = [
     component: InProgressComponent
   },
   {
-    path: 'charge-complete',
+    path: 'charge-complete/:transactionId',
     component: ChargeCompleteComponent
   }
 ];
