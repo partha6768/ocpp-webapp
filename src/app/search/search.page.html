@@ -1,22 +1,19 @@
 <ion-content [fullscreen]="true">
-  <div class="in-progress-box">
+  <div class="in-progress-box" *ngIf="userOnGoingTransactions.length !== 0">
     <ion-slides pager="true">
-      <ion-slide>
+      <ion-slide *ngFor="let onGoingTxt of userOnGoingTransactions">
         <ion-grid>
           <ion-row style="height: 3.4rem">
             <ion-icon class="in-progress-icon" name="speedometer-outline"></ion-icon>
             <ion-col size="8">
-              <div class="in-progress-header-1"><span>1:01:34 </span><span>Charge Time Remaining</span></div>
-              <div class="in-progress-header-2">TCL Station</div>
+              <div class="in-progress-header-1">{{onGoingTxt.siteDispName}}</div>
+              <div class="in-progress-header-2"><span>Start Time : </span><span>{{onGoingTxt.startTimestamp | date:'medium'}} </span></div>
             </ion-col>
             <ion-col>
-              <ion-button (click)="openDetailModal()" expand="full" size="large">View</ion-button>
+              <ion-button (click)="openDetailModal(onGoingTxt.transactionId)" expand="full" size="large">View</ion-button>
             </ion-col>
           </ion-row>
         </ion-grid>
-      </ion-slide>
-      <ion-slide>
-
       </ion-slide>
     </ion-slides>
   </div>

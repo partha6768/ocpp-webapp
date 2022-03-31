@@ -3,7 +3,7 @@
     <ion-back-button defaultHref="" class="back_btn" title="blank" (click)="close()"></ion-back-button>
   </ion-buttons>
 </ion-toolbar>
-<div class="bill-header-1">TCL Service Station</div>
+<div class="bill-header-1">{{txtDb?.siteDispName}}</div>
 <div class="station station-address">Gomtinagar Extention, Lucknow</div>
 <ion-content>
   <div class="remaining">
@@ -22,11 +22,11 @@
   <ion-grid class="amount padding-top-20">
     <ion-row>
       <ion-col>
-        <div class="body-header">{{startChargingData.startTime | date:'shortTime'}}</div>
+        <div class="body-header">{{startChargingData?.startTime | date:'shortTime'}}</div>
         <div class="body-text">Start Time</div>
       </ion-col>
       <ion-col>
-        <div class="body-header">{{startChargingData.stopTime | date:'shortTime'}}</div>
+        <div class="body-header">{{startChargingData?.stopTime | date:'shortTime'}}</div>
         <div class="body-text">End Time</div>
       </ion-col>
     </ion-row>

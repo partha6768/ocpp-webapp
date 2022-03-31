@@ -10,6 +10,7 @@ import {SelectionsComponent} from "./selections/selections.component";
 import {CommonService} from "../_service/common-service";
 import {SiteService} from "../_service/site-service";
 import {DataService} from "../_service/data.service";
+import {UserService} from "../_service/user-service";
 declare let google;
 
 @Component({
@@ -28,13 +29,15 @@ export class SearchPage implements AfterViewInit, OnInit{
   locationList = [];
   availableStationFlag = false;
   fastChargerFlag = false;
-
-  constructor(public commonService: CommonService, private dataService: DataService, public siteService: SiteService, public modalController: ModalController, private router: Router) {
+  userName: string;
+  userOnGoingTransactions = [];
+  constructor(public commonService: CommonService, private dataService: DataService, public siteService: SiteService, public modalController: ModalController, private router: Router, private userService: UserService) {
     this.commonService.getCurrentLocation().then((pos) => {
       localStorage.setItem('userLat', pos.lat);
       localStorage.setItem('userLng', pos.lng);
       this.getCurrentLocation();
     });
+    this.userName = this.commonService.currentUserInfo();
   }
 
   ngAfterViewInit(): void {
@@ -52,7 +55,19 @@ export class SearchPage implements AfterViewInit, OnInit{
   }
 
   ngOnInit() {
+    this.getUserOnGoingTxt();
     // this.openPendingModel();
+  }
+
+  getUserOnGoingTxt() {
+    this.userService.getUserOnGoingTransactions(this.userName).subscribe((data: any) => {
+      this.userOnGoingTransactions = [];
+      if (data.result && data.result.length > 0) {
+        data.result.forEach(item => {
+          this.userOnGoingTransactions.push(item);
+        });
+      }
+    });
   }
 
   getFilterData(obj): void {
@@ -66,7 +81,7 @@ export class SearchPage implements AfterViewInit, OnInit{
     if (obj.isAvailable) {
       url += '&status=Available';
     }
-    if (!obj.distance) {
+    if (!obj && (obj.distance == undefined || obj.distance === null)) {
       obj.distance = 20
     }
     this.map = new google.maps.Map(this.mapElement.nativeElement, this.mapOptions);
@@ -152,8 +167,8 @@ export class SearchPage implements AfterViewInit, OnInit{
     this.router.navigate(['/home/search/scan-qr']);
   }
 
-  openDetailModal() {
-    this.router.navigate(['/charging/in-progress']);
+  openDetailModal(transactionId) {
+    this.router.navigate(['/charging/in-progress', transactionId]);
   }
 
   searchLocation() {

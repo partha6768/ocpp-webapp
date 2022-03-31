@@ -37,4 +37,8 @@ export class UserService {
     getUserTransactions(username) {
         return this.http.get(this.apiUrl + `users/${username}/transactions`);
     }
+
+    getUserOnGoingTransactions(username) {
+        return this.http.get(this.apiUrl + `users/${username}/on-going`);
+    }
 }

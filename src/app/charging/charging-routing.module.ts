@@ -16,7 +16,7 @@ const routes: Routes = [
     component: LateComponent
   },
   {
-    path: 'in-progress',
+    path: 'in-progress/:transactionId',
     component: InProgressComponent
   },
   {

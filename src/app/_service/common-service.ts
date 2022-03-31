@@ -71,4 +71,8 @@ export class CommonService {
         });
         await toast.present();
     }
+
+    getTransactionDetail(transactionId) {
+        return this.http.get(this.apiUrl + `charging/details/${transactionId}`);
+    }
 }

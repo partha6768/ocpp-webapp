@@ -16,8 +16,8 @@ export class DataService {
 	private readonly availableFilterSubject: BehaviorSubject<boolean>;
 	public availableFilter: Observable<boolean>;
 
-	private readonly filterSubject: BehaviorSubject<boolean>;
-	public filter: Observable<boolean>;
+	private readonly filterSubject: BehaviorSubject<any>;
+	public filter: Observable<any>;
 
 	private readonly startChargeSubject: BehaviorSubject<any>;
 	public startCharge: Observable<any>;
@@ -38,7 +38,9 @@ export class DataService {
 		this.availableFilterSubject = new BehaviorSubject<boolean>(false);
 		this.availableFilter = this.availableFilterSubject.asObservable();
 
-		this.filterSubject = new BehaviorSubject<boolean>(false);
+		this.filterSubject = new BehaviorSubject<any>({
+			distance: 20
+		});
 		this.filter = this.filterSubject.asObservable();
 
 		this.startChargeSubject = new BehaviorSubject<any>(null);

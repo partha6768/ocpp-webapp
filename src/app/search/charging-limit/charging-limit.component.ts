@@ -88,7 +88,7 @@ export class ChargingLimitComponent implements OnInit {
           }
         };
         localStorage.setItem('TRANSACTION', JSON.stringify(txt));
-        this.router.navigate(['/charging/in-progress']);
+        this.router.navigate(['/charging/in-progress', data.result.transactionId]);
       }
     });
   }
