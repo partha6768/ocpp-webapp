@@ -33,8 +33,8 @@ export class SearchPage implements AfterViewInit, OnInit{
   userOnGoingTransactions = [];
   constructor(public commonService: CommonService, private dataService: DataService, public siteService: SiteService, public modalController: ModalController, private router: Router, private userService: UserService) {
     this.commonService.getCurrentLocation().then((pos) => {
-      localStorage.setItem('userLat', pos.lat);
-      localStorage.setItem('userLng', pos.lng);
+      localStorage.setItem('userLat', ''+pos.coords.latitude);
+      localStorage.setItem('userLng', ''+pos.coords.longitude);
       this.getCurrentLocation();
     });
     this.userName = this.commonService.currentUserInfo();

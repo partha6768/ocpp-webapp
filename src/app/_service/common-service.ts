@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {ToastController} from "@ionic/angular";
+import { Geolocation } from '@capacitor/geolocation';
 
 @Injectable()
 export class CommonService {
@@ -39,14 +40,8 @@ export class CommonService {
         return this.http.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?origins=${origin}&destinations=${destination}&key=AIzaSyDH-JIjvzwccPIxPHOusrTFKZtDT8hohHE`);
     }
 
-    getCurrentLocation(): Promise<any> {
-        return new Promise((resolve, reject) => {
-            navigator.geolocation.getCurrentPosition(resp => {
-                resolve({lng: resp.coords.longitude, lat: resp.coords.latitude});
-            }, err => {
-                reject(err);
-            });
-        });
+    getCurrentLocation() {
+        return Geolocation.getCurrentPosition();
     }
 
     getConnectorTypeListForFilter() {
