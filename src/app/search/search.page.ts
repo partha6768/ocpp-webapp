@@ -35,15 +35,12 @@ export class SearchPage implements AfterViewInit, OnInit{
     this.commonService.getCurrentLocation().then((pos) => {
       localStorage.setItem('userLat', ''+pos.coords.latitude);
       localStorage.setItem('userLng', ''+pos.coords.longitude);
-      this.getCurrentLocation();
     });
     this.userName = this.commonService.currentUserInfo();
   }
 
   ngAfterViewInit(): void {
-    this.getFilterData({
-      distance: 20
-    });
+    this.getCurrentLocation();
     this.dataService.filter.subscribe((obj: any) => {
         this.getFilterData(obj);
     });
@@ -207,24 +204,24 @@ export class SearchPage implements AfterViewInit, OnInit{
   }
 
   getCurrentLocation() {
-    this.focusToPosition(localStorage.getItem('userLat'), localStorage.getItem('userlng'));
+    this.focusToPosition(localStorage.getItem('userLat'), localStorage.getItem('userLng'));
     this.getFilterData({
       distance: 20
     });
   }
 
   focusToPosition(lat, lng) {
-    this.coordinates = new google.maps.LatLng(lat, lng);
     this.mapOptions = {
-      center: this.coordinates,
-      zoom: 12,
-      minZoom: 12, maxZoom: 18,
+      center: new google.maps.LatLng(lat, lng),
+      zoom: 15,
+      minZoom: 3, maxZoom: 15,
       fullscreenControl: false,
       zoomControl: false,
       mapTypeControl: false,
       streetViewControl: false,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
+    this.map = new google.maps.Map(this.mapElement.nativeElement, this.mapOptions);
     this.getFilterData({
       distance: 20
     });
