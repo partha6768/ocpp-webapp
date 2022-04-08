@@ -2,6 +2,7 @@ import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {IonSlides, ModalController} from "@ionic/angular";
 import {ViewRoutePage} from "../../view-route/view-route.page";
 import {VehicleComponent} from "../../home/vehicle/vehicle.component";
+import {CommonService} from "../../_service/common-service";
 
 @Component({
   selector: 'app-slider',
@@ -11,7 +12,12 @@ import {VehicleComponent} from "../../home/vehicle/vehicle.component";
 export class SliderComponent implements AfterViewInit {
   currentIndex = 0;
   @ViewChild('slides', {static: true}) slides: IonSlides;
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController, private commonService: CommonService) {
+    this.commonService.getCurrentLocation().then((pos) => {
+      localStorage.setItem('userLat', ''+pos.coords.latitude);
+      localStorage.setItem('userLng', ''+pos.coords.longitude);
+    });
+  }
 
   slideChanged(){
     this.slides.getActiveIndex().then((index)=>{

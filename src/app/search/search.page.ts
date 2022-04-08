@@ -81,7 +81,6 @@ export class SearchPage implements AfterViewInit, OnInit{
     if (!obj && (obj.distance == undefined || obj.distance === null)) {
       obj.distance = 20
     }
-    this.map = new google.maps.Map(this.mapElement.nativeElement, this.mapOptions);
     this.siteService.getAllSites(localStorage.getItem('userLat'), localStorage.getItem('userLng'),obj.distance, url).subscribe((items: any) => {
       this.markers = [];
       if (items.result && items.result.length != 0) {
