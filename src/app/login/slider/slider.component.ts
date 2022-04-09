@@ -1,6 +1,5 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {IonSlides, ModalController} from "@ionic/angular";
-import {ViewRoutePage} from "../../view-route/view-route.page";
 import {VehicleComponent} from "../../home/vehicle/vehicle.component";
 import {CommonService} from "../../_service/common-service";
 

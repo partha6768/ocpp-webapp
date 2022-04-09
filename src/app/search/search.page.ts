@@ -35,12 +35,12 @@ export class SearchPage implements AfterViewInit, OnInit{
     this.commonService.getCurrentLocation().then((pos) => {
       localStorage.setItem('userLat', ''+pos.coords.latitude);
       localStorage.setItem('userLng', ''+pos.coords.longitude);
+      this.getCurrentLocation();
     });
     this.userName = this.commonService.currentUserInfo();
   }
 
   ngAfterViewInit(): void {
-    this.getCurrentLocation();
     this.dataService.filter.subscribe((obj: any) => {
         this.getFilterData(obj);
     });

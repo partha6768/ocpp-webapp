@@ -1,15 +1,15 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {ToastController} from "@ionic/angular";
-import { Geolocation } from '@capacitor/geolocation';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @Injectable()
 export class CommonService {
 
     private apiUrl = environment.apiURL + '/api/cb/v1/';
 
-    constructor(public toastController: ToastController, private http: HttpClient) {
+    constructor(public toastController: ToastController, private http: HttpClient, private geolocation: Geolocation) {
     }
 
     currentUserInfo() {
@@ -41,7 +41,7 @@ export class CommonService {
     }
 
     getCurrentLocation() {
-        return Geolocation.getCurrentPosition();
+        return this.geolocation.getCurrentPosition();
     }
 
     getConnectorTypeListForFilter() {
